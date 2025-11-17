@@ -1,0 +1,6 @@
+# Additional folders to ignore during crawling (one per line)
+node_modules
+dist
+build
+coverage
+.git
