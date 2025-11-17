@@ -9,7 +9,8 @@ async function crawlDir(dir: string, results: string[], ignoreFolders: Set<strin
   let items: string[];
   try {
     items = await fs.promises.readdir(dir);
-  } catch {
+  } catch (error) {
+    console.error(`Failed to read directory: ${dir}`, error);
     return;
   }
 
@@ -23,7 +24,8 @@ async function crawlDir(dir: string, results: string[], ignoreFolders: Set<strin
     let stats: fs.Stats;
     try {
       stats = await fs.promises.stat(fullPath);
-    } catch {
+    } catch (error) {
+      console.error(`Failed to stat path: ${fullPath}`, error);
       continue;
     }
 
@@ -52,8 +54,9 @@ async function loadIgnoreFolders(): Promise<Set<string>> {
       .map((line) => line.trim())
       .filter((line) => line && !line.startsWith("#"))
       .forEach((folder) => ignore.add(folder));
-  } catch {
+  } catch (error) {
     // If the ignore file is missing or unreadable, fall back to defaults.
+    console.warn("Ignoring custom folder list; using defaults only.", error);
   }
 
   return ignore;
