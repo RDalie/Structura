@@ -18,10 +18,13 @@
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "vitest": "^1.6.0"
+    "vitest": "^4.0.14"
   },
   "dependencies": {
     "tree-sitter": "^0.25.0",
     "tree-sitter-javascript": "^0.25.0"
+  },
+  "overrides": {
+    "vite": "7.2.4"
   }
 }

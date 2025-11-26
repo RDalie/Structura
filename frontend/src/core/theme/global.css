@@ -1,0 +1,22 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Smooth font rendering */
+html,
+body {
+  height: 100%;
+  font-family: system-ui, sans-serif;
+  background-color: #111;
+  color: #eee;
+}
+
+/* Default for root app */
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
