@@ -14,7 +14,8 @@ export function SidebarNav({ items }: SidebarNavProps) {
           to={item.to}
           className={({ isActive }) =>
             [
-              "group flex items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors",
+              "group flex flex-col items-start gap-0.5 rounded-lg px-3 py-2 text-sm transition-colors",
+              "md:flex-row md:items-center md:justify-between md:gap-0",
               isActive
                 ? "bg-slate-800 text-slate-50 shadow-sm"
                 : "text-slate-300 hover:bg-slate-800/70 hover:text-white",
