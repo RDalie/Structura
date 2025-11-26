@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Structura">
+  <defs>
+    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop stop-color="#68d0ff" offset="0" />
+      <stop stop-color="#6f7bff" offset="1" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0b1222" />
+  <path
+    d="M16 40.5c0-6 4.5-9.5 9.5-9.5h7c4 0 6.5-2.5 6.5-6.5S36.5 18 32 18h-8"
+    fill="none"
+    stroke="url(#g)"
+    stroke-width="6"
+    stroke-linecap="round"
+  />
+  <path
+    d="M48 23.5c0 6-4.5 9.5-9.5 9.5h-7c-4 0-6.5 2.5-6.5 6.5s3.5 6.5 8 6.5h8"
+    fill="none"
+    stroke="url(#g)"
+    stroke-width="6"
+    stroke-linecap="round"
+  />
+</svg>
