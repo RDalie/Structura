@@ -17,13 +17,13 @@ export function SidebarNav({ items }: SidebarNavProps) {
               "group flex flex-col items-start gap-0.5 rounded-lg px-3 py-2 text-sm transition-colors",
               "md:flex-row md:items-center md:justify-between md:gap-0",
               isActive
-                ? "bg-slate-800 text-slate-50 shadow-sm"
-                : "text-slate-300 hover:bg-slate-800/70 hover:text-white",
+                ? "bg-[#e8ecf4] text-[#0f172a] shadow-sm"
+                : "text-[#4b5563] hover:bg-[#eef1f7] hover:text-[#0f172a]",
             ].join(" ")
           }
         >
           <span className="font-medium">{item.label}</span>
-          <span className="text-[11px] text-slate-400 md:hidden">{item.blurb}</span>
+          <span className="text-[11px] text-[#6b7280] md:hidden">{item.blurb}</span>
         </NavLink>
       ))}
     </nav>
