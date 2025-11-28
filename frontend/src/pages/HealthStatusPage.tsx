@@ -1,35 +1,14 @@
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useMemo } from 'react';
+import { useHealth } from '../hooks/useHealth';
+import { endpoints } from '../lib/endpoints';
 import { HealthChecksTable } from './health/HealthChecksTable';
 import { HealthErrorBanner } from './health/HealthErrorBanner';
 import { HealthHeader } from './health/HealthHeader';
 import { HealthSummaryCard } from './health/HealthSummaryCard';
-import type { HealthCheck, HealthResponse } from './health/types';
-
-// Build the health endpoint from env, trimming trailing slashes to avoid accidental double slashes.
-const API_BASE =
-  (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/+$/, '') ?? '';
-const HEALTH_ENDPOINT = `${API_BASE}/health`;
+import type { HealthCheck } from './health/types';
 
 export function HealthStatusPage() {
-  const {
-    data: health,
-    error,
-    isLoading,
-    isFetching,
-    refetch,
-    dataUpdatedAt,
-  } = useQuery<HealthResponse>({
-    queryKey: ['health'],
-    queryFn: async () => {
-      const { data } = await axios.get<HealthResponse>(HEALTH_ENDPOINT);
-      return data;
-    },
-    // Poll the health endpoint every 20s to keep the view current without manual intervals.
-    refetchInterval: 20000,
-    refetchOnWindowFocus: false,
-  });
+  const { data: health, error, isLoading, isFetching, refetch, dataUpdatedAt } = useHealth();
 
   const checks: HealthCheck[] = useMemo(() => {
     // Nest Terminus may return data in details/info/error; merge to render whatever is available.
@@ -46,13 +25,7 @@ export function HealthStatusPage() {
 
   const overallStatus = health?.status?.toLowerCase() ?? 'unknown';
   const lastUpdated = health ? new Date(dataUpdatedAt) : null;
-  const errorMessage = error
-    ? axios.isAxiosError(error)
-      ? (error.message ?? 'Request failed')
-      : error instanceof Error
-        ? error.message
-        : 'Unknown error'
-    : null;
+  const errorMessage = error ? (error instanceof Error ? error.message : 'Unknown error') : null;
 
   return (
     <div className="flex flex-col gap-6">
@@ -60,7 +33,7 @@ export function HealthStatusPage() {
 
       <HealthSummaryCard
         overallStatus={overallStatus}
-        endpoint={HEALTH_ENDPOINT}
+        endpoint={endpoints.health}
         lastUpdated={lastUpdated}
         isLoading={isFetching}
         error={errorMessage}
