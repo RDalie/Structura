@@ -9,9 +9,9 @@ export function HealthHeader({ onRefresh, isLoading }: HealthHeaderProps) {
   return (
     <div className="flex flex-wrap items-center justify-between gap-3">
       <div>
-        <div className="text-xs uppercase tracking-[0.2em] text-slate-400">Operations</div>
-        <h1 className="text-2xl font-semibold text-slate-50">Health Checks</h1>
-        <p className="text-sm text-slate-300">
+        <div className="text-xs uppercase tracking-[0.2em] text-[#6b7280]">Operations</div>
+        <h1 className="text-2xl font-semibold text-[#0f172a]">Health Checks</h1>
+        <p className="text-sm text-[#4b5563]">
           Live view of backend checks exposed via the /health endpoint.
         </p>
       </div>
