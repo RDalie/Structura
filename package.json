@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "ingestion",
+    "backend",
     "core",
     "frontend",
+    "ingestion",
     "tests"
   ],
   "scripts": {

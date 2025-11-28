@@ -12,6 +12,10 @@ nvm use          # ensure Node 22.21.1
 npm install      # install workspace deps
 ```
 
+## Environment
+- Frontend dev: `frontend/.env.local` points Vite to the backend (`VITE_API_BASE_URL`).
+- Backend dev: copy `backend/.env.example` to `backend/.env` (or `.env.local`) and adjust `PORT`/`CORS_ORIGIN` as needed. Defaults assume Vite runs on `http://localhost:5173`.
+
 ## Running the apps
 - Backend (NestJS, `backend/`): `npm run start:dev --workspace backend`
   - Prod build: `npm run build --workspace backend` then `npm run start:prod --workspace backend`
