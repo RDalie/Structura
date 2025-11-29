@@ -1,0 +1,68 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: structura-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: structura
+      POSTGRES_PASSWORD: structura_password
+      POSTGRES_DB: structura_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - structura_net
+  mongo:
+    image: mongo:7
+    container_name: structura-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - structura_net
+  neo4j:
+    image: neo4j:5
+    container_name: structura-neo4j
+    restart: unless-stopped
+    ports:
+      - "7474:7474"   # HTTP Browser
+      - "7687:7687"   # Bolt protocol
+    environment:
+      NEO4J_AUTH: neo4j/password123
+      NEO4J_ACCEPT_LICENSE_AGREEMENT: "yes"
+    volumes:
+      - neo4j_data:/data
+    networks:
+      - structura_net
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: structura-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@structura.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "5050:80"
+    networks:
+      - structura_net
+  mongo-express:
+    image: mongo-express:1
+    container_name: structura-mongo-express
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_PORT: 27017
+    networks:
+      - structura_net
+volumes:
+  postgres_data:
+  mongo_data:
+  neo4j_data:
+networks:
+  structura_net:
+    driver: bridge
