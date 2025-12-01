@@ -4,20 +4,20 @@ Structura is a static analysis and AI-assisted engineering platform. This monore
 
 ## Requirements
 
-- Node 22.21.1 (run `nvm use` from the repo root)
+- Node 20.19.0 (run `nvm use` from the repo root)
 - npm 10+ (npm workspaces enabled)
 
 ## Quick start
 
 ```bash
-nvm use          # ensure Node 22.21.1
+nvm use          # ensure Node 20.19.0
 npm install      # install workspace deps
 ```
 
 ## Environment
 
 - Frontend dev: `frontend/.env.local` points Vite to the backend (`VITE_API_BASE_URL`).
-- Backend dev: copy `backend/.env.example` to `backend/.env` (or `.env.local`) and adjust `PORT`/`CORS_ORIGIN` as needed. Defaults assume Vite runs on `http://localhost:5173`.
+- Backend dev: copy `backend/.env.example` to `backend/.env` (or `.env.local`). Defaults assume Vite runs on `http://localhost:5173`; set `PORT` (default `3000`) and `CORS_ORIGIN` to your frontend URL. Env vars are validated, so keep `CORS_ORIGIN` as a full `http`/`https` URL.
 
 ## Local data stack (Docker)
 
@@ -28,11 +28,12 @@ npm install      # install workspace deps
 
 ## Running the apps
 
-- Backend (NestJS, `backend/`): `npm run start:dev --workspace backend`
+- Backend (NestJS 11 + Terminus, `backend/`): `npm run start:dev --workspace backend`
   - Prod build: `npm run build --workspace backend` then `npm run start:prod --workspace backend`
-  - Health check: `GET /health` (see `backend/src/health/health.controller.ts`)
+  - Health check: `GET /health` pings `https://docs.nestjs.com` to verify outbound connectivity; keep CORS in sync with the frontend.
 - Frontend (React + Vite, `frontend/`): `npm run dev --workspace frontend`
   - Build/preview: `npm run build --workspace frontend` then `npm run preview --workspace frontend`
+  - Health dashboard: visit `/health` in the app; it polls the backend `/health` endpoint every ~20s and surfaces check details.
 - Repo-wide tests (Vitest): `npm test`
   - Backend tests: `npm run test --workspace backend`
 
