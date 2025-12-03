@@ -3,7 +3,9 @@ import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { HealthModule } from './health.module';
+import { HealthModule } from './health/health.module';
+import { PrismaModule } from './prisma.module';
+import { UsersModule } from './users.module';
 
 @Module({
   imports: [
@@ -19,6 +21,8 @@ import { HealthModule } from './health.module';
       }).options({ abortEarly: false }),
     }),
     HealthModule,
+    PrismaModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
