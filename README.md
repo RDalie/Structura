@@ -82,7 +82,7 @@ Services and ports:
 ## Database admin tools
 After `docker compose -f docker/docker-compose.yml up -d`:
 - pgAdmin (Postgres): open `http://localhost:5050`, log in with `admin@structura.com` / `admin123`, add a new server pointing to host `postgres`, port `5432`, username `structura`, password `structura_password`, db `structura_db`.
-- Mongo Express (MongoDB): open `http://localhost:8081` (auto-connects to the `mongo` container); use the UI to browse collections.
+- Mongo Express (MongoDB): open `http://localhost:8081` (auto-connects to the `mongo` container); default basic auth is enabled—username `admin`, password `pass`.
 - Neo4j Browser: open `http://localhost:7474`, log in with `neo4j` / `password123`; Bolt is at `bolt://localhost:7687` if you use Neo4j Desktop or drivers.
 
 ## Running the backend
