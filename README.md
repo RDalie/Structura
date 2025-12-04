@@ -79,6 +79,12 @@ Services and ports:
 - pgAdmin: `5050`, login `admin@structura.com` / `admin123`.
 - Mongo Express: `8081`.
 
+## Database admin tools
+After `docker compose -f docker/docker-compose.yml up -d`:
+- pgAdmin (Postgres): open `http://localhost:5050`, log in with `admin@structura.com` / `admin123`, add a new server pointing to host `postgres`, port `5432`, username `structura`, password `structura_password`, db `structura_db`.
+- Mongo Express (MongoDB): open `http://localhost:8081` (auto-connects to the `mongo` container); use the UI to browse collections.
+- Neo4j Browser: open `http://localhost:7474`, log in with `neo4j` / `password123`; Bolt is at `bolt://localhost:7687` if you use Neo4j Desktop or drivers.
+
 ## Running the backend
 Backend lives in `backend/` and uses NestJS.
 - Key folders: `src/` (app code), `prisma/` (schema and migrations), `generated/` (Prisma client), `test/` (Jest).
