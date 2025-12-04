@@ -6,6 +6,8 @@ import { AppService } from './app.service';
 import { HealthModule } from './health/health.module';
 import { PrismaModule } from './infrastructure/prisma/prisma.module';
 import { UsersModule } from './users/users.module';
+import { MongoModule } from './infrastructure/mongodb/mongo.module';
+import { TestModule } from './test/test.module';
 
 @Module({
   imports: [
@@ -18,11 +20,17 @@ import { UsersModule } from './users/users.module';
         CORS_ORIGIN: Joi.string()
           .uri({ scheme: ['http', 'https'] })
           .optional(),
+        MONGO_URI: Joi.string()
+          .uri({ scheme: ['mongodb', 'mongodb+srv'] })
+          .default('mongodb://127.0.0.1:27017/structura'),
       }).options({ abortEarly: false }),
     }),
     HealthModule,
     PrismaModule,
     UsersModule,
+    // Default to local Docker compose Mongo (port 27017, DB "structura") and allow override via env.
+    MongoModule,
+    TestModule,
   ],
   controllers: [AppController],
   providers: [AppService],
