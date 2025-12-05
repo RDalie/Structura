@@ -1,11 +1,42 @@
 import fs from "fs";
 import path from "path";
 
-// File extensions to collect while crawling.
-const JS_EXTENSIONS = new Set([".js", ".mjs", ".ts", ".tsx"]);
+type SupportedLanguage =
+  | "javascript"
+  | "typescript"
+  | "python"
+  | "go"
+  | "java"
+  | "ruby"
+  | "php"
+  | "rust"
+  | "csharp";
+
+type CrawlOptions = {
+  extensions?: Iterable<string>;
+  languages?: SupportedLanguage[];
+};
+
+// Language-to-extension map so ingestion can request specific stacks.
+export const LANGUAGE_EXTENSION_MAP: Record<SupportedLanguage, string[]> = {
+  javascript: [".js", ".mjs", ".cjs"],
+  typescript: [".ts", ".tsx"],
+  python: [".py"],
+  go: [".go"],
+  java: [".java"],
+  ruby: [".rb"],
+  php: [".php"],
+  rust: [".rs"],
+  csharp: [".cs"],
+};
 
 // Recursively walk a directory tree, honoring ignore rules and collecting matches.
-async function crawlDir(dir: string, results: string[], ignoreFolders: Set<string>) {
+async function crawlDir(
+  dir: string,
+  results: string[],
+  ignoreFolders: Set<string>,
+  extensions: Set<string>
+) {
   let items: string[];
   try {
     items = await fs.promises.readdir(dir);
@@ -30,12 +61,12 @@ async function crawlDir(dir: string, results: string[], ignoreFolders: Set<strin
     }
 
     if (stats.isDirectory()) {
-      await crawlDir(fullPath, results, ignoreFolders);
+      await crawlDir(fullPath, results, ignoreFolders, extensions);
       continue;
     }
 
-    const ext = path.extname(fullPath);
-    if (JS_EXTENSIONS.has(ext)) {
+    const ext = path.extname(fullPath).toLowerCase();
+    if (extensions.has(ext)) {
       const normalized = fullPath.replace(/\\/g, "/");
       results.push(normalized);
     }
@@ -68,11 +99,32 @@ function shouldIgnore(fullPath: string, ignoreFolders: Set<string>): boolean {
 }
 
 // Public API: crawl and return matching file paths.
-export async function crawlJsFiles(root: string): Promise<string[]> {
+export async function crawlFiles(root: string, options?: CrawlOptions): Promise<string[]> {
   const ignoreFolders = await loadIgnoreFolders();
   const results: string[] = [];
-  await crawlDir(root, results, ignoreFolders);
+  const extensions = resolveExtensions(options);
+  await crawlDir(root, results, ignoreFolders, extensions);
   return results;
+}
+
+// Backward-compatible helper for JS/TS callers.
+export async function crawlJsFiles(root: string): Promise<string[]> {
+  return crawlFiles(root, { languages: ["javascript", "typescript"] });
+}
+
+function resolveExtensions(options?: CrawlOptions): Set<string> {
+  if (options?.extensions) {
+    return new Set(Array.from(options.extensions, (ext) => ext.toLowerCase()));
+  }
+
+  if (options?.languages && options.languages.length > 0) {
+    return new Set(
+      options.languages.flatMap((lang) => LANGUAGE_EXTENSION_MAP[lang] ?? []).map((ext) => ext.toLowerCase())
+    );
+  }
+
+  // Default to JS/TS if nothing is specified.
+  return new Set([...LANGUAGE_EXTENSION_MAP.javascript, ...LANGUAGE_EXTENSION_MAP.typescript].map((ext) => ext.toLowerCase()));
 }
 
 // Test run
