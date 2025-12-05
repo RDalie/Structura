@@ -16,7 +16,7 @@ import {
   ReturnNode,
   VariableNode,
   UnknownNode,
-} from '../src/ast/types';
+} from '../types/ast';
 import { makeDeterministicId } from './makeDeterministicId';
 
 export function normalize(node: SyntaxNode, source: string, filePath = ''): NormalizedNode {
