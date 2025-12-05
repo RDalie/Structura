@@ -83,6 +83,10 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^\\.\\/internal\\/(.*)\\.js$": "<rootDir>/../generated/prisma/internal/$1.ts",
+      "^\\.\\/enums\\.js$": "<rootDir>/../generated/prisma/enums.ts"
+    }
   }
 }

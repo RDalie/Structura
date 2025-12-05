@@ -171,8 +171,8 @@ npm run preview --workspace frontend
 ## Useful development commands
 - Format all workspaces: `npm run format`
 - Check formatting: `npm run format:check`
-- Repo-wide tests (Vitest): `npm test`
-- Backend tests: `npm run test --workspace backend`
+- Full test suite (backend Jest first, then Vitest in `tests/**`): `npm test`
+- Backend tests only: `npm run test --workspace backend`
 - Frontend lint: `npm run lint --workspace frontend`
 
 ## Troubleshooting
