@@ -8,6 +8,7 @@ import { PrismaModule } from './infrastructure/prisma/prisma.module';
 import { UsersModule } from './users/users.module';
 import { MongoModule } from './infrastructure/mongodb/mongo.module';
 import { TestModule } from './test/test.module';
+import { GraphModule } from './infrastructure/neo4j/graph.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { TestModule } from './test/test.module';
     // Default to local Docker compose Mongo (port 27017, DB "structura") and allow override via env.
     MongoModule,
     TestModule,
+    GraphModule,
   ],
   controllers: [AppController],
   providers: [AppService],
