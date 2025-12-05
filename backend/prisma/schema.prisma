@@ -1,7 +1,6 @@
+
 generator client {
-  provider     = "prisma-client"
-  output       = "../generated/prisma"
-  moduleFormat = "cjs"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -12,4 +11,28 @@ model User {
   id    Int     @id @default(autoincrement())
   email String  @unique
   name  String?
+}
+
+
+model AstNode {
+  id            String   @id @default(uuid()) @db.Uuid
+  filePath      String
+  type          String
+
+  parentId      String?  @db.Uuid
+  parent        AstNode? @relation("AstNodeToParent", fields: [parentId], references: [id], onDelete: Cascade)
+  children      AstNode[] @relation("AstNodeToParent")
+
+  childIds      String[] @db.Uuid
+
+  data          Json
+  location      Json?
+  originalType  String?
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([type])
+  @@index([filePath])
+  @@index([parentId])
 }

@@ -12,7 +12,9 @@
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "vitest run"
+    "test": "npm run test:backend && npm run test:vitest",
+    "test:backend": "npm --workspace backend test",
+    "test:vitest": "vitest"
   },
   "engines": {
     "node": ">=20.19.0"
