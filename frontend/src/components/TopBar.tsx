@@ -1,16 +1,15 @@
+import type { ReactNode } from "react";
+
 type TopBarProps = {
-  projectName?: string;
-  subtitle?: string;
+  left?: ReactNode;
+  right?: ReactNode;
 };
 
-export function TopBar({ projectName = "Untitled Workspace", subtitle }: TopBarProps) {
+export function TopBar({ left, right }: TopBarProps) {
   return (
-    <header className="flex h-16 items-center justify-between border-b border-[#e4e7ee] bg-[#f8fafc]/90 px-4 backdrop-blur">
-      <div>
-        <div className="pb-1 text-xs uppercase tracking-[0.15em] text-[#6b7280]">Project</div>
-        <div className="text-sm font-semibold text-[#0f172a]">{projectName}</div>
-      </div>
-      <div className="text-xs text-[#6b7280]">{subtitle ?? "Context actions coming soon"}</div>
+    <header className="flex h-20 items-center justify-between gap-4 border-b border-[#e4e7ee] bg-[#f8fafc]/90 px-4 backdrop-blur">
+      <div className="flex-1">{left}</div>
+      <div className="text-xs text-[#6b7280]">{right ?? "Context actions coming soon"}</div>
     </header>
   );
 }
