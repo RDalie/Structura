@@ -1,11 +1,13 @@
 # Call Normalization Example
 
 ## Source Code
+
 ```js
-runTask("build", 3);
+runTask('build', 3);
 ```
 
 ## Tree-sitter Parse (summary)
+
 - `program`
   - `expression_statement`
     - `call_expression`
@@ -15,6 +17,7 @@ runTask("build", 3);
         - `number` `3`
 
 ## Normalized Output
+
 ```json
 {
   "type": "Call",
@@ -50,6 +53,7 @@ runTask("build", 3);
 ```
 
 ## Mapping Notes
+
 - The call’s callee and each argument are normalized separately, yielding consistent `Identifier` and `Literal` nodes.
 - The shared `id`, `location`, and `originalType` fields make it clear where each node originated in the Tree-sitter parse.
 - Argument order is preserved, so downstream tooling can reconstruct invocation semantics accurately.

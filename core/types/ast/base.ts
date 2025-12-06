@@ -1,6 +1,12 @@
 import type { ModuleNode, ImportNode } from './module';
 import type { FunctionNode, ParameterNode, VariableNode } from './declarations';
-import type { BlockNode, ReturnNode, ExpressionStatementNode, ConditionalNode, LoopNode } from './statements';
+import type {
+  BlockNode,
+  ReturnNode,
+  ExpressionStatementNode,
+  ConditionalNode,
+  LoopNode,
+} from './statements';
 import type { CallNode, BinaryOpNode, UnaryOpNode, MemberAccessNode } from './expressions';
 
 export interface BaseNode {

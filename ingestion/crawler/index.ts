@@ -1,16 +1,16 @@
-import fs from "fs";
-import path from "path";
+import fs from 'fs';
+import path from 'path';
 
 type SupportedLanguage =
-  | "javascript"
-  | "typescript"
-  | "python"
-  | "go"
-  | "java"
-  | "ruby"
-  | "php"
-  | "rust"
-  | "csharp";
+  | 'javascript'
+  | 'typescript'
+  | 'python'
+  | 'go'
+  | 'java'
+  | 'ruby'
+  | 'php'
+  | 'rust'
+  | 'csharp';
 
 type CrawlOptions = {
   extensions?: Iterable<string>;
@@ -19,15 +19,15 @@ type CrawlOptions = {
 
 // Language-to-extension map so ingestion can request specific stacks.
 export const LANGUAGE_EXTENSION_MAP: Record<SupportedLanguage, string[]> = {
-  javascript: [".js", ".mjs", ".cjs"],
-  typescript: [".ts", ".tsx"],
-  python: [".py"],
-  go: [".go"],
-  java: [".java"],
-  ruby: [".rb"],
-  php: [".php"],
-  rust: [".rs"],
-  csharp: [".cs"],
+  javascript: ['.js', '.mjs', '.cjs'],
+  typescript: ['.ts', '.tsx'],
+  python: ['.py'],
+  go: ['.go'],
+  java: ['.java'],
+  ruby: ['.rb'],
+  php: ['.php'],
+  rust: ['.rs'],
+  csharp: ['.cs'],
 };
 
 // Recursively walk a directory tree, honoring ignore rules and collecting matches.
@@ -67,7 +67,7 @@ async function crawlDir(
 
     const ext = path.extname(fullPath).toLowerCase();
     if (extensions.has(ext)) {
-      const normalized = fullPath.replace(/\\/g, "/");
+      const normalized = fullPath.replace(/\\/g, '/');
       results.push(normalized);
     }
   }
@@ -75,19 +75,19 @@ async function crawlDir(
 
 // Build the set of folders to ignore from defaults plus optional file.
 async function loadIgnoreFolders(): Promise<Set<string>> {
-  const defaults = ["node_modules", "dist", "build", "coverage", ".git"];
+  const defaults = ['node_modules', 'dist', 'build', 'coverage', '.git'];
   const ignore = new Set<string>(defaults);
 
   try {
-    const file = await fs.promises.readFile(path.join(__dirname, "ignore-folders.txt"), "utf8");
+    const file = await fs.promises.readFile(path.join(__dirname, 'ignore-folders.txt'), 'utf8');
     file
       .split(/\r?\n/)
       .map((line) => line.trim())
-      .filter((line) => line && !line.startsWith("#"))
+      .filter((line) => line && !line.startsWith('#'))
       .forEach((folder) => ignore.add(folder));
   } catch (error) {
     // If the ignore file is missing or unreadable, fall back to defaults.
-    console.warn("Ignoring custom folder list; using defaults only.", error);
+    console.warn('Ignoring custom folder list; using defaults only.', error);
   }
 
   return ignore;
@@ -109,7 +109,7 @@ export async function crawlFiles(root: string, options?: CrawlOptions): Promise<
 
 // Backward-compatible helper for JS/TS callers.
 export async function crawlJsFiles(root: string): Promise<string[]> {
-  return crawlFiles(root, { languages: ["javascript", "typescript"] });
+  return crawlFiles(root, { languages: ['javascript', 'typescript'] });
 }
 
 function resolveExtensions(options?: CrawlOptions): Set<string> {
@@ -119,12 +119,18 @@ function resolveExtensions(options?: CrawlOptions): Set<string> {
 
   if (options?.languages && options.languages.length > 0) {
     return new Set(
-      options.languages.flatMap((lang) => LANGUAGE_EXTENSION_MAP[lang] ?? []).map((ext) => ext.toLowerCase())
+      options.languages
+        .flatMap((lang) => LANGUAGE_EXTENSION_MAP[lang] ?? [])
+        .map((ext) => ext.toLowerCase())
     );
   }
 
   // Default to JS/TS if nothing is specified.
-  return new Set([...LANGUAGE_EXTENSION_MAP.javascript, ...LANGUAGE_EXTENSION_MAP.typescript].map((ext) => ext.toLowerCase()));
+  return new Set(
+    [...LANGUAGE_EXTENSION_MAP.javascript, ...LANGUAGE_EXTENSION_MAP.typescript].map((ext) =>
+      ext.toLowerCase()
+    )
+  );
 }
 
 // Test run

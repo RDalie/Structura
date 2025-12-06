@@ -1,11 +1,11 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { ShellLayout } from "./layout/ShellLayout";
-import { navItems } from "./core/nav";
-import { PlaceholderPage } from "./pages/PlaceholderPage";
-import { HealthStatusPage } from "./pages/HealthStatusPage";
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { ShellLayout } from './layout/ShellLayout';
+import { navItems } from './core/nav';
+import { PlaceholderPage } from './pages/PlaceholderPage';
+import { HealthStatusPage } from './pages/HealthStatusPage';
 
 export default function App() {
-  const placeholderItems = navItems.filter((item) => item.key !== "health");
+  const placeholderItems = navItems.filter((item) => item.key !== 'health');
 
   return (
     <BrowserRouter>

@@ -1,29 +1,29 @@
-import { describe, it, expect } from "vitest";
-import Parser from "tree-sitter";
-import JavaScript from "tree-sitter-javascript";
-import { normalize } from "../../core/utils/normalize";
+import { describe, it, expect } from 'vitest';
+import Parser from 'tree-sitter';
+import JavaScript from 'tree-sitter-javascript';
+import { normalize } from '../../core/utils/normalize';
 
-describe("unknown node normalization", () => {
-  it("wraps unsupported nodes in UnknownNode with deterministic ids", () => {
+describe('unknown node normalization', () => {
+  it('wraps unsupported nodes in UnknownNode with deterministic ids', () => {
     const parser = new Parser();
     parser.setLanguage(JavaScript);
 
-    const source = "class Example {}";
+    const source = 'class Example {}';
     const tree = parser.parse(source);
-    const node = tree.rootNode.namedChildren.find((child) => child.type === "class_declaration");
+    const node = tree.rootNode.namedChildren.find((child) => child.type === 'class_declaration');
 
     if (!node) {
-      throw new Error("Class declaration not found in parsed tree");
+      throw new Error('Class declaration not found in parsed tree');
     }
 
-    const first = normalize(node, source, "test.js");
-    const second = normalize(node, source, "test.js");
+    const first = normalize(node, source, 'test.js');
+    const second = normalize(node, source, 'test.js');
 
-    if (first.type !== "Unknown" || second.type !== "Unknown") {
-      throw new Error("Expected unknown normalization output");
+    if (first.type !== 'Unknown' || second.type !== 'Unknown') {
+      throw new Error('Expected unknown normalization output');
     }
 
-    expect(first.originalType).toBe("class_declaration");
+    expect(first.originalType).toBe('class_declaration');
     expect(first.raw).toBe(source);
     expect(first.location?.startLine).toBe(0);
     expect(first.location?.startCol).toBe(0);

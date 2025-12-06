@@ -1,8 +1,8 @@
-import { useMemo } from "react";
-import type { ReactNode } from "react";
-import { Check, ChevronDown, Plus } from "lucide-react";
-import type { Project } from "../core/projects";
-import { ProjectAvatar } from "./ProjectAvatar";
+import { useMemo } from 'react';
+import type { ReactNode } from 'react';
+import { Check, ChevronDown, Plus } from 'lucide-react';
+import type { Project } from '../core/projects';
+import { ProjectAvatar } from './ProjectAvatar';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,7 +10,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
+} from './ui/dropdown-menu';
 
 type ProjectSwitcherProps = {
   projects: Project[];
@@ -26,10 +26,13 @@ export function ProjectSwitcher({
   value,
   onChange,
   onCreateNew,
-  label = "Projects",
+  label = 'Projects',
   renderTrigger,
 }: ProjectSwitcherProps) {
-  const selected = useMemo(() => projects.find((p) => p.id === value) ?? projects[0], [projects, value]);
+  const selected = useMemo(
+    () => projects.find((p) => p.id === value) ?? projects[0],
+    [projects, value]
+  );
 
   const defaultTrigger = (
     <button
@@ -40,7 +43,9 @@ export function ProjectSwitcher({
         {selected && <ProjectAvatar project={selected} />}
         <div className="flex flex-col">
           <span className="text-[11px] uppercase tracking-[0.08em] text-[#6b7280]">Project</span>
-          <span className="text-sm font-semibold text-[#0f172a]">{selected?.name ?? "Select a project"}</span>
+          <span className="text-sm font-semibold text-[#0f172a]">
+            {selected?.name ?? 'Select a project'}
+          </span>
         </div>
       </div>
       <ChevronDown className="h-4 w-4 text-[#6b7280]" />
@@ -53,7 +58,10 @@ export function ProjectSwitcher({
         {renderTrigger ? renderTrigger(selected) : defaultTrigger}
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent align="start" className="w-[240px] rounded-xl border border-[#e4e7ee] p-0">
+      <DropdownMenuContent
+        align="start"
+        className="w-[240px] rounded-xl border border-[#e4e7ee] p-0"
+      >
         <DropdownMenuLabel className="border-b border-[#edf0f6] px-4 pb-2 pt-3 text-[13px] font-semibold text-[#6b7280]">
           {label}
         </DropdownMenuLabel>
@@ -63,7 +71,7 @@ export function ProjectSwitcher({
             return (
               <DropdownMenuItem
                 key={project.id}
-                className={`flex items-center justify-between ${isActive ? "bg-[#eef2ff]" : ""}`}
+                className={`flex items-center justify-between ${isActive ? 'bg-[#eef2ff]' : ''}`}
                 onSelect={(event) => {
                   event.preventDefault();
                   onChange(project.id);

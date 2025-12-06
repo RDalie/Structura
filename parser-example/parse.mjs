@@ -1,8 +1,8 @@
-import Parser from "tree-sitter";
-import JavaScript from "tree-sitter-javascript";
-import fs from "fs";
+import Parser from 'tree-sitter';
+import JavaScript from 'tree-sitter-javascript';
+import fs from 'fs';
 
-const code = fs.readFileSync("./broken.js", "utf8");
+const code = fs.readFileSync('./broken.js', 'utf8');
 
 const parser = new Parser();
 parser.setLanguage(JavaScript);

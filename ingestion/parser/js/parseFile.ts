@@ -1,6 +1,6 @@
-import Parser from "tree-sitter";
-import JavaScript from "tree-sitter-javascript";
-import fs from "node:fs/promises";
+import Parser from 'tree-sitter';
+import JavaScript from 'tree-sitter-javascript';
+import fs from 'node:fs/promises';
 
 const parser = new Parser();
 parser.setLanguage(JavaScript as any);
@@ -9,13 +9,13 @@ export async function parseJSFile(filePath: string) {
   let code: string;
 
   try {
-    code = await fs.readFile(filePath, "utf8");
+    code = await fs.readFile(filePath, 'utf8');
   } catch (err: any) {
     return {
       filePath,
       tree: null,
       hasErrors: true,
-      errorType: "FileReadError",
+      errorType: 'FileReadError',
       errorMessage: err?.message ?? String(err),
     };
   }
@@ -27,7 +27,7 @@ export async function parseJSFile(filePath: string) {
     filePath,
     tree,
     hasErrors,
-    errorType: hasErrors ? "SyntaxError" : null,
+    errorType: hasErrors ? 'SyntaxError' : null,
     errorMessage: hasErrors ? collectErrorSummary(root) : null,
   };
 }
@@ -36,7 +36,7 @@ function collectErrorSummary(rootNode: any): string {
   const errors: string[] = [];
 
   const visit = (node: any) => {
-    if (node.type === "ERROR" || node.hasError) {
+    if (node.type === 'ERROR' || node.hasError) {
       errors.push(`Error at line ${node.startPosition.row + 1}`);
     }
 
@@ -47,5 +47,5 @@ function collectErrorSummary(rootNode: any): string {
 
   visit(rootNode);
 
-  return errors.join("; ");
+  return errors.join('; ');
 }

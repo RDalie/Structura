@@ -1,16 +1,16 @@
-import Parser from "tree-sitter";
-import JavaScript from "tree-sitter-javascript";
-import fs from "node:fs/promises";
+import Parser from 'tree-sitter';
+import JavaScript from 'tree-sitter-javascript';
+import fs from 'node:fs/promises';
 
 async function main() {
   const filePath = process.argv[2];
   if (!filePath) {
-    console.error("Usage: ts-node parseOne.ts <file>");
+    console.error('Usage: ts-node parseOne.ts <file>');
     process.exit(1);
   }
 
   // 1. Read file
-  const code = await fs.readFile(filePath, "utf8");
+  const code = await fs.readFile(filePath, 'utf8');
 
   // 2. Create parser and load JS grammar
   const parser = new Parser();

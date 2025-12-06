@@ -1,18 +1,18 @@
-import { parseJSFile } from "../ingestion/parser/js/parseFile";
-import { crawlJsFiles } from "../ingestion/crawler";
+import { parseJSFile } from '../ingestion/parser/js/parseFile';
+import { crawlJsFiles } from '../ingestion/crawler';
 
 async function main() {
   const rootDir = process.argv[2];
   if (!rootDir) {
-    console.error("Usage: npx ts-node scripts/perfTest.ts <projectRoot>");
+    console.error('Usage: npx ts-node scripts/perfTest.ts <projectRoot>');
     process.exit(1);
   }
 
-  console.log("Crawling project...");
+  console.log('Crawling project...');
   const filePaths = await crawlJsFiles(rootDir);
 
   console.log(`Found ${filePaths.length} JS files`);
-  console.log("Starting parse performance test...\n");
+  console.log('Starting parse performance test...\n');
 
   const start = Date.now();
 

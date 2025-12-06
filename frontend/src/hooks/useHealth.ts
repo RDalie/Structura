@@ -14,7 +14,7 @@ export function useHealth() {
       } catch (err) {
         // Normalize errors so consumers can display a readable message.
         const message = axios.isAxiosError(err)
-          ? err.message ?? 'Request failed'
+          ? (err.message ?? 'Request failed')
           : err instanceof Error
             ? err.message
             : 'Unknown error';

@@ -1,11 +1,13 @@
 # Variable Normalization Example
 
 ## Source Code
+
 ```js
 const answer = 42;
 ```
 
 ## Tree-sitter Parse (summary)
+
 - `program`
   - `lexical_declaration` (`const`)
     - `variable_declarator`
@@ -13,6 +15,7 @@ const answer = 42;
       - `number` `42`
 
 ## Normalized Output
+
 ```json
 {
   "type": "Variable",
@@ -33,6 +36,7 @@ const answer = 42;
 ```
 
 ## Mapping Notes
+
 - Each `variable_declarator` becomes a `Variable` node capturing the declared name, declaration kind (`const`, `let`, or `var`), and optional initializer.
 - Initializers are recursively normalized, so literals, identifiers, or more complex expressions retain their unified Structura shapes.
 - When a single declaration contains multiple variables, Structura returns a `Block` containing one `ExpressionStatement` per variable to keep every variable accessible as a standalone node.

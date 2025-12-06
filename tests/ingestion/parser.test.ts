@@ -1,12 +1,12 @@
-import path from "node:path";
-import { parseJSFile } from "../../ingestion/parser/js/parseFile";
-import { describe, expect, it, beforeEach, afterEach } from "vitest";
+import path from 'node:path';
+import { parseJSFile } from '../../ingestion/parser/js/parseFile';
+import { describe, expect, it, beforeEach, afterEach } from 'vitest';
 
-const fixturesDir = path.join(__dirname, "../fixtures");
+const fixturesDir = path.join(__dirname, '../fixtures');
 
-describe("parseJSFile", () => {
-  it("parses a valid JS file without errors", async () => {
-    const filePath = path.join(fixturesDir, "valid.js");
+describe('parseJSFile', () => {
+  it('parses a valid JS file without errors', async () => {
+    const filePath = path.join(fixturesDir, 'valid.js');
     const result = await parseJSFile(filePath);
 
     expect(result.filePath).toBe(filePath);
@@ -16,24 +16,24 @@ describe("parseJSFile", () => {
     expect(result.errorMessage).toBe(null);
   });
 
-  it("parses an invalid JS file and detects syntax errors", async () => {
-    const filePath = path.join(fixturesDir, "invalid.js");
+  it('parses an invalid JS file and detects syntax errors', async () => {
+    const filePath = path.join(fixturesDir, 'invalid.js');
     const result = await parseJSFile(filePath);
 
     expect(result.tree).toBeTruthy();
     expect(result.hasErrors).toBe(true);
-    expect(result.errorType).toBe("SyntaxError");
+    expect(result.errorType).toBe('SyntaxError');
     expect(result.errorMessage).not.toBeNull();
-    expect(result.errorMessage).toContain("Error");
+    expect(result.errorMessage).toContain('Error');
   });
 
-  it("handles non existent files gracefully", async () => {
-    const filePath = path.join(fixturesDir, "no-such-file.js");
+  it('handles non existent files gracefully', async () => {
+    const filePath = path.join(fixturesDir, 'no-such-file.js');
     const result = await parseJSFile(filePath);
 
     expect(result.tree).toBeNull();
     expect(result.hasErrors).toBe(true);
-    expect(result.errorType).toBe("FileReadError");
+    expect(result.errorType).toBe('FileReadError');
     expect(result.errorMessage).toBeDefined();
   });
 });

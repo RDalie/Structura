@@ -1,12 +1,14 @@
 # Conditional Normalization Example
 
 ## Source Code
+
 ```js
 if (ready) run();
 else fallback();
 ```
 
 ## Tree-sitter Parse (summary)
+
 - `program`
   - `if_statement`
     - `parenthesized_expression` → `identifier` `ready`
@@ -14,6 +16,7 @@ else fallback();
     - `expression_statement` → `call_expression` (`identifier` `fallback`)
 
 ## Normalized Output
+
 ```json
 {
   "type": "Conditional",
@@ -63,6 +66,7 @@ else fallback();
 ```
 
 ## Mapping Notes
+
 - `if_statement` nodes normalize to Structura’s `Conditional`, preserving `condition`, `then`, and optional `else` branches.
 - Consequence and alternative branches become `Block` nodes even when the source omits braces, keeping statements in a consistent list format.
 - Each nested expression (here, calls) is recursively normalized, so callee/args reuse the shared `Call` and `Identifier` shapes.
