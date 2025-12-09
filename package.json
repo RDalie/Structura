@@ -5,6 +5,7 @@
   "workspaces": [
     "backend",
     "core",
+    "docs",
     "frontend",
     "ingestion",
     "tests"
@@ -14,7 +15,11 @@
     "format:check": "prettier --check .",
     "test": "npm run test:backend && npm run test:vitest",
     "test:backend": "npm --workspace backend test",
-    "test:vitest": "vitest"
+    "test:vitest": "vitest",
+    "docs:start": "npm --workspace docs run start",
+    "docs:build": "npm --workspace docs run build",
+    "docs:serve": "npm --workspace docs run serve",
+    "docs:typecheck": "npm --workspace docs run typecheck"
   },
   "engines": {
     "node": ">=20.19.0"
