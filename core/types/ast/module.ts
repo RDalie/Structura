@@ -11,4 +11,5 @@ export interface ImportNode extends BaseNode {
   type: 'Import';
   module: string;
   imported: string[];
+  raw: string;
 }

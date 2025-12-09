@@ -114,6 +114,7 @@ function normalizeCall(node: SyntaxNode, source: string, filePath: string): Call
     ...base(node, 'Call', filePath),
     callee: normalize(calleeNode, source, filePath),
     args,
+    raw: source.slice(node.startIndex, node.endIndex),
   };
 }
 
@@ -288,17 +289,54 @@ function normalizeVariableDeclaration(
 }
 
 function normalizeImport(node: SyntaxNode, _source: string, _filePath: string): ImportNode {
+  const importClause = node.namedChildren.find((child) => child.type === 'import_clause');
   const moduleSpecifierNode =
     node.childForFieldName?.('source') ??
     node.namedChildren.find((child) => child.type === 'string');
-  const importedNodes = node.namedChildren.filter((child) => child.type === 'identifier');
+
+  const importedNames: string[] = [];
+
+  if (importClause) {
+    // Imported names reflect local bindings (default, namespace alias, or named/aliased imports).
+    importClause.namedChildren.forEach((child) => {
+      if (child.type === 'identifier') {
+        // Default import
+        importedNames.push(child.text);
+        return;
+      }
+
+      if (child.type === 'namespace_import') {
+        const nsAlias =
+          child.childForFieldName?.('name') ??
+          child.namedChildren.find((n) => n.type === 'identifier');
+        if (nsAlias) importedNames.push(nsAlias.text);
+        return;
+      }
+
+      if (child.type === 'named_imports') {
+        child.namedChildren
+          .filter((spec) => spec.type === 'import_specifier')
+          .forEach((spec) => {
+            const alias =
+              spec.childForFieldName?.('alias') ??
+              spec.namedChildren.find((n) => n.type === 'identifier' && n !== undefined);
+            const name =
+              spec.childForFieldName?.('name') ??
+              spec.namedChildren.find((n) => n.type === 'identifier');
+            const local = alias ?? name;
+            if (local) importedNames.push(local.text);
+          });
+      }
+    });
+  }
 
   return {
     ...base(node, 'Import', _filePath),
     module: moduleSpecifierNode
       ? moduleSpecifierNode.text.replace(/^['"`]/, '').replace(/['"`]$/, '')
       : '',
-    imported: importedNodes.map((child) => child.text),
+    imported: importedNames,
+    raw: _source.slice(node.startIndex, node.endIndex),
   };
 }
 
