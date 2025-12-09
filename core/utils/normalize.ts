@@ -114,6 +114,7 @@ function normalizeCall(node: SyntaxNode, source: string, filePath: string): Call
     ...base(node, 'Call', filePath),
     callee: normalize(calleeNode, source, filePath),
     args,
+    raw: source.slice(node.startIndex, node.endIndex),
   };
 }
 
@@ -299,6 +300,7 @@ function normalizeImport(node: SyntaxNode, _source: string, _filePath: string): 
       ? moduleSpecifierNode.text.replace(/^['"`]/, '').replace(/['"`]$/, '')
       : '',
     imported: importedNodes.map((child) => child.text),
+    raw: _source.slice(node.startIndex, node.endIndex),
   };
 }
 
