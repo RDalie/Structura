@@ -190,6 +190,14 @@ npx prisma migrate dev
 # npx prisma migrate dev --config backend/prisma.config.ts --schema backend/prisma/schema.prisma
 ```
 
+## Running the docs (Docusaurus)
+
+- Dev server (port 4000): `npm run docs:start`
+- Production build: `npm run docs:build`
+- Preview a production build locally: `npm run docs:serve`
+
+All commands run from the repo root (the docs site is a workspace under `docs/`).
+
 Ensure `DATABASE_URL` matches your Postgres container when running these commands.
 
 ## Running the frontend
