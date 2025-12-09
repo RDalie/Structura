@@ -137,6 +137,7 @@ const sidebars: SidebarsConfig = {
         'development-guide/running-pipelines',
         'development-guide/testing-and-debugging',
         'development-guide/coding-standards',
+        'development-guide/import-extractor',
         'development-guide/contributing-guide',
       ],
     },

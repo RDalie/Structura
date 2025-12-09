@@ -5,6 +5,7 @@ export interface CallNode extends BaseNode {
   type: 'Call';
   callee: NormalizedNode;
   args: NormalizedNode[];
+  raw?: string;
 }
 
 export interface BinaryOpNode extends BaseNode {
