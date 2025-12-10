@@ -33,6 +33,7 @@ const sidebars: SidebarsConfig = {
         'ingestion-pipeline/crawler',
         'ingestion-pipeline/parser',
         'ingestion-pipeline/snapshot-creation',
+        'ingestion-pipeline/snapshot-file-map',
         'ingestion-pipeline/error-handling',
       ],
     },
