@@ -1,25 +1,21 @@
 ---
 title: Import Extractor
-sidebar_position: 6
+sidebar_position: 1
 description: How Structura extracts ES module and CommonJS imports and how to run the extractor.
 ---
 
 ## Import extractor
-
-The import extractor scans JavaScript and TypeScript source files and produces a normalized view of their import relationships. It is a lightweight dependency signal that other parts of the system can consume for graph building, metrics, and navigation.
+The import extractor scans JavaScript and TypeScript source files and produces a normalized view of their import relationships. It is a lightweight dependency signal that other parts of the system can consume for graph building, metrics, and navigation. The description here is layout-agnostic and applies to any ingestion pipeline that consumes the extractor’s output.
 
 At a high level, the extractor:
-- Walks all supported source files in a repository
+- Walks supported source files
 - Parses each file and identifies import-style statements
 - Normalizes the result into a consistent JSON structure
 - Records enough information to map imports back to the original text
 
 It does not resolve modules on disk or through Node resolution rules; it is purely syntax based.
 
----
-
 ## Supported import styles
-
 ES module syntax:
 - Default import: `import axios from "axios";`
 - Named import: `import { AxiosError, AxiosHeaders } from "./core/index.js";`
@@ -34,10 +30,7 @@ CommonJS patterns:
 
 Any other usage that does not match the supported patterns is ignored.
 
----
-
 ## Output shape
-
 The extractor returns an array of file-level records:
 
 ```ts
@@ -73,10 +66,7 @@ Field semantics:
 - `line`: one-based line number where the import starts.
 - `raw`: exact source snippet for the import, including quotes, whitespace, and semicolon if present.
 
----
-
 ## Example
-
 Source:
 ```js
 import axios, { AxiosError } from "axios";
@@ -123,10 +113,7 @@ Output:
 }
 ```
 
----
-
 ## Running the extractor script
-
 Use the helper script to parse, normalize, and extract imports for a codebase:
 
 ```bash
@@ -143,19 +130,13 @@ The script uses:
 - `core/utils/normalize` to normalize
 - `core/imports/extractor` to collect imports
 
----
-
 ## Typical usage pattern
-
-1. Run the extractor over a repository or selected roots.
-2. Persist or stream the resulting `ExtractorResult`.
-3. Feed `module` and `importedNames` into graph building or other analysis stages.
+1. Run the extractor over a repository or selected roots.  
+2. Persist or stream the resulting `ExtractorResult`.  
+3. Feed `module` and `importedNames` into graph building or other analysis stages.  
 4. Use `filePath`, `line`, and `raw` to link back to the original code for visualization or debugging.
 
----
-
 ## Testing
-
 Unit tests live in `tests/imports/extractor.test.ts` and cover ES6 and CommonJS patterns (default, named, namespace, mixed, side-effect imports, and require variants). Run Vitest:
 
 ```bash

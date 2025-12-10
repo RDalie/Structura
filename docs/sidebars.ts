@@ -62,10 +62,30 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Graph System',
       items: [
-        'graph-system/dependency-graph-model',
-        'graph-system/call-graph-model',
-        'graph-system/graph-storage-format',
-        'graph-system/querying-graph-data',
+        {
+          type: 'category',
+          label: 'Dependency Graph',
+          items: [
+            'graph-system/dependency-graph-model',
+            'graph-system/import-extractor',
+            'graph-system/relative-import-resolver',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Call Graph',
+          items: [
+            'graph-system/call-graph-model',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Storage & Querying',
+          items: [
+            'graph-system/graph-storage-format',
+            'graph-system/querying-graph-data',
+          ],
+        },
       ],
     },
     {
@@ -138,7 +158,6 @@ const sidebars: SidebarsConfig = {
         'development-guide/running-pipelines',
         'development-guide/testing-and-debugging',
         'development-guide/coding-standards',
-        'development-guide/import-extractor',
         'development-guide/contributing-guide',
       ],
     },
