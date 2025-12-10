@@ -11,8 +11,8 @@ The Relative Import Resolver turns relative module specifiers into concrete file
 The resolver follows a deterministic sequence:
 1) Identify the importer file’s directory.  
 2) Use `path.resolve` to join that directory with the relative specifier, producing a normalized base path.  
-3) Apply extension inference by checking, in order: the raw path, then `.js`, `.ts`, `.jsx`, `.tsx`.  
-4) If the raw path is a directory, also try `index.js`, `index.ts`, `index.jsx`, `index.tsx`.  
+3) Apply extension inference by checking, in order: the raw path, then `.js`, `.ts`, `.jsx`, `.tsx`, `.cjs`, `.mjs`.  
+4) If the raw path is a directory, also try `index.js`, `index.ts`, `index.jsx`, `index.tsx`, `index.cjs`, `index.mjs`.  
 5) Use synchronous file existence checks to see which candidate exists.  
 6) If a file is found, return `{ ok: true, resolvedPath }`.  
 7) If none match, return `{ ok: false, reason: "FILE_NOT_FOUND", tried: [...] }`.  

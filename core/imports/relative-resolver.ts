@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { inferDirectoryIndexFiles, inferFileExtensions } from './resolution-helpers';
 
 type ResolveSuccess = {
   ok: true;
@@ -25,11 +26,9 @@ export type RelativeImportResolution = ResolveSuccess | ResolveNotAttempted | Re
 
 const RELATIVE_SPECIFIER = /^\.{1,2}\//;
 
-// Resolve a relative import specifier to a concrete file path.
-// Example: resolveRelativeImport('/repo/src/app.ts', './utils/math')
-// -> tries /repo/src/utils/math, then .js/.ts/.jsx/.tsx, then index files if math/ is a dir.
+// Resolve a relative import specifier to a concrete file path using deterministic extension inference.
+// Structured errors mean callers can log or continue without throwing.
 export function resolveRelativeImport(importerFilePath: string, specifier: string): RelativeImportResolution {
-  // check if the specifier isnt a relative specifier
   if (!RELATIVE_SPECIFIER.test(specifier)) {
     return {
       ok: false,
@@ -41,32 +40,21 @@ export function resolveRelativeImport(importerFilePath: string, specifier: strin
 
   const importerDir = path.dirname(path.resolve(importerFilePath));
   const basePath = path.resolve(importerDir, specifier);
-  const tried: string[] = [];
+  const tried: string[] = []; // capture every attempted path for structured error reporting.
 
-  const baseStat = fs.existsSync(basePath) ? fs.statSync(basePath) : undefined;
-  const baseIsDir = baseStat?.isDirectory() ?? false;
-
-  const candidates = [
-    basePath,
-    `${basePath}.js`,
-    `${basePath}.ts`,
-    `${basePath}.jsx`,
-    `${basePath}.tsx`,
-    ...(baseIsDir
-      ? [
-          path.join(basePath, 'index.js'),
-          path.join(basePath, 'index.ts'),
-          path.join(basePath, 'index.jsx'),
-          path.join(basePath, 'index.tsx'),
-        ]
-      : []),
-  ];
-
-  for (const candidate of candidates) {
+  // First try the base path with the full extension order (source-first, then build artifacts).
+  for (const candidate of inferFileExtensions(basePath)) {
     tried.push(candidate);
-    if (fs.existsSync(candidate)) {
-      const stat = fs.statSync(candidate);
-      if (stat.isFile()) {
+    if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
+      return { ok: true, resolvedPath: candidate };
+    }
+  }
+
+  // If the base path is a directory, try known index file names inside it.
+  if (fs.existsSync(basePath) && fs.statSync(basePath).isDirectory()) {
+    for (const candidate of inferDirectoryIndexFiles(basePath)) {
+      tried.push(candidate);
+      if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
         return { ok: true, resolvedPath: candidate };
       }
     }
