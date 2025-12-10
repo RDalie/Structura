@@ -1,5 +1,5 @@
-// Usage: npx ts-node scripts/resolveRelativeImports.ts [root] [--out file.json] [--include-non-relative]
-// Example: npx ts-node scripts/resolveRelativeImports.ts ../some/project --out project-imports.json
+// Usage: npx ts-node scripts/resolveImports.ts [root] [--out file.json]
+// Example: npx ts-node scripts/resolveImports.ts ../some/project --out project-imports.json
 import fs from 'node:fs';
 import path from 'node:path';
 import { crawlJsFiles } from '../ingestion/crawler';
@@ -7,15 +7,14 @@ import { parseJSFile } from '../ingestion/parser/js/parseFile';
 import { normalize } from '../core/utils/normalize';
 import type { ModuleNode, NormalizedNode } from '../core/types/ast';
 import { extractImportsFromModule } from '../core/imports/extractor';
-import { resolveRelativeImport, RelativeImportResolution } from '../core/imports/relative-resolver';
+import { resolveImport, ImportResolution } from '../core/imports/import-resolver';
 
-const OUTPUT_DIR = path.resolve('output/resolve-relative-imports');
-const DEFAULT_OUTPUT = path.join(OUTPUT_DIR, 'relative-import-resolutions.json');
+const OUTPUT_DIR = path.resolve('output/resolve-imports');
+const DEFAULT_OUTPUT = path.join(OUTPUT_DIR, 'import-resolutions.json');
 
 type CliArgs = {
   root: string;
   outFile: string;
-  includeNonRelative: boolean;
 };
 
 type ResolutionEntry = {
@@ -24,19 +23,18 @@ type ResolutionEntry = {
   kind: 'es6' | 'commonjs';
   importedNames: string[];
   line: number;
-  resolution: RelativeImportResolution;
+  resolution: ImportResolution;
 };
 
 function printUsage() {
-  console.log(`Resolve relative imports for JS/TS files.
+  console.log(`Resolve JS/TS imports (relative and bare packages).
 
 Usage:
-  npx ts-node scripts/resolveRelativeImports.ts [root] [--out file.json] [--include-non-relative]
+  npx ts-node scripts/resolveImports.ts [root] [--out file.json]
 
 Options:
   root                    Directory to crawl (default: ./src)
-  --out/-o <file>         Optional output file name (written under output/resolve-relative-imports)
-  --include-non-relative  Include bare/absolute specifiers in the output (skipped by default)
+  --out/-o <file>         Optional output file name (written under output/resolve-imports)
 `);
 }
 
@@ -44,7 +42,6 @@ function parseArgs(): CliArgs {
   const args = process.argv.slice(2);
   let root: string | undefined;
   let out: string | undefined;
-  let includeNonRelative = false;
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
@@ -60,10 +57,6 @@ function parseArgs(): CliArgs {
       out = arg.split('=')[1];
       continue;
     }
-    if (arg === '--include-non-relative') {
-      includeNonRelative = true;
-      continue;
-    }
     if (!arg.startsWith('-') && !root) {
       root = arg;
       continue;
@@ -77,7 +70,6 @@ function parseArgs(): CliArgs {
   return {
     root: resolvedRoot,
     outFile: resolvedOut,
-    includeNonRelative,
   };
 }
 
@@ -118,13 +110,8 @@ async function main() {
     const imports = extractImportsFromModule(module, source);
 
     for (const imp of imports.imports) {
-      const res = resolveRelativeImport(file, imp.module);
-      if (!args.includeNonRelative && res.ok === false && res.reason === 'NON_RELATIVE_SPECIFIER') {
-        continue;
-      }
-      if (res.ok || res.reason !== 'NON_RELATIVE_SPECIFIER') {
-        attempted += 1;
-      }
+      const res = resolveImport(file, imp.module);
+      attempted += 1;
       if (res.ok) {
         resolved += 1;
       }
@@ -158,10 +145,7 @@ async function main() {
   fs.writeFileSync(args.outFile, JSON.stringify(output, null, 2), 'utf8');
 
   console.log(`Wrote ${entries.length} import records to ${args.outFile}`);
-  console.log(
-    `Resolutions: ${resolved}/${attempted} successful` +
-      (args.includeNonRelative ? ' (including non-relative entries)' : '')
-  );
+  console.log(`Resolutions: ${resolved}/${attempted} successful`);
 }
 
 main().catch((err) => {
