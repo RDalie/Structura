@@ -68,7 +68,7 @@ const sidebars: SidebarsConfig = {
           items: [
             'graph-system/dependency-graph-model',
             'graph-system/import-extractor',
-            'graph-system/relative-import-resolver',
+            'graph-system/import-resolver',
           ],
         },
         {
