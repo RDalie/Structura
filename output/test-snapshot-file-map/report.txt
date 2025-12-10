@@ -1,0 +1,20 @@
+Snapshot File Map Report
+========================
+Snapshot root: /Users/rabyatayal/dev/axios
+Total files discovered: 170
+
+First 10 entries (relative => absolute):
+- .eslintrc.cjs => /Users/rabyatayal/dev/axios/.eslintrc.cjs
+- bin/GithubAPI.js => /Users/rabyatayal/dev/axios/bin/GithubAPI.js
+- bin/RepoBot.js => /Users/rabyatayal/dev/axios/bin/RepoBot.js
+- bin/actions/notify_published.js => /Users/rabyatayal/dev/axios/bin/actions/notify_published.js
+- bin/api.js => /Users/rabyatayal/dev/axios/bin/api.js
+- bin/check-build-version.js => /Users/rabyatayal/dev/axios/bin/check-build-version.js
+- bin/contributors.js => /Users/rabyatayal/dev/axios/bin/contributors.js
+- bin/githubAxios.js => /Users/rabyatayal/dev/axios/bin/githubAxios.js
+- bin/helpers/colorize.js => /Users/rabyatayal/dev/axios/bin/helpers/colorize.js
+- bin/helpers/parser.js => /Users/rabyatayal/dev/axios/bin/helpers/parser.js
+
+Sample lookups:
+getAbsolute(".eslintrc.cjs") => /Users/rabyatayal/dev/axios/.eslintrc.cjs
+getBaseDir("/Users/rabyatayal/dev/axios/.eslintrc.cjs") => /Users/rabyatayal/dev/axios

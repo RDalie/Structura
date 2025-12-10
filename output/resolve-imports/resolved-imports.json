@@ -1,0 +1,5777 @@
+{
+  "summary": {
+    "root": "/Users/rabyatayal/dev/axios",
+    "generatedAt": "2025-12-10T23:21:09.876Z",
+    "filesScanned": 170,
+    "importsCollected": 387,
+    "attemptedResolutions": 387,
+    "resolvedCount": 323,
+    "unresolvedCount": 64
+  },
+  "entries": [
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "specifier": "util",
+      "kind": "es6",
+      "importedNames": [
+        "util"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/util/util.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "specifier": "child_process",
+      "kind": "es6",
+      "importedNames": [
+        "cp"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "child_process",
+        "importer": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/child_process",
+          "/Users/rabyatayal/dev/axios/node_modules/child_process",
+          "/Users/rabyatayal/dev/node_modules/child_process",
+          "/Users/rabyatayal/node_modules/child_process",
+          "/Users/node_modules/child_process",
+          "/node_modules/child_process"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "specifier": "./helpers/parser.js",
+      "kind": "es6",
+      "importedNames": [
+        "parseVersion"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/helpers/parser.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "specifier": "./githubAxios.js",
+      "kind": "es6",
+      "importedNames": [
+        "githubAxios"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/githubAxios.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "specifier": "memoizee",
+      "kind": "es6",
+      "importedNames": [
+        "memoize"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/memoizee/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "specifier": "./GithubAPI.js",
+      "kind": "es6",
+      "importedNames": [
+        "GithubAPI"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "specifier": "./api.js",
+      "kind": "es6",
+      "importedNames": [
+        "api"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/api.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "specifier": "handlebars",
+      "kind": "es6",
+      "importedNames": [
+        "Handlebars"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/handlebars/lib/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "specifier": "fs/promises",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "fs/promises",
+        "importer": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/node_modules/fs",
+          "/Users/rabyatayal/dev/node_modules/fs",
+          "/Users/rabyatayal/node_modules/fs",
+          "/Users/node_modules/fs",
+          "/node_modules/fs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "specifier": "./helpers/colorize.js",
+      "kind": "es6",
+      "importedNames": [
+        "colorize"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "specifier": "./contributors.js",
+      "kind": "es6",
+      "importedNames": [
+        "getReleaseInfo"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/contributors.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "specifier": "path",
+      "kind": "es6",
+      "importedNames": [
+        "path"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "path",
+        "importer": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/path",
+          "/Users/rabyatayal/dev/axios/node_modules/path",
+          "/Users/rabyatayal/dev/node_modules/path",
+          "/Users/rabyatayal/node_modules/path",
+          "/Users/node_modules/path",
+          "/node_modules/path"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "specifier": "url",
+      "kind": "es6",
+      "importedNames": [
+        "fileURLToPath"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/url/url.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/actions/notify_published.js",
+      "specifier": "minimist",
+      "kind": "es6",
+      "importedNames": [
+        "minimist"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/minimist/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/actions/notify_published.js",
+      "specifier": "../RepoBot.js",
+      "kind": "es6",
+      "importedNames": [
+        "RepoBot"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/RepoBot.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/actions/notify_published.js",
+      "specifier": "fs/promises",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "fs/promises",
+        "importer": "/Users/rabyatayal/dev/axios/bin/actions/notify_published.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/actions/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/bin/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/node_modules/fs",
+          "/Users/rabyatayal/dev/node_modules/fs",
+          "/Users/rabyatayal/node_modules/fs",
+          "/Users/node_modules/fs",
+          "/node_modules/fs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/api.js",
+      "specifier": "./GithubAPI.js",
+      "kind": "es6",
+      "importedNames": [
+        "GithubAPI"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/check-build-version.js",
+      "specifier": "fs",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "fs",
+        "importer": "/Users/rabyatayal/dev/axios/bin/check-build-version.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/node_modules/fs",
+          "/Users/rabyatayal/dev/node_modules/fs",
+          "/Users/rabyatayal/node_modules/fs",
+          "/Users/node_modules/fs",
+          "/node_modules/fs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/check-build-version.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/check-build-version.js",
+      "specifier": "../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/check-build-version.js",
+      "specifier": "../dist/node/axios.cjs",
+      "kind": "es6",
+      "importedNames": [
+        "axiosBuild"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": false,
+        "reason": "FILE_NOT_FOUND",
+        "importer": "/Users/rabyatayal/dev/axios/bin/check-build-version.js",
+        "specifier": "../dist/node/axios.cjs",
+        "tried": [
+          "/Users/rabyatayal/dev/axios/dist/node/axios.cjs",
+          "/Users/rabyatayal/dev/axios/dist/node/axios.cjs.js",
+          "/Users/rabyatayal/dev/axios/dist/node/axios.cjs.ts",
+          "/Users/rabyatayal/dev/axios/dist/node/axios.cjs.jsx",
+          "/Users/rabyatayal/dev/axios/dist/node/axios.cjs.tsx",
+          "/Users/rabyatayal/dev/axios/dist/node/axios.cjs.cjs",
+          "/Users/rabyatayal/dev/axios/dist/node/axios.cjs.mjs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "specifier": "./githubAxios.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/githubAxios.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "specifier": "util",
+      "kind": "es6",
+      "importedNames": [
+        "util"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/util/util.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "specifier": "child_process",
+      "kind": "es6",
+      "importedNames": [
+        "cp"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "child_process",
+        "importer": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/child_process",
+          "/Users/rabyatayal/dev/axios/node_modules/child_process",
+          "/Users/rabyatayal/dev/node_modules/child_process",
+          "/Users/rabyatayal/node_modules/child_process",
+          "/Users/node_modules/child_process",
+          "/node_modules/child_process"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "specifier": "handlebars",
+      "kind": "es6",
+      "importedNames": [
+        "Handlebars"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/handlebars/lib/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "specifier": "fs/promises",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "fs/promises",
+        "importer": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/node_modules/fs",
+          "/Users/rabyatayal/dev/node_modules/fs",
+          "/Users/rabyatayal/node_modules/fs",
+          "/Users/node_modules/fs",
+          "/node_modules/fs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "specifier": "./helpers/colorize.js",
+      "kind": "es6",
+      "importedNames": [
+        "colorize"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/githubAxios.js",
+      "specifier": "../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/githubAxios.js",
+      "specifier": "./helpers/colorize.js",
+      "kind": "es6",
+      "importedNames": [
+        "colorize"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js",
+      "specifier": "chalk",
+      "kind": "es6",
+      "importedNames": [
+        "chalk"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/chalk/source/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "specifier": "fs/promises",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "fs/promises",
+        "importer": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/node_modules/fs",
+          "/Users/rabyatayal/dev/node_modules/fs",
+          "/Users/rabyatayal/node_modules/fs",
+          "/Users/node_modules/fs",
+          "/node_modules/fs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "specifier": "path",
+      "kind": "es6",
+      "importedNames": [
+        "path"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "path",
+        "importer": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/path",
+          "/Users/rabyatayal/dev/axios/node_modules/path",
+          "/Users/rabyatayal/dev/node_modules/path",
+          "/Users/rabyatayal/node_modules/path",
+          "/Users/node_modules/path",
+          "/node_modules/path"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "specifier": "./contributors.js",
+      "kind": "es6",
+      "importedNames": [
+        "renderContributorsList",
+        "getTagRef",
+        "renderPRsList"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/contributors.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "specifier": "string-replace-async",
+      "kind": "es6",
+      "importedNames": [
+        "asyncReplace"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/string-replace-async/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "specifier": "url",
+      "kind": "es6",
+      "importedNames": [
+        "fileURLToPath"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/url/url.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "specifier": "./helpers/colorize.js",
+      "kind": "es6",
+      "importedNames": [
+        "colorize"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "specifier": "handlebars",
+      "kind": "es6",
+      "importedNames": [
+        "Handlebars"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/handlebars/lib/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "specifier": "fs/promises",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "fs/promises",
+        "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/node_modules/fs",
+          "/Users/rabyatayal/dev/node_modules/fs",
+          "/Users/rabyatayal/node_modules/fs",
+          "/Users/node_modules/fs",
+          "/node_modules/fs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "specifier": "pretty-bytes",
+      "kind": "es6",
+      "importedNames": [
+        "prettyBytes"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/pretty-bytes/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "specifier": "./repo.js",
+      "kind": "es6",
+      "importedNames": [
+        "getBlobHistory"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/repo.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "specifier": "pacote",
+      "kind": "es6",
+      "importedNames": [
+        "pacote"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/pacote/lib/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "specifier": "zlib",
+      "kind": "es6",
+      "importedNames": [
+        "zlib"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "zlib",
+        "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/zlib",
+          "/Users/rabyatayal/dev/axios/node_modules/zlib",
+          "/Users/rabyatayal/dev/node_modules/zlib",
+          "/Users/rabyatayal/node_modules/zlib",
+          "/Users/node_modules/zlib",
+          "/node_modules/zlib"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "specifier": "tar-stream",
+      "kind": "es6",
+      "importedNames": [
+        "tar"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/tar-stream/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "specifier": "stream",
+      "kind": "es6",
+      "importedNames": [
+        "Readable"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "stream",
+        "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/node_modules/stream",
+          "/Users/rabyatayal/dev/node_modules/stream",
+          "/Users/rabyatayal/node_modules/stream",
+          "/Users/node_modules/stream",
+          "/node_modules/stream"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/repo.js",
+      "specifier": "util",
+      "kind": "es6",
+      "importedNames": [
+        "util"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/util/util.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/repo.js",
+      "specifier": "child_process",
+      "kind": "es6",
+      "importedNames": [
+        "cp"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "child_process",
+        "importer": "/Users/rabyatayal/dev/axios/bin/repo.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/child_process",
+          "/Users/rabyatayal/dev/axios/node_modules/child_process",
+          "/Users/rabyatayal/dev/node_modules/child_process",
+          "/Users/rabyatayal/node_modules/child_process",
+          "/Users/node_modules/child_process",
+          "/node_modules/child_process"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/resolveNPMTag.js",
+      "specifier": "./repo.js",
+      "kind": "es6",
+      "importedNames": [
+        "exec",
+        "getTags"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/repo.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/resolveNPMTag.js",
+      "specifier": "fs",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "fs",
+        "importer": "/Users/rabyatayal/dev/axios/bin/resolveNPMTag.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/node_modules/fs",
+          "/Users/rabyatayal/dev/node_modules/fs",
+          "/Users/rabyatayal/node_modules/fs",
+          "/Users/node_modules/fs",
+          "/node_modules/fs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/resolveNPMTag.js",
+      "specifier": "./helpers/colorize.js",
+      "kind": "es6",
+      "importedNames": [
+        "colorize"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/run-karma-tests.js",
+      "specifier": "../test/helpers/server.js",
+      "kind": "es6",
+      "importedNames": [
+        "startTestServer",
+        "stopHTTPServer"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/test/helpers/server.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/run-karma-tests.js",
+      "specifier": "child_process",
+      "kind": "es6",
+      "importedNames": [
+        "spawn"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "child_process",
+        "importer": "/Users/rabyatayal/dev/axios/bin/run-karma-tests.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/child_process",
+          "/Users/rabyatayal/dev/axios/node_modules/child_process",
+          "/Users/rabyatayal/dev/node_modules/child_process",
+          "/Users/rabyatayal/node_modules/child_process",
+          "/Users/node_modules/child_process",
+          "/node_modules/child_process"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/run-karma-tests.js",
+      "specifier": "chalk",
+      "kind": "es6",
+      "importedNames": [
+        "chalk"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/chalk/source/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/sponsors.js",
+      "specifier": "fs/promises",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "fs/promises",
+        "importer": "/Users/rabyatayal/dev/axios/bin/sponsors.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/node_modules/fs",
+          "/Users/rabyatayal/dev/node_modules/fs",
+          "/Users/rabyatayal/node_modules/fs",
+          "/Users/node_modules/fs",
+          "/node_modules/fs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/sponsors.js",
+      "specifier": "../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "_axios"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/sponsors.js",
+      "specifier": "./repo.js",
+      "kind": "es6",
+      "importedNames": [
+        "exec"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/repo.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/sponsors.js",
+      "specifier": "./helpers/colorize.js",
+      "kind": "es6",
+      "importedNames": [
+        "colorize"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/ssl_hotfix.js",
+      "specifier": "child_process",
+      "kind": "es6",
+      "importedNames": [
+        "spawn"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "child_process",
+        "importer": "/Users/rabyatayal/dev/axios/bin/ssl_hotfix.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/bin/node_modules/child_process",
+          "/Users/rabyatayal/dev/axios/node_modules/child_process",
+          "/Users/rabyatayal/dev/node_modules/child_process",
+          "/Users/rabyatayal/node_modules/child_process",
+          "/Users/node_modules/child_process",
+          "/node_modules/child_process"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/examples/network_enhanced.js",
+      "specifier": "axios",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "axios",
+        "importer": "/Users/rabyatayal/dev/axios/examples/network_enhanced.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/examples/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/node_modules/axios",
+          "/Users/rabyatayal/dev/node_modules/axios",
+          "/Users/rabyatayal/node_modules/axios",
+          "/Users/node_modules/axios",
+          "/node_modules/axios"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/examples/server.js",
+      "specifier": "fs",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "fs",
+        "importer": "/Users/rabyatayal/dev/axios/examples/server.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/examples/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/node_modules/fs",
+          "/Users/rabyatayal/dev/node_modules/fs",
+          "/Users/rabyatayal/node_modules/fs",
+          "/Users/node_modules/fs",
+          "/node_modules/fs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/examples/server.js",
+      "specifier": "path",
+      "kind": "es6",
+      "importedNames": [
+        "path"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "path",
+        "importer": "/Users/rabyatayal/dev/axios/examples/server.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/examples/node_modules/path",
+          "/Users/rabyatayal/dev/axios/node_modules/path",
+          "/Users/rabyatayal/dev/node_modules/path",
+          "/Users/rabyatayal/node_modules/path",
+          "/Users/node_modules/path",
+          "/node_modules/path"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/examples/server.js",
+      "specifier": "http",
+      "kind": "es6",
+      "importedNames": [
+        "http"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "http",
+        "importer": "/Users/rabyatayal/dev/axios/examples/server.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/examples/node_modules/http",
+          "/Users/rabyatayal/dev/axios/node_modules/http",
+          "/Users/rabyatayal/dev/node_modules/http",
+          "/Users/rabyatayal/node_modules/http",
+          "/Users/node_modules/http",
+          "/node_modules/http"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/examples/server.js",
+      "specifier": "minimist",
+      "kind": "es6",
+      "importedNames": [
+        "minimist"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/minimist/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/examples/server.js",
+      "specifier": "url",
+      "kind": "es6",
+      "importedNames": [
+        "url"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/url/url.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/gulpfile.js",
+      "specifier": "gulp",
+      "kind": "es6",
+      "importedNames": [
+        "gulp"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/gulp/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/gulpfile.js",
+      "specifier": "fs-extra",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/fs-extra/lib/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/gulpfile.js",
+      "specifier": "./bin/githubAxios.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/bin/githubAxios.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/gulpfile.js",
+      "specifier": "minimist",
+      "kind": "es6",
+      "importedNames": [
+        "minimist"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/minimist/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/index.js",
+      "specifier": "./lib/axios.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/axios.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "specifier": "./http.js",
+      "kind": "es6",
+      "importedNames": [
+        "httpAdapter"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/adapters/http.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "specifier": "./xhr.js",
+      "kind": "es6",
+      "importedNames": [
+        "xhrAdapter"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "specifier": "./fetch.js",
+      "kind": "es6",
+      "importedNames": [
+        "fetchAdapter"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "specifier": "../core/AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "specifier": "../platform/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "specifier": "../core/AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "specifier": "../helpers/composeSignals.js",
+      "kind": "es6",
+      "importedNames": [
+        "composeSignals"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/composeSignals.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "specifier": "../helpers/trackStream.js",
+      "kind": "es6",
+      "importedNames": [
+        "trackStream"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/trackStream.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "specifier": "../core/AxiosHeaders.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosHeaders"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "specifier": "../helpers/progressEventReducer.js",
+      "kind": "es6",
+      "importedNames": [
+        "progressEventReducer",
+        "progressEventDecorator",
+        "asyncDecorator"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "specifier": "../helpers/resolveConfig.js",
+      "kind": "es6",
+      "importedNames": [
+        "resolveConfig"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "specifier": "../core/settle.js",
+      "kind": "es6",
+      "importedNames": [
+        "settle"
+      ],
+      "line": 9,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/settle.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../core/settle.js",
+      "kind": "es6",
+      "importedNames": [
+        "settle"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/settle.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../core/buildFullPath.js",
+      "kind": "es6",
+      "importedNames": [
+        "buildFullPath"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../helpers/buildURL.js",
+      "kind": "es6",
+      "importedNames": [
+        "buildURL"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "proxy-from-env",
+      "kind": "es6",
+      "importedNames": [
+        "proxyFromEnv"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/proxy-from-env/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "http",
+      "kind": "es6",
+      "importedNames": [
+        "http"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "http",
+        "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/lib/adapters/node_modules/http",
+          "/Users/rabyatayal/dev/axios/lib/node_modules/http",
+          "/Users/rabyatayal/dev/axios/node_modules/http",
+          "/Users/rabyatayal/dev/node_modules/http",
+          "/Users/rabyatayal/node_modules/http",
+          "/Users/node_modules/http",
+          "/node_modules/http"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "https",
+      "kind": "es6",
+      "importedNames": [
+        "https"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "https",
+        "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/lib/adapters/node_modules/https",
+          "/Users/rabyatayal/dev/axios/lib/node_modules/https",
+          "/Users/rabyatayal/dev/axios/node_modules/https",
+          "/Users/rabyatayal/dev/node_modules/https",
+          "/Users/rabyatayal/node_modules/https",
+          "/Users/node_modules/https",
+          "/node_modules/https"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "http2",
+      "kind": "es6",
+      "importedNames": [
+        "http2"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "http2",
+        "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/lib/adapters/node_modules/http2",
+          "/Users/rabyatayal/dev/axios/lib/node_modules/http2",
+          "/Users/rabyatayal/dev/axios/node_modules/http2",
+          "/Users/rabyatayal/dev/node_modules/http2",
+          "/Users/rabyatayal/node_modules/http2",
+          "/Users/node_modules/http2",
+          "/node_modules/http2"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "util",
+      "kind": "es6",
+      "importedNames": [
+        "util"
+      ],
+      "line": 9,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/util/util.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "follow-redirects",
+      "kind": "es6",
+      "importedNames": [
+        "followRedirects"
+      ],
+      "line": 10,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/follow-redirects/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "zlib",
+      "kind": "es6",
+      "importedNames": [
+        "zlib"
+      ],
+      "line": 11,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "zlib",
+        "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/lib/adapters/node_modules/zlib",
+          "/Users/rabyatayal/dev/axios/lib/node_modules/zlib",
+          "/Users/rabyatayal/dev/axios/node_modules/zlib",
+          "/Users/rabyatayal/dev/node_modules/zlib",
+          "/Users/rabyatayal/node_modules/zlib",
+          "/Users/node_modules/zlib",
+          "/node_modules/zlib"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../env/data.js",
+      "kind": "es6",
+      "importedNames": [
+        "VERSION"
+      ],
+      "line": 12,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/env/data.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../defaults/transitional.js",
+      "kind": "es6",
+      "importedNames": [
+        "transitionalDefaults"
+      ],
+      "line": 13,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/defaults/transitional.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../core/AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 14,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../cancel/CanceledError.js",
+      "kind": "es6",
+      "importedNames": [
+        "CanceledError"
+      ],
+      "line": 15,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../platform/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 16,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../helpers/fromDataURI.js",
+      "kind": "es6",
+      "importedNames": [
+        "fromDataURI"
+      ],
+      "line": 17,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/fromDataURI.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "stream",
+      "kind": "es6",
+      "importedNames": [
+        "stream"
+      ],
+      "line": 18,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "stream",
+        "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/lib/adapters/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/lib/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/node_modules/stream",
+          "/Users/rabyatayal/dev/node_modules/stream",
+          "/Users/rabyatayal/node_modules/stream",
+          "/Users/node_modules/stream",
+          "/node_modules/stream"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../core/AxiosHeaders.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosHeaders"
+      ],
+      "line": 19,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../helpers/AxiosTransformStream.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosTransformStream"
+      ],
+      "line": 20,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosTransformStream.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "events",
+      "kind": "es6",
+      "importedNames": [
+        "EventEmitter"
+      ],
+      "line": 21,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/events/events.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../helpers/formDataToStream.js",
+      "kind": "es6",
+      "importedNames": [
+        "formDataToStream"
+      ],
+      "line": 22,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../helpers/readBlob.js",
+      "kind": "es6",
+      "importedNames": [
+        "readBlob"
+      ],
+      "line": 23,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/readBlob.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../helpers/ZlibHeaderTransformStream.js",
+      "kind": "es6",
+      "importedNames": [
+        "ZlibHeaderTransformStream"
+      ],
+      "line": 24,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/ZlibHeaderTransformStream.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../helpers/callbackify.js",
+      "kind": "es6",
+      "importedNames": [
+        "callbackify"
+      ],
+      "line": 25,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/callbackify.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../helpers/progressEventReducer.js",
+      "kind": "es6",
+      "importedNames": [
+        "progressEventReducer",
+        "progressEventDecorator",
+        "asyncDecorator"
+      ],
+      "line": 26,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "../helpers/estimateDataURLDecodedBytes.js",
+      "kind": "es6",
+      "importedNames": [
+        "estimateDataURLDecodedBytes"
+      ],
+      "line": 27,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/estimateDataURLDecodedBytes.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "specifier": "../core/settle.js",
+      "kind": "es6",
+      "importedNames": [
+        "settle"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/settle.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "specifier": "../defaults/transitional.js",
+      "kind": "es6",
+      "importedNames": [
+        "transitionalDefaults"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/defaults/transitional.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "specifier": "../core/AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "specifier": "../cancel/CanceledError.js",
+      "kind": "es6",
+      "importedNames": [
+        "CanceledError"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "specifier": "../helpers/parseProtocol.js",
+      "kind": "es6",
+      "importedNames": [
+        "parseProtocol"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/parseProtocol.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "specifier": "../platform/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "specifier": "../core/AxiosHeaders.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosHeaders"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "specifier": "../helpers/progressEventReducer.js",
+      "kind": "es6",
+      "importedNames": [
+        "progressEventReducer"
+      ],
+      "line": 9,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "specifier": "../helpers/resolveConfig.js",
+      "kind": "es6",
+      "importedNames": [
+        "resolveConfig"
+      ],
+      "line": 10,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./helpers/bind.js",
+      "kind": "es6",
+      "importedNames": [
+        "bind"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/bind.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./core/Axios.js",
+      "kind": "es6",
+      "importedNames": [
+        "Axios"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/Axios.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./core/mergeConfig.js",
+      "kind": "es6",
+      "importedNames": [
+        "mergeConfig"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./defaults/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "defaults"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/defaults/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./helpers/formDataToJSON.js",
+      "kind": "es6",
+      "importedNames": [
+        "formDataToJSON"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToJSON.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./cancel/CanceledError.js",
+      "kind": "es6",
+      "importedNames": [
+        "CanceledError"
+      ],
+      "line": 9,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./cancel/CancelToken.js",
+      "kind": "es6",
+      "importedNames": [
+        "CancelToken"
+      ],
+      "line": 10,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/CancelToken.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./cancel/isCancel.js",
+      "kind": "es6",
+      "importedNames": [
+        "isCancel"
+      ],
+      "line": 11,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/isCancel.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./env/data.js",
+      "kind": "es6",
+      "importedNames": [
+        "VERSION"
+      ],
+      "line": 12,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/env/data.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./helpers/toFormData.js",
+      "kind": "es6",
+      "importedNames": [
+        "toFormData"
+      ],
+      "line": 13,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./core/AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 14,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./helpers/spread.js",
+      "kind": "es6",
+      "importedNames": [
+        "spread"
+      ],
+      "line": 15,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/spread.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./helpers/isAxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "isAxiosError"
+      ],
+      "line": 16,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/isAxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./core/AxiosHeaders.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosHeaders"
+      ],
+      "line": 17,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./adapters/adapters.js",
+      "kind": "es6",
+      "importedNames": [
+        "adapters"
+      ],
+      "line": 18,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "specifier": "./helpers/HttpStatusCode.js",
+      "kind": "es6",
+      "importedNames": [
+        "HttpStatusCode"
+      ],
+      "line": 19,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/HttpStatusCode.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/cancel/CancelToken.js",
+      "specifier": "./CanceledError.js",
+      "kind": "es6",
+      "importedNames": [
+        "CanceledError"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js",
+      "specifier": "../core/AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "specifier": "../helpers/buildURL.js",
+      "kind": "es6",
+      "importedNames": [
+        "buildURL"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "specifier": "./InterceptorManager.js",
+      "kind": "es6",
+      "importedNames": [
+        "InterceptorManager"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/InterceptorManager.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "specifier": "./dispatchRequest.js",
+      "kind": "es6",
+      "importedNames": [
+        "dispatchRequest"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "specifier": "./mergeConfig.js",
+      "kind": "es6",
+      "importedNames": [
+        "mergeConfig"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "specifier": "./buildFullPath.js",
+      "kind": "es6",
+      "importedNames": [
+        "buildFullPath"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "specifier": "../helpers/validator.js",
+      "kind": "es6",
+      "importedNames": [
+        "validator"
+      ],
+      "line": 9,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/validator.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "specifier": "./AxiosHeaders.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosHeaders"
+      ],
+      "line": 10,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "specifier": "../helpers/parseHeaders.js",
+      "kind": "es6",
+      "importedNames": [
+        "parseHeaders"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/parseHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/InterceptorManager.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js",
+      "specifier": "../helpers/isAbsoluteURL.js",
+      "kind": "es6",
+      "importedNames": [
+        "isAbsoluteURL"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/isAbsoluteURL.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js",
+      "specifier": "../helpers/combineURLs.js",
+      "kind": "es6",
+      "importedNames": [
+        "combineURLs"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/combineURLs.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "specifier": "./transformData.js",
+      "kind": "es6",
+      "importedNames": [
+        "transformData"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/transformData.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "specifier": "../cancel/isCancel.js",
+      "kind": "es6",
+      "importedNames": [
+        "isCancel"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/isCancel.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "specifier": "../defaults/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "defaults"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/defaults/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "specifier": "../cancel/CanceledError.js",
+      "kind": "es6",
+      "importedNames": [
+        "CanceledError"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "specifier": "../core/AxiosHeaders.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosHeaders"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "specifier": "../adapters/adapters.js",
+      "kind": "es6",
+      "importedNames": [
+        "adapters"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js",
+      "specifier": "./AxiosHeaders.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosHeaders"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/settle.js",
+      "specifier": "./AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/transformData.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/transformData.js",
+      "specifier": "../defaults/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "defaults"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/defaults/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/core/transformData.js",
+      "specifier": "../core/AxiosHeaders.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosHeaders"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "specifier": "../core/AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "specifier": "./transitional.js",
+      "kind": "es6",
+      "importedNames": [
+        "transitionalDefaults"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/defaults/transitional.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "specifier": "../helpers/toFormData.js",
+      "kind": "es6",
+      "importedNames": [
+        "toFormData"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "specifier": "../helpers/toURLEncodedForm.js",
+      "kind": "es6",
+      "importedNames": [
+        "toURLEncodedForm"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/toURLEncodedForm.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "specifier": "../platform/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "specifier": "../helpers/formDataToJSON.js",
+      "kind": "es6",
+      "importedNames": [
+        "formDataToJSON"
+      ],
+      "line": 9,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToJSON.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/env/classes/FormData.js",
+      "specifier": "form-data",
+      "kind": "es6",
+      "importedNames": [
+        "_FormData"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/form-data/lib/form_data.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosTransformStream.js",
+      "specifier": "stream",
+      "kind": "es6",
+      "importedNames": [
+        "stream"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "stream",
+        "importer": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosTransformStream.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/lib/helpers/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/lib/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/node_modules/stream",
+          "/Users/rabyatayal/dev/node_modules/stream",
+          "/Users/rabyatayal/node_modules/stream",
+          "/Users/node_modules/stream",
+          "/node_modules/stream"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosTransformStream.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosURLSearchParams.js",
+      "specifier": "./toFormData.js",
+      "kind": "es6",
+      "importedNames": [
+        "toFormData"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/ZlibHeaderTransformStream.js",
+      "specifier": "stream",
+      "kind": "es6",
+      "importedNames": [
+        "stream"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "stream",
+        "importer": "/Users/rabyatayal/dev/axios/lib/helpers/ZlibHeaderTransformStream.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/lib/helpers/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/lib/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/node_modules/stream",
+          "/Users/rabyatayal/dev/node_modules/stream",
+          "/Users/rabyatayal/node_modules/stream",
+          "/Users/node_modules/stream",
+          "/node_modules/stream"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js",
+      "specifier": "../helpers/AxiosURLSearchParams.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosURLSearchParams"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosURLSearchParams.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/callbackify.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/composeSignals.js",
+      "specifier": "../cancel/CanceledError.js",
+      "kind": "es6",
+      "importedNames": [
+        "CanceledError"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/composeSignals.js",
+      "specifier": "../core/AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/composeSignals.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/cookies.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/cookies.js",
+      "specifier": "../platform/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToJSON.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+      "specifier": "util",
+      "kind": "es6",
+      "importedNames": [
+        "util"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/util/util.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+      "specifier": "stream",
+      "kind": "es6",
+      "importedNames": [
+        "Readable"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "stream",
+        "importer": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/lib/helpers/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/lib/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/node_modules/stream",
+          "/Users/rabyatayal/dev/node_modules/stream",
+          "/Users/rabyatayal/node_modules/stream",
+          "/Users/node_modules/stream",
+          "/node_modules/stream"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+      "specifier": "./readBlob.js",
+      "kind": "es6",
+      "importedNames": [
+        "readBlob"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/readBlob.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+      "specifier": "../platform/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/fromDataURI.js",
+      "specifier": "../core/AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/fromDataURI.js",
+      "specifier": "./parseProtocol.js",
+      "kind": "es6",
+      "importedNames": [
+        "parseProtocol"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/parseProtocol.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/fromDataURI.js",
+      "specifier": "../platform/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/isAxiosError.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/isURLSameOrigin.js",
+      "specifier": "../platform/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/parseHeaders.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js",
+      "specifier": "./speedometer.js",
+      "kind": "es6",
+      "importedNames": [
+        "speedometer"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/speedometer.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js",
+      "specifier": "./throttle.js",
+      "kind": "es6",
+      "importedNames": [
+        "throttle"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/throttle.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "specifier": "../platform/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "specifier": "./isURLSameOrigin.js",
+      "kind": "es6",
+      "importedNames": [
+        "isURLSameOrigin"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/isURLSameOrigin.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "specifier": "./cookies.js",
+      "kind": "es6",
+      "importedNames": [
+        "cookies"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/cookies.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "specifier": "../core/buildFullPath.js",
+      "kind": "es6",
+      "importedNames": [
+        "buildFullPath"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "specifier": "../core/mergeConfig.js",
+      "kind": "es6",
+      "importedNames": [
+        "mergeConfig"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "specifier": "../core/AxiosHeaders.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosHeaders"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "specifier": "./buildURL.js",
+      "kind": "es6",
+      "importedNames": [
+        "buildURL"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js",
+      "specifier": "../core/AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js",
+      "specifier": "../platform/node/classes/FormData.js",
+      "kind": "es6",
+      "importedNames": [
+        "PlatformFormData"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/node/classes/FormData.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/toURLEncodedForm.js",
+      "specifier": "../utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/toURLEncodedForm.js",
+      "specifier": "./toFormData.js",
+      "kind": "es6",
+      "importedNames": [
+        "toFormData"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/toURLEncodedForm.js",
+      "specifier": "../platform/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/validator.js",
+      "specifier": "../env/data.js",
+      "kind": "es6",
+      "importedNames": [
+        "VERSION"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/env/data.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/validator.js",
+      "specifier": "../core/AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/platform/browser/classes/URLSearchParams.js",
+      "specifier": "../../../helpers/AxiosURLSearchParams.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosURLSearchParams"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosURLSearchParams.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/platform/browser/index.js",
+      "specifier": "./classes/URLSearchParams.js",
+      "kind": "es6",
+      "importedNames": [
+        "URLSearchParams"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/browser/classes/URLSearchParams.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/platform/browser/index.js",
+      "specifier": "./classes/FormData.js",
+      "kind": "es6",
+      "importedNames": [
+        "FormData"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/browser/classes/FormData.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/platform/browser/index.js",
+      "specifier": "./classes/Blob.js",
+      "kind": "es6",
+      "importedNames": [
+        "Blob"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/browser/classes/Blob.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "specifier": "./node/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/node/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "specifier": "./common/utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/common/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/platform/node/classes/FormData.js",
+      "specifier": "form-data",
+      "kind": "es6",
+      "importedNames": [
+        "FormData"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/form-data/lib/form_data.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/platform/node/classes/URLSearchParams.js",
+      "specifier": "url",
+      "kind": "es6",
+      "importedNames": [
+        "url"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/url/url.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/platform/node/index.js",
+      "specifier": "crypto",
+      "kind": "es6",
+      "importedNames": [
+        "crypto"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "crypto",
+        "importer": "/Users/rabyatayal/dev/axios/lib/platform/node/index.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/lib/platform/node/node_modules/crypto",
+          "/Users/rabyatayal/dev/axios/lib/platform/node_modules/crypto",
+          "/Users/rabyatayal/dev/axios/lib/node_modules/crypto",
+          "/Users/rabyatayal/dev/axios/node_modules/crypto",
+          "/Users/rabyatayal/dev/node_modules/crypto",
+          "/Users/rabyatayal/node_modules/crypto",
+          "/Users/node_modules/crypto",
+          "/node_modules/crypto"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/platform/node/index.js",
+      "specifier": "./classes/URLSearchParams.js",
+      "kind": "es6",
+      "importedNames": [
+        "URLSearchParams"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/node/classes/URLSearchParams.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/platform/node/index.js",
+      "specifier": "./classes/FormData.js",
+      "kind": "es6",
+      "importedNames": [
+        "FormData"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/node/classes/FormData.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "specifier": "./helpers/bind.js",
+      "kind": "es6",
+      "importedNames": [
+        "bind"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/bind.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "specifier": "@rollup/plugin-node-resolve",
+      "kind": "es6",
+      "importedNames": [
+        "resolve"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-node-resolve/dist/es/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "specifier": "@rollup/plugin-commonjs",
+      "kind": "es6",
+      "importedNames": [
+        "commonjs"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-commonjs/dist/index.es.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "specifier": "rollup-plugin-terser",
+      "kind": "es6",
+      "importedNames": [
+        "terser"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/rollup-plugin-terser/rollup-plugin-terser.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "specifier": "@rollup/plugin-json",
+      "kind": "es6",
+      "importedNames": [
+        "json"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-json/dist/index.es.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "specifier": "@rollup/plugin-babel",
+      "kind": "es6",
+      "importedNames": [
+        "babel"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-babel/dist/index.es.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "specifier": "rollup-plugin-auto-external",
+      "kind": "es6",
+      "importedNames": [
+        "autoExternal"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/rollup-plugin-auto-external/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "specifier": "rollup-plugin-bundle-size",
+      "kind": "es6",
+      "importedNames": [
+        "bundleSize"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/rollup-plugin-bundle-size/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "specifier": "@rollup/plugin-alias",
+      "kind": "es6",
+      "importedNames": [
+        "aliasPlugin"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-alias/dist/es/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "specifier": "path",
+      "kind": "es6",
+      "importedNames": [
+        "path"
+      ],
+      "line": 9,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "path",
+        "importer": "/Users/rabyatayal/dev/axios/rollup.config.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/node_modules/path",
+          "/Users/rabyatayal/dev/node_modules/path",
+          "/Users/rabyatayal/node_modules/path",
+          "/Users/node_modules/path",
+          "/node_modules/path"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "specifier": "./package.json",
+      "kind": "commonjs",
+      "importedNames": [
+        "lib"
+      ],
+      "line": 11,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/package.json"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/sandbox/client.js",
+      "specifier": "../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/sandbox/server.js",
+      "specifier": "fs",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "fs",
+        "importer": "/Users/rabyatayal/dev/axios/sandbox/server.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/sandbox/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/node_modules/fs",
+          "/Users/rabyatayal/dev/node_modules/fs",
+          "/Users/rabyatayal/node_modules/fs",
+          "/Users/node_modules/fs",
+          "/node_modules/fs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/sandbox/server.js",
+      "specifier": "url",
+      "kind": "es6",
+      "importedNames": [
+        "url"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/url/url.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/sandbox/server.js",
+      "specifier": "path",
+      "kind": "es6",
+      "importedNames": [
+        "path"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "path",
+        "importer": "/Users/rabyatayal/dev/axios/sandbox/server.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/sandbox/node_modules/path",
+          "/Users/rabyatayal/dev/axios/node_modules/path",
+          "/Users/rabyatayal/dev/node_modules/path",
+          "/Users/rabyatayal/node_modules/path",
+          "/Users/node_modules/path",
+          "/node_modules/path"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/sandbox/server.js",
+      "specifier": "http",
+      "kind": "es6",
+      "importedNames": [
+        "http"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "http",
+        "importer": "/Users/rabyatayal/dev/axios/sandbox/server.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/sandbox/node_modules/http",
+          "/Users/rabyatayal/dev/axios/node_modules/http",
+          "/Users/rabyatayal/dev/node_modules/http",
+          "/Users/rabyatayal/node_modules/http",
+          "/Users/node_modules/http",
+          "/node_modules/http"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "specifier": "http",
+      "kind": "es6",
+      "importedNames": [
+        "http"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "http",
+        "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/helpers/node_modules/http",
+          "/Users/rabyatayal/dev/axios/test/node_modules/http",
+          "/Users/rabyatayal/dev/axios/node_modules/http",
+          "/Users/rabyatayal/dev/node_modules/http",
+          "/Users/rabyatayal/node_modules/http",
+          "/Users/node_modules/http",
+          "/node_modules/http"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "specifier": "http2",
+      "kind": "es6",
+      "importedNames": [
+        "http2"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "http2",
+        "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/helpers/node_modules/http2",
+          "/Users/rabyatayal/dev/axios/test/node_modules/http2",
+          "/Users/rabyatayal/dev/axios/node_modules/http2",
+          "/Users/rabyatayal/dev/node_modules/http2",
+          "/Users/rabyatayal/node_modules/http2",
+          "/Users/node_modules/http2",
+          "/node_modules/http2"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "specifier": "stream",
+      "kind": "es6",
+      "importedNames": [
+        "stream"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "stream",
+        "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/helpers/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/test/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/node_modules/stream",
+          "/Users/rabyatayal/dev/node_modules/stream",
+          "/Users/rabyatayal/node_modules/stream",
+          "/Users/node_modules/stream",
+          "/node_modules/stream"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "specifier": "get-stream",
+      "kind": "es6",
+      "importedNames": [
+        "getStream"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/get-stream/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "specifier": "stream-throttle",
+      "kind": "es6",
+      "importedNames": [
+        "Throttle"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/stream-throttle/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "specifier": "formidable",
+      "kind": "es6",
+      "importedNames": [
+        "formidable"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/formidable/src/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "specifier": "selfsigned",
+      "kind": "es6",
+      "importedNames": [
+        "selfsigned"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/selfsigned/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/cjs/index.js",
+      "specifier": "axios",
+      "kind": "commonjs",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "axios",
+        "importer": "/Users/rabyatayal/dev/axios/test/module/cjs/index.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/module/cjs/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/module/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/node_modules/axios",
+          "/Users/rabyatayal/dev/node_modules/axios",
+          "/Users/rabyatayal/node_modules/axios",
+          "/Users/node_modules/axios",
+          "/node_modules/axios"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/cjs/index.js",
+      "specifier": "assert",
+      "kind": "commonjs",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/esm/index.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/esm/index.js",
+      "specifier": "axios",
+      "kind": "es6",
+      "importedNames": [
+        "axios",
+        "CanceledError",
+        "AxiosError",
+        "AxiosHeaders"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "axios",
+        "importer": "/Users/rabyatayal/dev/axios/test/module/esm/index.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/module/esm/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/module/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/node_modules/axios",
+          "/Users/rabyatayal/dev/node_modules/axios",
+          "/Users/rabyatayal/node_modules/axios",
+          "/Users/node_modules/axios",
+          "/node_modules/axios"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/esm/index.js",
+      "specifier": "axios/unsafe/core/settle.js",
+      "kind": "es6",
+      "importedNames": [
+        "settle"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "axios/unsafe/core/settle.js",
+        "importer": "/Users/rabyatayal/dev/axios/test/module/esm/index.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/module/esm/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/module/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/node_modules/axios",
+          "/Users/rabyatayal/dev/node_modules/axios",
+          "/Users/rabyatayal/node_modules/axios",
+          "/Users/node_modules/axios",
+          "/node_modules/axios"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "specifier": "../../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "specifier": "../../lib/axios.js",
+      "kind": "es6",
+      "importedNames": [
+        "axiosFactory"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/axios.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "specifier": "../../lib/utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "specifier": "url",
+      "kind": "es6",
+      "importedNames": [
+        "fileURLToPath"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/url/url.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "specifier": "path",
+      "kind": "es6",
+      "importedNames": [
+        "path"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "path",
+        "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/module/node_modules/path",
+          "/Users/rabyatayal/dev/axios/test/node_modules/path",
+          "/Users/rabyatayal/dev/axios/node_modules/path",
+          "/Users/rabyatayal/dev/node_modules/path",
+          "/Users/rabyatayal/node_modules/path",
+          "/Users/node_modules/path",
+          "/node_modules/path"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "specifier": "util",
+      "kind": "es6",
+      "importedNames": [
+        "util"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/util/util.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "specifier": "child_process",
+      "kind": "es6",
+      "importedNames": [
+        "cp"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "child_process",
+        "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/module/node_modules/child_process",
+          "/Users/rabyatayal/dev/axios/test/node_modules/child_process",
+          "/Users/rabyatayal/dev/axios/node_modules/child_process",
+          "/Users/rabyatayal/dev/node_modules/child_process",
+          "/Users/rabyatayal/node_modules/child_process",
+          "/Users/node_modules/child_process",
+          "/node_modules/child_process"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "specifier": "fs-extra",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 9,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/fs-extra/lib/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts/index.js",
+      "specifier": "assert",
+      "kind": "commonjs",
+      "importedNames": [],
+      "line": 29,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts/index.js",
+      "specifier": "axios",
+      "kind": "commonjs",
+      "importedNames": [],
+      "line": 30,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "axios",
+        "importer": "/Users/rabyatayal/dev/axios/test/module/ts/index.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/module/ts/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/module/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/node_modules/axios",
+          "/Users/rabyatayal/dev/node_modules/axios",
+          "/Users/rabyatayal/node_modules/axios",
+          "/Users/node_modules/axios",
+          "/node_modules/axios"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts/index.ts",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts/index.ts",
+      "specifier": "axios",
+      "kind": "es6",
+      "importedNames": [
+        "axios",
+        "CanceledError",
+        "AxiosError",
+        "AxiosHeaders",
+        "formToJSON",
+        "spread",
+        "isAxiosError",
+        "isCancel",
+        "all",
+        "toFormData"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "axios",
+        "importer": "/Users/rabyatayal/dev/axios/test/module/ts/index.ts",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/module/ts/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/module/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/node_modules/axios",
+          "/Users/rabyatayal/dev/node_modules/axios",
+          "/Users/rabyatayal/node_modules/axios",
+          "/Users/node_modules/axios",
+          "/node_modules/axios"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts-require/index.js",
+      "specifier": "assert",
+      "kind": "commonjs",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts-require/index.js",
+      "specifier": "axios",
+      "kind": "commonjs",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "axios",
+        "importer": "/Users/rabyatayal/dev/axios/test/module/ts-require/index.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/module/ts-require/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/module/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/node_modules/axios",
+          "/Users/rabyatayal/dev/node_modules/axios",
+          "/Users/rabyatayal/node_modules/axios",
+          "/Users/node_modules/axios",
+          "/node_modules/axios"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts-require/index.ts",
+      "specifier": "assert",
+      "kind": "commonjs",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts-require/index.ts",
+      "specifier": "axios",
+      "kind": "commonjs",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "axios",
+        "importer": "/Users/rabyatayal/dev/axios/test/module/ts-require/index.ts",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/module/ts-require/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/module/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/test/node_modules/axios",
+          "/Users/rabyatayal/dev/axios/node_modules/axios",
+          "/Users/rabyatayal/dev/node_modules/axios",
+          "/Users/rabyatayal/node_modules/axios",
+          "/Users/node_modules/axios",
+          "/node_modules/axios"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts-require-default/index.js",
+      "specifier": "assert",
+      "kind": "commonjs",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts-require-default/index.ts",
+      "specifier": "assert",
+      "kind": "commonjs",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/__helpers.js",
+      "specifier": "../../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "_axios"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/basicAuth.spec.js",
+      "specifier": "../../index",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/cancel/CancelToken.spec.js",
+      "specifier": "../../../lib/cancel/CancelToken",
+      "kind": "es6",
+      "importedNames": [
+        "CancelToken"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/CancelToken.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/cancel/CancelToken.spec.js",
+      "specifier": "../../../lib/cancel/CanceledError",
+      "kind": "es6",
+      "importedNames": [
+        "CanceledError"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/cancel/CanceledError.spec.js",
+      "specifier": "../../../lib/cancel/CanceledError",
+      "kind": "es6",
+      "importedNames": [
+        "CanceledError"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/cancel/isCancel.spec.js",
+      "specifier": "../../../lib/cancel/isCancel",
+      "kind": "es6",
+      "importedNames": [
+        "isCancel"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/isCancel.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/cancel/isCancel.spec.js",
+      "specifier": "../../../lib/cancel/CanceledError",
+      "kind": "es6",
+      "importedNames": [
+        "CanceledError"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/cancel.spec.js",
+      "specifier": "abortcontroller-polyfill/dist/cjs-ponyfill.js",
+      "kind": "es6",
+      "importedNames": [
+        "_AbortController"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/abortcontroller-polyfill/dist/cjs-ponyfill.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/core/AxiosError.spec.js",
+      "specifier": "../../../lib/core/AxiosError",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/core/buildFullPath.spec.js",
+      "specifier": "../../../lib/core/buildFullPath",
+      "kind": "es6",
+      "importedNames": [
+        "buildFullPath"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/core/mergeConfig.spec.js",
+      "specifier": "../../../lib/defaults",
+      "kind": "es6",
+      "importedNames": [
+        "defaults"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/defaults/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/core/mergeConfig.spec.js",
+      "specifier": "../../../lib/core/mergeConfig",
+      "kind": "es6",
+      "importedNames": [
+        "mergeConfig"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/core/mergeConfig.spec.js",
+      "specifier": "../../../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosHeaders"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/core/settle.spec.js",
+      "specifier": "../../../lib/core/settle",
+      "kind": "es6",
+      "importedNames": [
+        "settle"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/settle.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/core/transformData.spec.js",
+      "specifier": "../../../lib/core/transformData",
+      "kind": "es6",
+      "importedNames": [
+        "transformData"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/transformData.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/defaults.spec.js",
+      "specifier": "../../lib/defaults",
+      "kind": "es6",
+      "importedNames": [
+        "defaults"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/defaults/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/defaults.spec.js",
+      "specifier": "../../lib/core/AxiosHeaders",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosHeaders"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/formdata.spec.js",
+      "specifier": "../helpers/retry.js",
+      "kind": "es6",
+      "importedNames": [
+        "retryNetwork"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/test/helpers/retry.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/bind.spec.js",
+      "specifier": "../../../lib/helpers/bind",
+      "kind": "es6",
+      "importedNames": [
+        "bind"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/bind.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/buildURL.spec.js",
+      "specifier": "../../../lib/helpers/buildURL",
+      "kind": "es6",
+      "importedNames": [
+        "buildURL"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/combineURLs.spec.js",
+      "specifier": "../../../lib/helpers/combineURLs",
+      "kind": "es6",
+      "importedNames": [
+        "combineURLs"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/combineURLs.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/cookies.spec.js",
+      "specifier": "../../../lib/helpers/cookies",
+      "kind": "es6",
+      "importedNames": [
+        "cookies"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/cookies.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/formDataToJSON.spec.js",
+      "specifier": "../../../lib/helpers/formDataToJSON",
+      "kind": "es6",
+      "importedNames": [
+        "formDataToJSON"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToJSON.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/isAbsoluteURL.spec.js",
+      "specifier": "../../../lib/helpers/isAbsoluteURL",
+      "kind": "es6",
+      "importedNames": [
+        "isAbsoluteURL"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/isAbsoluteURL.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/isAxiosError.spec.js",
+      "specifier": "../../../lib/core/AxiosError",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/isAxiosError.spec.js",
+      "specifier": "../../../lib/helpers/isAxiosError",
+      "kind": "es6",
+      "importedNames": [
+        "isAxiosError"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/isAxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/isURLSameOrigin.spec.js",
+      "specifier": "../../../lib/helpers/isURLSameOrigin",
+      "kind": "es6",
+      "importedNames": [
+        "isURLSameOrigin"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/isURLSameOrigin.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/parseHeaders.spec.js",
+      "specifier": "../../../lib/helpers/parseHeaders",
+      "kind": "es6",
+      "importedNames": [
+        "parseHeaders"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/parseHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/spread.spec.js",
+      "specifier": "../../../lib/helpers/spread",
+      "kind": "es6",
+      "importedNames": [
+        "spread"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/spread.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/toFormData.spec.js",
+      "specifier": "../../../lib/helpers/toFormData",
+      "kind": "es6",
+      "importedNames": [
+        "toFormData"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/helpers/validator.spec.js",
+      "specifier": "../../../lib/helpers/validator",
+      "kind": "es6",
+      "importedNames": [
+        "validator"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/validator.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/transform.spec.js",
+      "specifier": "../../lib/core/AxiosError",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/utils/endsWith.js",
+      "specifier": "../../../lib/utils",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/utils/extend.spec.js",
+      "specifier": "../../../lib/utils",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/utils/forEach.spec.js",
+      "specifier": "../../../lib/utils",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/utils/isX.spec.js",
+      "specifier": "../../../lib/utils",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/utils/kindOf.js",
+      "specifier": "../../../lib/utils",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/utils/kindOfTest.js",
+      "specifier": "../../../lib/utils",
+      "kind": "es6",
+      "importedNames": [
+        "kindOfTest"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/utils/merge.spec.js",
+      "specifier": "../../../lib/utils",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/utils/toArray.js",
+      "specifier": "../../../lib/utils",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/utils/toFlatObject.js",
+      "specifier": "../../../lib/utils",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/utils/trim.spec.js",
+      "specifier": "../../../lib/utils",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/specs/xsrf.spec.js",
+      "specifier": "../../lib/helpers/cookies",
+      "kind": "es6",
+      "importedNames": [
+        "cookies"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/cookies.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/adapters.js",
+      "specifier": "../../../lib/adapters/adapters.js",
+      "kind": "es6",
+      "importedNames": [
+        "adapters"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/adapters.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "specifier": "https",
+      "kind": "es6",
+      "importedNames": [
+        "https"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "https",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/https",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/https",
+          "/Users/rabyatayal/dev/axios/test/node_modules/https",
+          "/Users/rabyatayal/dev/axios/node_modules/https",
+          "/Users/rabyatayal/dev/node_modules/https",
+          "/Users/rabyatayal/node_modules/https",
+          "/Users/node_modules/https",
+          "/node_modules/https"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "specifier": "net",
+      "kind": "es6",
+      "importedNames": [
+        "net"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "net",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/net",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/net",
+          "/Users/rabyatayal/dev/axios/test/node_modules/net",
+          "/Users/rabyatayal/dev/axios/node_modules/net",
+          "/Users/rabyatayal/dev/node_modules/net",
+          "/Users/rabyatayal/node_modules/net",
+          "/Users/node_modules/net",
+          "/node_modules/net"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "specifier": "fs",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "fs",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/test/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/node_modules/fs",
+          "/Users/rabyatayal/dev/node_modules/fs",
+          "/Users/rabyatayal/node_modules/fs",
+          "/Users/node_modules/fs",
+          "/node_modules/fs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "specifier": "path",
+      "kind": "es6",
+      "importedNames": [
+        "path"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "path",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/path",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/path",
+          "/Users/rabyatayal/dev/axios/test/node_modules/path",
+          "/Users/rabyatayal/dev/axios/node_modules/path",
+          "/Users/rabyatayal/dev/node_modules/path",
+          "/Users/rabyatayal/node_modules/path",
+          "/Users/node_modules/path",
+          "/node_modules/path"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "specifier": "url",
+      "kind": "es6",
+      "importedNames": [
+        "fileURLToPath"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/url/url.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "specifier": "../../../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "specifier": "../../helpers/server.js",
+      "kind": "es6",
+      "importedNames": [
+        "startHTTPServer",
+        "stopHTTPServer",
+        "LOCAL_SERVER_URL",
+        "setTimeoutAsync",
+        "makeReadableStream",
+        "generateReadable",
+        "makeEchoStream"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/test/helpers/server.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "specifier": "../../../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 11,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "specifier": "stream",
+      "kind": "es6",
+      "importedNames": [
+        "stream"
+      ],
+      "line": 12,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "stream",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/test/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/node_modules/stream",
+          "/Users/rabyatayal/dev/node_modules/stream",
+          "/Users/rabyatayal/node_modules/stream",
+          "/Users/node_modules/stream",
+          "/node_modules/stream"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "specifier": "abortcontroller-polyfill/dist/cjs-ponyfill.js",
+      "kind": "es6",
+      "importedNames": [
+        "AbortController"
+      ],
+      "line": 13,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/abortcontroller-polyfill/dist/cjs-ponyfill.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "specifier": "util",
+      "kind": "es6",
+      "importedNames": [
+        "util"
+      ],
+      "line": 14,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/util/util.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "../../../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "http",
+      "kind": "es6",
+      "importedNames": [
+        "http"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "http",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/http",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/http",
+          "/Users/rabyatayal/dev/axios/test/node_modules/http",
+          "/Users/rabyatayal/dev/axios/node_modules/http",
+          "/Users/rabyatayal/dev/node_modules/http",
+          "/Users/rabyatayal/node_modules/http",
+          "/Users/node_modules/http",
+          "/node_modules/http"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "https",
+      "kind": "es6",
+      "importedNames": [
+        "https"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "https",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/https",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/https",
+          "/Users/rabyatayal/dev/axios/test/node_modules/https",
+          "/Users/rabyatayal/dev/axios/node_modules/https",
+          "/Users/rabyatayal/dev/node_modules/https",
+          "/Users/rabyatayal/node_modules/https",
+          "/Users/node_modules/https",
+          "/node_modules/https"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "net",
+      "kind": "es6",
+      "importedNames": [
+        "net"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "net",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/net",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/net",
+          "/Users/rabyatayal/dev/axios/test/node_modules/net",
+          "/Users/rabyatayal/dev/axios/node_modules/net",
+          "/Users/rabyatayal/dev/node_modules/net",
+          "/Users/rabyatayal/node_modules/net",
+          "/Users/node_modules/net",
+          "/node_modules/net"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "url",
+      "kind": "es6",
+      "importedNames": [
+        "url"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/url/url.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "zlib",
+      "kind": "es6",
+      "importedNames": [
+        "zlib"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "zlib",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/zlib",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/zlib",
+          "/Users/rabyatayal/dev/axios/test/node_modules/zlib",
+          "/Users/rabyatayal/dev/axios/node_modules/zlib",
+          "/Users/rabyatayal/dev/node_modules/zlib",
+          "/Users/rabyatayal/node_modules/zlib",
+          "/Users/node_modules/zlib",
+          "/node_modules/zlib"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "stream",
+      "kind": "es6",
+      "importedNames": [
+        "stream"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "stream",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/test/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/node_modules/stream",
+          "/Users/rabyatayal/dev/node_modules/stream",
+          "/Users/rabyatayal/node_modules/stream",
+          "/Users/node_modules/stream",
+          "/node_modules/stream"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "util",
+      "kind": "es6",
+      "importedNames": [
+        "util"
+      ],
+      "line": 8,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/util/util.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 9,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "fs",
+      "kind": "es6",
+      "importedNames": [
+        "fs"
+      ],
+      "line": 10,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "fs",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/test/node_modules/fs",
+          "/Users/rabyatayal/dev/axios/node_modules/fs",
+          "/Users/rabyatayal/dev/node_modules/fs",
+          "/Users/rabyatayal/node_modules/fs",
+          "/Users/node_modules/fs",
+          "/node_modules/fs"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "path",
+      "kind": "es6",
+      "importedNames": [
+        "path"
+      ],
+      "line": 11,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "path",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/path",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/path",
+          "/Users/rabyatayal/dev/axios/test/node_modules/path",
+          "/Users/rabyatayal/dev/axios/node_modules/path",
+          "/Users/rabyatayal/dev/node_modules/path",
+          "/Users/rabyatayal/node_modules/path",
+          "/Users/node_modules/path",
+          "/node_modules/path"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "dns",
+      "kind": "es6",
+      "importedNames": [
+        "lookup"
+      ],
+      "line": 12,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "dns",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/adapters/node_modules/dns",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/dns",
+          "/Users/rabyatayal/dev/axios/test/node_modules/dns",
+          "/Users/rabyatayal/dev/axios/node_modules/dns",
+          "/Users/rabyatayal/dev/node_modules/dns",
+          "/Users/rabyatayal/node_modules/dns",
+          "/Users/node_modules/dns",
+          "/node_modules/dns"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "../../../lib/core/AxiosError.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosError"
+      ],
+      "line": 14,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "form-data",
+      "kind": "es6",
+      "importedNames": [
+        "FormDataLegacy"
+      ],
+      "line": 15,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/form-data/lib/form_data.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "formidable",
+      "kind": "es6",
+      "importedNames": [
+        "formidable"
+      ],
+      "line": 16,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/formidable/src/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "express",
+      "kind": "es6",
+      "importedNames": [
+        "express"
+      ],
+      "line": 17,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/express/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "multer",
+      "kind": "es6",
+      "importedNames": [
+        "multer"
+      ],
+      "line": 18,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/multer/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "body-parser",
+      "kind": "es6",
+      "importedNames": [
+        "bodyParser"
+      ],
+      "line": 19,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/body-parser/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "dev-null",
+      "kind": "es6",
+      "importedNames": [
+        "devNull"
+      ],
+      "line": 21,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/dev-null/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "abortcontroller-polyfill/dist/cjs-ponyfill.js",
+      "kind": "es6",
+      "importedNames": [
+        "AbortController"
+      ],
+      "line": 22,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/abortcontroller-polyfill/dist/cjs-ponyfill.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "../../../lib/adapters/http.js",
+      "kind": "es6",
+      "importedNames": [
+        "__setProxy"
+      ],
+      "line": 23,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/adapters/http.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "formdata-node",
+      "kind": "es6",
+      "importedNames": [
+        "FormDataPolyfill",
+        "BlobPolyfill",
+        "FilePolyfill"
+      ],
+      "line": 24,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/formdata-node/lib/browser.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "get-stream",
+      "kind": "es6",
+      "importedNames": [
+        "getStream"
+      ],
+      "line": 25,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/get-stream/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "../../helpers/server.js",
+      "kind": "es6",
+      "importedNames": [
+        "startHTTPServer",
+        "stopHTTPServer",
+        "LOCAL_SERVER_URL",
+        "SERVER_HANDLER_STREAM_ECHO",
+        "handleFormData",
+        "generateReadable"
+      ],
+      "line": 26,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/test/helpers/server.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/core/Axios.js",
+      "specifier": "../../../lib/core/Axios.js",
+      "kind": "es6",
+      "importedNames": [
+        "Axios"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/Axios.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/core/Axios.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/core/AxiosHeaders.js",
+      "specifier": "../../../lib/core/AxiosHeaders.js",
+      "kind": "es6",
+      "importedNames": [
+        "AxiosHeaders"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/core/AxiosHeaders.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/defaults/transformResponse.js",
+      "specifier": "../../../lib/defaults/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "defaults"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/defaults/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/defaults/transformResponse.js",
+      "specifier": "../../../lib/core/transformData.js",
+      "kind": "es6",
+      "importedNames": [
+        "transformData"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/core/transformData.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/defaults/transformResponse.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/helpers/composeSignals.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/helpers/composeSignals.js",
+      "specifier": "../../../lib/helpers/composeSignals.js",
+      "kind": "es6",
+      "importedNames": [
+        "composeSignals"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/composeSignals.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/helpers/estimateDataURLDecodedBytes.spec.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/helpers/estimateDataURLDecodedBytes.spec.js",
+      "specifier": "../../../lib/helpers/estimateDataURLDecodedBytes.js",
+      "kind": "es6",
+      "importedNames": [
+        "estimateDataURLDecodedBytes"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/estimateDataURLDecodedBytes.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/helpers/fromDataURI.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/helpers/fromDataURI.js",
+      "specifier": "../../../lib/helpers/fromDataURI.js",
+      "kind": "es6",
+      "importedNames": [
+        "fromDataURI"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/fromDataURI.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/helpers/parseProtocol.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/helpers/parseProtocol.js",
+      "specifier": "../../../lib/utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/helpers/parseProtocol.js",
+      "specifier": "../../../lib/helpers/parseProtocol.js",
+      "kind": "es6",
+      "importedNames": [
+        "parseProtocol"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/helpers/parseProtocol.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/platform/index.js",
+      "specifier": "../../../lib/platform/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/platform/index.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-1038255.js",
+      "specifier": "../../../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-1038255.js",
+      "specifier": "http",
+      "kind": "es6",
+      "importedNames": [
+        "http"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "http",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-1038255.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/regression/node_modules/http",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/http",
+          "/Users/rabyatayal/dev/axios/test/node_modules/http",
+          "/Users/rabyatayal/dev/axios/node_modules/http",
+          "/Users/rabyatayal/dev/node_modules/http",
+          "/Users/rabyatayal/node_modules/http",
+          "/Users/node_modules/http",
+          "/node_modules/http"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-1038255.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-7361793.js",
+      "specifier": "../../../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-7361793.js",
+      "specifier": "http",
+      "kind": "es6",
+      "importedNames": [
+        "http"
+      ],
+      "line": 5,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "http",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-7361793.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/regression/node_modules/http",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/http",
+          "/Users/rabyatayal/dev/axios/test/node_modules/http",
+          "/Users/rabyatayal/dev/axios/node_modules/http",
+          "/Users/rabyatayal/dev/node_modules/http",
+          "/Users/rabyatayal/node_modules/http",
+          "/Users/node_modules/http",
+          "/node_modules/http"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-7361793.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 6,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-7361793.js",
+      "specifier": "../../../lib/platform/index.js",
+      "kind": "es6",
+      "importedNames": [
+        "platform"
+      ],
+      "line": 7,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/platform/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/bugs.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/bugs.js",
+      "specifier": "http",
+      "kind": "es6",
+      "importedNames": [
+        "http"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "http",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/bugs.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/regression/node_modules/http",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/http",
+          "/Users/rabyatayal/dev/axios/test/node_modules/http",
+          "/Users/rabyatayal/dev/axios/node_modules/http",
+          "/Users/rabyatayal/dev/node_modules/http",
+          "/Users/rabyatayal/node_modules/http",
+          "/Users/node_modules/http",
+          "/node_modules/http"
+        ]
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/bugs.js",
+      "specifier": "../../../index.js",
+      "kind": "es6",
+      "importedNames": [
+        "axios"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/index.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/utils/utils.js",
+      "specifier": "assert",
+      "kind": "es6",
+      "importedNames": [
+        "assert"
+      ],
+      "line": 1,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/utils/utils.js",
+      "specifier": "../../../lib/utils.js",
+      "kind": "es6",
+      "importedNames": [
+        "utils"
+      ],
+      "line": 2,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/lib/utils.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/utils/utils.js",
+      "specifier": "form-data",
+      "kind": "es6",
+      "importedNames": [
+        "FormData"
+      ],
+      "line": 3,
+      "resolution": {
+        "ok": true,
+        "resolvedPath": "/Users/rabyatayal/dev/axios/node_modules/form-data/lib/form_data.js"
+      }
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/utils/utils.js",
+      "specifier": "stream",
+      "kind": "es6",
+      "importedNames": [
+        "stream"
+      ],
+      "line": 4,
+      "resolution": {
+        "ok": false,
+        "reason": "PACKAGE_NOT_FOUND",
+        "specifier": "stream",
+        "importer": "/Users/rabyatayal/dev/axios/test/unit/utils/utils.js",
+        "searched": [
+          "/Users/rabyatayal/dev/axios/test/unit/utils/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/test/unit/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/test/node_modules/stream",
+          "/Users/rabyatayal/dev/axios/node_modules/stream",
+          "/Users/rabyatayal/dev/node_modules/stream",
+          "/Users/rabyatayal/node_modules/stream",
+          "/Users/node_modules/stream",
+          "/node_modules/stream"
+        ]
+      }
+    }
+  ]
+}

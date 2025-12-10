@@ -13,6 +13,7 @@ Structura is a static analysis and AI-assisted engineering platform. The monorep
 - `tests/` – repo-wide test helpers and fixtures.
 - `docker/` – docker-compose stack for local databases and admin tools.
 - `scripts/`, `docs/`, `parser-example/`, `patches/` – helper scripts, notes, samples, and patches.
+- `output/` – generated artifacts from helper scripts (e.g., resolved imports). Current samples were produced against the public Axios repository for validation.
 
 ## Prerequisites
 
