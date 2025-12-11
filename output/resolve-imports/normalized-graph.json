@@ -1,0 +1,2676 @@
+{
+  "version": "2025-12-10T23:21:09.876Z",
+  "nodes": [
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/actions/notify_published.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/api.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/check-build-version.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/githubAxios.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/helpers/parser.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/repo.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/resolveNPMTag.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/run-karma-tests.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/sponsors.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/bin/ssl_hotfix.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/examples/network_enhanced.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/examples/server.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/gulpfile.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/cancel/CancelToken.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/cancel/isCancel.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/core/InterceptorManager.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/core/settle.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/core/transformData.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/defaults/transitional.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/env/classes/FormData.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/env/data.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosTransformStream.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosURLSearchParams.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/HttpStatusCode.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/ZlibHeaderTransformStream.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/bind.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/callbackify.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/combineURLs.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/composeSignals.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/cookies.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/estimateDataURLDecodedBytes.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToJSON.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/fromDataURI.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/isAbsoluteURL.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/isAxiosError.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/isURLSameOrigin.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/parseHeaders.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/parseProtocol.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/readBlob.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/speedometer.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/spread.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/throttle.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/toURLEncodedForm.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/trackStream.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/helpers/validator.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/platform/browser/classes/Blob.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/platform/browser/classes/FormData.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/platform/browser/classes/URLSearchParams.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/platform/browser/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/platform/common/utils.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/platform/node/classes/FormData.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/platform/node/classes/URLSearchParams.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/platform/node/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-alias/dist/es/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-babel/dist/index.es.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-commonjs/dist/index.es.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-json/dist/index.es.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-node-resolve/dist/es/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/abortcontroller-polyfill/dist/cjs-ponyfill.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/body-parser/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/chalk/source/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/dev-null/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/events/events.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/express/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/follow-redirects/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/form-data/lib/form_data.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/formdata-node/lib/browser.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/formidable/src/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/fs-extra/lib/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/get-stream/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/gulp/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/handlebars/lib/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/memoizee/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/minimist/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/multer/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/pacote/lib/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/pretty-bytes/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/proxy-from-env/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/rollup-plugin-auto-external/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/rollup-plugin-bundle-size/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/rollup-plugin-terser/rollup-plugin-terser.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/selfsigned/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/stream-throttle/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/string-replace-async/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/tar-stream/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/url/url.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/node_modules/util/util.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/package.json",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/sandbox/client.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/sandbox/server.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/helpers/retry.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/module/cjs/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/module/esm/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/module/ts-require-default/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/module/ts-require-default/index.ts",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/module/ts-require/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/module/ts-require/index.ts",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/module/ts/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/module/ts/index.ts",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/__helpers.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/basicAuth.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/cancel.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/cancel/CancelToken.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/cancel/CanceledError.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/cancel/isCancel.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/core/AxiosError.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/core/buildFullPath.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/core/mergeConfig.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/core/settle.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/core/transformData.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/defaults.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/formdata.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/helpers/bind.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/helpers/buildURL.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/helpers/combineURLs.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/helpers/cookies.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/helpers/formDataToJSON.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/helpers/isAbsoluteURL.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/helpers/isAxiosError.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/helpers/isURLSameOrigin.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/helpers/parseHeaders.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/helpers/spread.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/helpers/toFormData.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/helpers/validator.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/transform.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/utils/endsWith.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/utils/extend.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/utils/forEach.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/utils/isX.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/utils/kindOf.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/utils/kindOfTest.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/utils/merge.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/utils/toArray.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/utils/toFlatObject.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/utils/trim.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/specs/xsrf.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/adapters/adapters.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/core/Axios.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/core/AxiosHeaders.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/defaults/transformResponse.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/helpers/composeSignals.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/helpers/estimateDataURLDecodedBytes.spec.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/helpers/fromDataURI.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/helpers/parseProtocol.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/platform/index.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-1038255.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-7361793.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/regression/bugs.js",
+      "type": "file"
+    },
+    {
+      "id": "/Users/rabyatayal/dev/axios/test/unit/utils/utils.js",
+      "type": "file"
+    }
+  ],
+  "edges": [
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/githubAxios.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/helpers/parser.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/memoizee/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/util/util.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/api.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/handlebars/lib/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/url/url.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/actions/notify_published.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/actions/notify_published.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/minimist/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/api.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/check-build-version.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/check-build-version.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/githubAxios.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/handlebars/lib/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/util/util.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/githubAxios.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/githubAxios.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/chalk/source/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/string-replace-async/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/url/url.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/repo.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/handlebars/lib/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/pacote/lib/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/pretty-bytes/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/tar-stream/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/repo.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/util/util.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/resolveNPMTag.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/resolveNPMTag.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/repo.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/run-karma-tests.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/chalk/source/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/run-karma-tests.js",
+      "to": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/sponsors.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/helpers/colorize.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/sponsors.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/repo.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/bin/sponsors.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/examples/server.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/minimist/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/examples/server.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/url/url.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/gulpfile.js",
+      "to": "/Users/rabyatayal/dev/axios/bin/githubAxios.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/gulpfile.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/fs-extra/lib/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/gulpfile.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/gulp/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/gulpfile.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/minimist/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/settle.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/composeSignals.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/trackStream.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/settle.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/defaults/transitional.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/env/data.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosTransformStream.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/ZlibHeaderTransformStream.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/callbackify.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/estimateDataURLDecodedBytes.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/fromDataURI.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/readBlob.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/events/events.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/follow-redirects/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/proxy-from-env/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/util/util.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/settle.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/defaults/transitional.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/parseProtocol.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/adapters/xhr.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/CancelToken.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/isCancel.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/env/data.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/HttpStatusCode.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/bind.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToJSON.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/isAxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/spread.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/cancel/CancelToken.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/InterceptorManager.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/validator.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/parseHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/InterceptorManager.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/combineURLs.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/isAbsoluteURL.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/isCancel.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/transformData.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/dispatchRequest.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/settle.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/transformData.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/transformData.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/core/transformData.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/defaults/transitional.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToJSON.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/toURLEncodedForm.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/env/classes/FormData.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/form-data/lib/form_data.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosTransformStream.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosURLSearchParams.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosURLSearchParams.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/callbackify.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/composeSignals.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/composeSignals.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/composeSignals.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/cookies.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/cookies.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToJSON.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/readBlob.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/util/util.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/fromDataURI.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/fromDataURI.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/parseProtocol.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/fromDataURI.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/isAxiosError.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/isURLSameOrigin.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/parseHeaders.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/speedometer.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/throttle.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/progressEventReducer.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/cookies.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/isURLSameOrigin.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/resolveConfig.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/node/classes/FormData.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/toURLEncodedForm.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/toURLEncodedForm.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/toURLEncodedForm.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/validator.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/helpers/validator.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/env/data.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/platform/browser/classes/URLSearchParams.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosURLSearchParams.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/platform/browser/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/browser/classes/Blob.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/platform/browser/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/browser/classes/FormData.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/platform/browser/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/browser/classes/URLSearchParams.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/common/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/node/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/platform/node/classes/FormData.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/form-data/lib/form_data.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/platform/node/classes/URLSearchParams.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/url/url.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/platform/node/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/node/classes/FormData.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/platform/node/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/node/classes/URLSearchParams.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/bind.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-alias/dist/es/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-babel/dist/index.es.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-commonjs/dist/index.es.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-json/dist/index.es.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/@rollup/plugin-node-resolve/dist/es/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/rollup-plugin-auto-external/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/rollup-plugin-bundle-size/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/rollup-plugin-terser/rollup-plugin-terser.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "to": "/Users/rabyatayal/dev/axios/package.json",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/sandbox/client.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/sandbox/server.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/url/url.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/formidable/src/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/get-stream/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/selfsigned/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/stream-throttle/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/cjs/index.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/esm/index.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/axios.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/fs-extra/lib/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/url/url.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/util/util.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/ts-require-default/index.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/ts-require-default/index.ts",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/ts-require/index.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/ts-require/index.ts",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/ts/index.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/module/ts/index.ts",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/__helpers.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/basicAuth.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/cancel.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/abortcontroller-polyfill/dist/cjs-ponyfill.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/cancel/CancelToken.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/CancelToken.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/cancel/CancelToken.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/cancel/CanceledError.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/cancel/isCancel.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/CanceledError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/cancel/isCancel.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/cancel/isCancel.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/core/AxiosError.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/core/buildFullPath.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/buildFullPath.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/core/mergeConfig.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/core/mergeConfig.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/mergeConfig.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/core/mergeConfig.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/core/settle.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/settle.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/core/transformData.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/transformData.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/defaults.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/defaults.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/formdata.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/test/helpers/retry.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/bind.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/bind.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/buildURL.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/buildURL.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/combineURLs.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/combineURLs.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/cookies.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/cookies.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/formDataToJSON.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToJSON.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/isAbsoluteURL.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/isAbsoluteURL.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/isAxiosError.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/isAxiosError.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/isAxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/isURLSameOrigin.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/isURLSameOrigin.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/parseHeaders.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/parseHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/spread.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/spread.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/toFormData.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/toFormData.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/helpers/validator.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/validator.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/transform.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/utils/endsWith.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/utils/extend.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/utils/forEach.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/utils/isX.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/utils/kindOf.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/utils/kindOfTest.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/utils/merge.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/utils/toArray.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/utils/toFlatObject.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/utils/trim.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/specs/xsrf.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/cookies.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/adapters.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/adapters/adapters.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/adapters.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/url/url.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/abortcontroller-polyfill/dist/cjs-ponyfill.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/util/util.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "to": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosError.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/abortcontroller-polyfill/dist/cjs-ponyfill.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/body-parser/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/dev-null/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/express/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/form-data/lib/form_data.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/formdata-node/lib/browser.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/formidable/src/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/get-stream/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/multer/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/url/url.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/util/util.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "to": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/core/Axios.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/Axios.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/core/Axios.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/core/AxiosHeaders.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/AxiosHeaders.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/core/AxiosHeaders.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/defaults/transformResponse.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/core/transformData.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/defaults/transformResponse.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/defaults/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/defaults/transformResponse.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/helpers/composeSignals.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/composeSignals.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/helpers/composeSignals.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/helpers/estimateDataURLDecodedBytes.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/estimateDataURLDecodedBytes.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/helpers/estimateDataURLDecodedBytes.spec.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/helpers/fromDataURI.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/fromDataURI.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/helpers/fromDataURI.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/helpers/parseProtocol.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/helpers/parseProtocol.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/helpers/parseProtocol.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/helpers/parseProtocol.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/platform/index.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/platform/index.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-1038255.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-1038255.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-7361793.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-7361793.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/platform/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-7361793.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/regression/bugs.js",
+      "to": "/Users/rabyatayal/dev/axios/index.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/regression/bugs.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/utils/utils.js",
+      "to": "/Users/rabyatayal/dev/axios/lib/utils.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/utils/utils.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/assert/assert.js",
+      "kind": "import"
+    },
+    {
+      "from": "/Users/rabyatayal/dev/axios/test/unit/utils/utils.js",
+      "to": "/Users/rabyatayal/dev/axios/node_modules/form-data/lib/form_data.js",
+      "kind": "import"
+    }
+  ],
+  "unresolved": [
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/GithubAPI.js",
+      "specifier": "child_process",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "specifier": "fs/promises",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/RepoBot.js",
+      "specifier": "path",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/actions/notify_published.js",
+      "specifier": "fs/promises",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/check-build-version.js",
+      "specifier": "fs",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/check-build-version.js",
+      "specifier": "../dist/node/axios.cjs",
+      "reason": "FILE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "specifier": "child_process",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/contributors.js",
+      "specifier": "fs/promises",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "specifier": "fs/promises",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/injectContributorsList.js",
+      "specifier": "path",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "specifier": "fs/promises",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "specifier": "zlib",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/pr.js",
+      "specifier": "stream",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/repo.js",
+      "specifier": "child_process",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/resolveNPMTag.js",
+      "specifier": "fs",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/run-karma-tests.js",
+      "specifier": "child_process",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/sponsors.js",
+      "specifier": "fs/promises",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/bin/ssl_hotfix.js",
+      "specifier": "child_process",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/examples/network_enhanced.js",
+      "specifier": "axios",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/examples/server.js",
+      "specifier": "fs",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/examples/server.js",
+      "specifier": "path",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/examples/server.js",
+      "specifier": "http",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "http",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "https",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "http2",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "zlib",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/adapters/http.js",
+      "specifier": "stream",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/AxiosTransformStream.js",
+      "specifier": "stream",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/ZlibHeaderTransformStream.js",
+      "specifier": "stream",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/helpers/formDataToStream.js",
+      "specifier": "stream",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/lib/platform/node/index.js",
+      "specifier": "crypto",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/rollup.config.js",
+      "specifier": "path",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/sandbox/server.js",
+      "specifier": "fs",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/sandbox/server.js",
+      "specifier": "path",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/sandbox/server.js",
+      "specifier": "http",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "specifier": "http",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "specifier": "http2",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/helpers/server.js",
+      "specifier": "stream",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/cjs/index.js",
+      "specifier": "axios",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/esm/index.js",
+      "specifier": "axios",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/esm/index.js",
+      "specifier": "axios/unsafe/core/settle.js",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "specifier": "path",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/test.js",
+      "specifier": "child_process",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts/index.js",
+      "specifier": "axios",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts/index.ts",
+      "specifier": "axios",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts-require/index.js",
+      "specifier": "axios",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/module/ts-require/index.ts",
+      "specifier": "axios",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "specifier": "https",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "specifier": "net",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "specifier": "fs",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/error-details.spec.js",
+      "specifier": "path",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/fetch.js",
+      "specifier": "stream",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "http",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "https",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "net",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "zlib",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "stream",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "fs",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "path",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/adapters/http.js",
+      "specifier": "dns",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-1038255.js",
+      "specifier": "http",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/SNYK-JS-AXIOS-7361793.js",
+      "specifier": "http",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/regression/bugs.js",
+      "specifier": "http",
+      "reason": "PACKAGE_NOT_FOUND"
+    },
+    {
+      "importer": "/Users/rabyatayal/dev/axios/test/unit/utils/utils.js",
+      "specifier": "stream",
+      "reason": "PACKAGE_NOT_FOUND"
+    }
+  ]
+}
