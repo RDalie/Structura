@@ -5,6 +5,7 @@ import path from 'node:path';
 import { crawlJsFiles } from '../ingestion/crawler';
 import { parseJSFile } from '../ingestion/parser/js/parseFile';
 import { normalize } from '../core/utils/normalize';
+import { SNAPSHOT_VERSION } from '../core/config/snapshotVersion';
 import type { ModuleNode, NormalizedNode } from '../core/types/ast';
 import { extractImportsFromModule } from '../core/imports/extractor';
 import { resolveImport, ImportResolution } from '../core/imports/import-resolver';
@@ -80,7 +81,12 @@ async function parseAndNormalize(filePath: string): Promise<ModuleNode | null> {
     return null;
   }
   const source = fs.readFileSync(filePath, 'utf8');
-  const root: NormalizedNode = normalize(parseResult.tree.rootNode, source, filePath);
+  const root: NormalizedNode = normalize(
+    parseResult.tree.rootNode,
+    source,
+    filePath,
+    SNAPSHOT_VERSION
+  );
   if (root.type !== 'Module') {
     console.warn(`Skipping ${filePath}: expected Module root, got ${root.type}`);
     return null;

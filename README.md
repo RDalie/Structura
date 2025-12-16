@@ -240,6 +240,13 @@ npm run preview --workspace frontend
 - Run format checks before pushing: `npm run format:check`.
 - Keep environment examples up to date when adding new env vars.
 
+### Snapshot Versioning and Semantic Changes
+
+- `SNAPSHOT_VERSION` is a manually managed constant (see `core/config/snapshotVersion.ts` and docs/ast-system/snapshot-versioning.md).
+- Bump the snapshot version when you change AST normalization semantics, node identity inputs, extraction rules, or graph construction semantics.
+- Do **not** bump for refactors, performance tweaks, formatting, or logging-only changes.
+- Skipping required bumps can corrupt persisted analysis, break graph comparisons, and invalidate evolution analysis results.
+
 ## License
 
 All rights reserved.

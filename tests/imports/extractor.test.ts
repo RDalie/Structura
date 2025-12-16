@@ -4,6 +4,7 @@ import path from 'node:path';
 import os from 'node:os';
 import { extractImportsFromModule } from '../../core/imports/extractor';
 import { normalize } from '../../core/utils/normalize';
+import { SNAPSHOT_VERSION } from '../../core/config/snapshotVersion';
 import type { ModuleNode, NormalizedNode } from '../../core/types/ast';
 import { parseJSFile } from '../../ingestion/parser/js/parseFile';
 
@@ -13,7 +14,12 @@ async function parseAndNormalizeModule(source: string, ext = '.js'): Promise<Mod
   fs.writeFileSync(filePath, source, 'utf8');
   const parseResult = await parseJSFile(filePath);
   if (!parseResult.tree) throw new Error('Parse failed');
-  const root: NormalizedNode = normalize(parseResult.tree.rootNode, source, filePath);
+  const root: NormalizedNode = normalize(
+    parseResult.tree.rootNode,
+    source,
+    filePath,
+    SNAPSHOT_VERSION
+  );
   fs.rmSync(tmpDir, { recursive: true, force: true });
   if (root.type !== 'Module') throw new Error('Expected Module root');
   return root;

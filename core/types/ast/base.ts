@@ -12,6 +12,7 @@ import type { CallNode, BinaryOpNode, UnaryOpNode, MemberAccessNode } from './ex
 export interface BaseNode {
   id: string;
   type: string;
+  filePath: string;
   location?: {
     startLine: number;
     startCol: number;
