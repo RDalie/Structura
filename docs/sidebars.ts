@@ -55,7 +55,7 @@ const sidebars: SidebarsConfig = {
         'ast-system/ast-extraction-pipeline',
         'ast-system/normalization-overview',
         'ast-system/normalized-ast-schema',
-        'ast-system/snapshot-versioning',
+        'ast-system/snapshot-and-ast-persistence-model',
         'ast-system/examples',
       ],
     },
