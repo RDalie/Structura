@@ -13,7 +13,6 @@ model User {
   name  String?
 }
 
-
 model AstNode {
   id            String   @id @db.Uuid
   filePath      String
@@ -23,7 +22,8 @@ model AstNode {
   parent        AstNode? @relation("AstNodeToParent", fields: [parentId], references: [id], onDelete: Cascade)
   children      AstNode[] @relation("AstNodeToParent")
 
-  childIds      String[] @db.Uuid
+  snapshotId    String   @db.Uuid
+  snapshot      Snapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
 
   data          Json
   location      Json?
@@ -35,4 +35,15 @@ model AstNode {
   @@index([type])
   @@index([filePath])
   @@index([parentId])
+}
+
+model Snapshot {
+  id              String   @id @default(uuid()) @db.Uuid
+  snapshotVersion String
+  rootPath        String
+  createdAt       DateTime @default(now())
+
+  astNodes AstNode[]
+
+  @@index([snapshotVersion])
 }
