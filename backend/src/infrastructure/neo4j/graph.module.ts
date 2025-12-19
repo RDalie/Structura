@@ -26,4 +26,4 @@ import { GraphController } from './graph.controller';
   controllers: [GraphController],
   exports: ['NEO4J_DRIVER', GraphService],
 })
-export class GraphModule {}
+export class Neo4jGraphModule {}

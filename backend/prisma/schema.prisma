@@ -1,6 +1,8 @@
 
 generator client {
   provider = "prisma-client-js"
+  // Emit the generated client into backend/generated/prisma
+  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -37,6 +39,30 @@ model AstNode {
   @@index([parentId])
 }
 
+model GraphEdge {
+  id         String   @id @db.Uuid
+
+  fromId     String   @db.Uuid
+  toId       String   @db.Uuid
+
+  kind       String   // CALL, IMPORT, MEMBER_ACCESS, ASSIGNMENT, ...
+
+  filePath   String
+
+  snapshotId String   @db.Uuid
+  snapshot   Snapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+
+  version    Int      // schema / extraction compatibility version
+
+  createdAt  DateTime @default(now())
+
+  @@index([fromId])
+  @@index([toId])
+  @@index([kind])
+  @@index([filePath])
+  @@index([snapshotId])
+}
+
 model Snapshot {
   id              String   @id @default(uuid()) @db.Uuid
   snapshotVersion String
@@ -44,6 +70,7 @@ model Snapshot {
   createdAt       DateTime @default(now())
 
   astNodes AstNode[]
+  graphEdges GraphEdge[]
 
   @@index([snapshotVersion])
 }
