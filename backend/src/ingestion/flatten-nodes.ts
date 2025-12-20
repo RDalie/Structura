@@ -18,7 +18,7 @@ export function flattenNodes(
 
     if (isNormalizedNode(value)) {
       childNodes.push(value);
-      data[`${key}Id`] = value.id;
+      data[`${key}Id`] = toUuid(value.id);
       continue;
     }
 
@@ -27,7 +27,7 @@ export function flattenNodes(
       const serialized = (value as unknown[]).map((item): unknown => {
         if (isNormalizedNode(item)) {
           arrayChildren.push(item);
-          return item.id;
+          return toUuid(item.id);
         }
         return item;
       });
@@ -42,7 +42,7 @@ export function flattenNodes(
   }
 
   const currentRow: Prisma.AstNodeCreateManyInput = {
-    id: node.id,
+    id: toUuid(node.id),
     filePath: node.filePath,
     type: node.type,
     parentId: parentId ? toUuid(parentId) : null,
@@ -73,4 +73,12 @@ function isBaseField(key: string) {
     key === 'location' ||
     key === 'originalType'
   );
+}
+
+function toUuid(input: string): string {
+  const hex = createHash('sha256').update(input).digest('hex');
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(
+    16,
+    20
+  )}-${hex.slice(20, 32)}`;
 }
