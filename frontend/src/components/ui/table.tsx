@@ -1,5 +1,5 @@
 import { cn } from '../../lib/utils';
-import type { HTMLAttributes, TableHTMLAttributes } from 'react';
+import type { HTMLAttributes, TableHTMLAttributes, TdHTMLAttributes, ThHTMLAttributes } from 'react';
 
 export function Table({ className, ...props }: TableHTMLAttributes<HTMLTableElement>) {
   return (
@@ -19,7 +19,7 @@ export function TableRow({ className, ...props }: HTMLAttributes<HTMLTableRowEle
   return <tr className={cn('transition-colors hover:bg-[#f8fafc]', className)} {...props} />;
 }
 
-export function TableHead({ className, ...props }: HTMLAttributes<HTMLTableCellElement>) {
+export function TableHead({ className, ...props }: ThHTMLAttributes<HTMLTableCellElement>) {
   return (
     <th
       className={cn(
@@ -31,7 +31,7 @@ export function TableHead({ className, ...props }: HTMLAttributes<HTMLTableCellE
   );
 }
 
-export function TableCell({ className, ...props }: HTMLAttributes<HTMLTableCellElement>) {
+export function TableCell({ className, ...props }: TdHTMLAttributes<HTMLTableCellElement>) {
   return <td className={cn('p-4 align-middle text-sm text-[#0f172a]', className)} {...props} />;
 }
 

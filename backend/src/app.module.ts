@@ -10,6 +10,7 @@ import { MongoModule } from './infrastructure/mongodb/mongo.module';
 import { TestModule } from './test/test.module';
 import { Neo4jGraphModule } from './infrastructure/neo4j/graph.module';
 import { GraphModule } from './graph/graph.module';
+import { IngestionModule } from './ingestion/ingestion.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { GraphModule } from './graph/graph.module';
     TestModule,
     Neo4jGraphModule,
     GraphModule,
+    IngestionModule,
   ],
   controllers: [AppController],
   providers: [AppService],

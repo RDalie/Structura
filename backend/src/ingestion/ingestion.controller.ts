@@ -1,4 +1,12 @@
-import { BadRequestException, Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Post,
+} from '@nestjs/common';
 import { IngestionService } from './ingestion.service';
 
 type StartIngestionPayload = {
@@ -23,5 +31,10 @@ export class IngestionController {
     }
 
     return this.ingestionService.start(path);
+  }
+
+  @Get('snapshots')
+  async listSnapshots() {
+    return this.ingestionService.listSnapshots();
   }
 }

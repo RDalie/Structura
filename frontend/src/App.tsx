@@ -3,9 +3,12 @@ import { ShellLayout } from './layout/ShellLayout';
 import { navItems } from './core/nav';
 import { PlaceholderPage } from './pages/PlaceholderPage';
 import { HealthStatusPage } from './pages/HealthStatusPage';
+import { IngestionPage } from './pages/IngestionPage';
 
 export default function App() {
-  const placeholderItems = navItems.filter((item) => item.key !== 'health');
+  const placeholderItems = navItems.filter(
+    (item) => item.key !== 'health' && item.key !== 'ingestion'
+  );
 
   return (
     <BrowserRouter>
@@ -13,6 +16,7 @@ export default function App() {
         <Route path="/" element={<ShellLayout />}>
           <Route index element={<Navigate to="/graph" replace />} />
           <Route path="health" element={<HealthStatusPage />} />
+          <Route path="ingestion" element={<IngestionPage />} />
           {placeholderItems.map((item) => (
             <Route
               key={item.key}

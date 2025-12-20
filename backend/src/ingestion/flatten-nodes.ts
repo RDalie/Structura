@@ -42,7 +42,7 @@ export function flattenNodes(
   }
 
   const currentRow: Prisma.AstNodeCreateManyInput = {
-    id: toUuid(node.id),
+    id: node.id,
     filePath: node.filePath,
     type: node.type,
     parentId: parentId ? toUuid(parentId) : null,
@@ -73,12 +73,4 @@ function isBaseField(key: string) {
     key === 'location' ||
     key === 'originalType'
   );
-}
-
-function toUuid(input: string): string {
-  const hex = createHash('sha256').update(input).digest('hex');
-  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(
-    16,
-    20
-  )}-${hex.slice(20, 32)}`;
 }

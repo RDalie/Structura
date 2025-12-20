@@ -21,8 +21,27 @@ export class IngestionService {
     this.parser.setLanguage(JavaScript as any);
   }
 
+  async listSnapshots() {
+    return this.prisma.snapshot.findMany({
+      orderBy: { createdAt: 'desc' },
+      take: 25,
+      select: {
+        id: true,
+        rootPath: true,
+        snapshotVersion: true,
+        createdAt: true,
+        _count: {
+          select: {
+            astNodes: true,
+            graphEdges: true,
+          },
+        },
+      },
+    });
+  }
+
   async start(rootPath: string) {
-    const normalizedRoot = path.resolve(rootPath);
+    const normalizedRoot = normalizeRootPath(rootPath);
     await assertDirectoryReadable(normalizedRoot);
 
     const snapshot = await createSnapshot(this.prisma, normalizedRoot);
@@ -64,4 +83,21 @@ export class IngestionService {
       );
     }
   }
+}
+
+function normalizeRootPath(input: string) {
+  let candidate = input.trim();
+
+  // Expand bare "~/…" to the user's home directory.
+  if (candidate.startsWith('~')) {
+    const home = process.env.HOME ?? '';
+    candidate = path.join(home, candidate.slice(1));
+  }
+
+  // If a macOS-style path was provided without a leading slash, add it.
+  if (/^Users[\\/]/.test(candidate)) {
+    candidate = `${path.sep}${candidate}`;
+  }
+
+  return path.resolve(candidate);
 }
