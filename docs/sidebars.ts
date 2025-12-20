@@ -1,4 +1,4 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -26,37 +26,31 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'AST System',
+      items: [
+        'ast-system/ast-extraction-pipeline',
+        'ast-system/normalization-overview',
+        'ast-system/normalized-ast-schema',
+        'ast-system/examples',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Ingestion Pipeline',
       items: [
         'ingestion-pipeline/overview',
         'ingestion-pipeline/source-types',
         'ingestion-pipeline/crawler',
         'ingestion-pipeline/parser',
-        'ingestion-pipeline/snapshot-creation',
-        'ingestion-pipeline/snapshot-file-map',
+        {
+          type: 'category',
+          label: 'Snapshots',
+          items: [
+            'ast-system/snapshot-and-ast-persistence-model',
+            'ingestion-pipeline/snapshot-file-map',
+          ],
+        },
         'ingestion-pipeline/error-handling',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Storage and Data Layout',
-      items: [
-        'storage-and-data-layout/cloud-storage-layout',
-        'storage-and-data-layout/snapshot-model',
-        'storage-and-data-layout/versioning-strategy',
-        'storage-and-data-layout/path-helpers-and-conventions',
-        'storage-and-data-layout/metadata-files',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'AST System',
-      items: [
-        'ast-system/ast-extraction-pipeline',
-        'ast-system/normalization-overview',
-        'ast-system/normalized-ast-schema',
-        'ast-system/snapshot-and-ast-persistence-model',
-        'ast-system/examples',
       ],
     },
     {
@@ -65,29 +59,31 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
+          label: 'Extraction',
+          items: ['graph-system/import-extractor', 'graph-system/import-resolver'],
+        },
+        {
+          type: 'category',
           label: 'Dependency Graph',
           items: [
             'graph-system/dependency-graph-model',
-            'graph-system/import-extractor',
-            'graph-system/import-resolver',
             'graph-system/dependency-graph-normalizer',
           ],
         },
         {
           type: 'category',
-          label: 'Call Graph',
-          items: [
-            'graph-system/call-graph-model',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Storage & Querying',
-          items: [
-            'graph-system/graph-storage-format',
-            'graph-system/querying-graph-data',
-          ],
+          items: ['graph-system/graph-storage-format', 'graph-system/querying-graph-data'],
         },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Storage and Data Layout',
+      items: [
+        'storage-and-data-layout/cloud-storage-layout',
+        'storage-and-data-layout/path-helpers-and-conventions',
+        'storage-and-data-layout/metadata-files',
       ],
     },
     {
