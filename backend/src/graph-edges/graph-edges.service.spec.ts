@@ -106,10 +106,12 @@ describe('GraphEdgesService', () => {
 
     const result = await service.createGraphEdges(edges);
 
+    const firstCall = result[0]?.id;
+
     expect(prisma.graphEdge.createMany).toHaveBeenCalledWith({
       data: [
         {
-          id: expect.any(String),
+          id: firstCall,
           fromId: 'from',
           toId: 'to',
           filePath: 'src/index.ts',
@@ -120,14 +122,13 @@ describe('GraphEdgesService', () => {
       ],
       skipDuplicates: true,
     });
-    expect(result[0]).toMatchObject({
-      fromId: 'from',
-      toId: 'to',
-      filePath: 'src/index.ts',
-      snapshotId: 'snap',
-      kind: EdgeKind.Import,
-      version: 1,
-    });
+    expect(firstCall).toMatch(
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
+    );
+
+    // Deterministic: calling again with the same input yields the same id.
+    const again = await service.createGraphEdges(edges);
+    expect(again[0]?.id).toBe(firstCall);
   });
 
   it('rejects empty edge payloads', async () => {

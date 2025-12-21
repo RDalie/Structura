@@ -1,5 +1,5 @@
 import { Injectable, BadRequestException } from '@nestjs/common';
-import { randomUUID } from 'node:crypto';
+import { createHash } from 'node:crypto';
 import type { Prisma } from '../../generated/prisma';
 import { GraphRepository } from '../graph/graph.repository';
 import { EdgeKind } from '../graph/graph.types';
@@ -47,7 +47,15 @@ export class GraphEdgesService {
     }
 
     const payload: Prisma.GraphEdgeCreateManyInput[] = edges.map((edge) => ({
-      id: edge.id ?? randomUUID(),
+      id:
+        edge.id ??
+        makeDeterministicId({
+          snapshotId: edge.snapshotId,
+          fromId: edge.fromId,
+          toId: edge.toId,
+          kind: edge.kind,
+          version: edge.version ?? 1,
+        }),
       fromId: edge.fromId,
       toId: edge.toId,
       kind: edge.kind,
@@ -93,4 +101,19 @@ export class GraphEdgesService {
       orderBy: { createdAt: 'asc' },
     });
   }
+}
+
+function makeDeterministicId(input: {
+  snapshotId: string;
+  fromId: string;
+  toId: string;
+  kind: string;
+  version: number;
+}) {
+  const key = `${input.snapshotId}:${input.fromId}:${input.toId}:${input.kind}:${input.version}`;
+  const hex = createHash('sha256').update(key).digest('hex');
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(
+    16,
+    20
+  )}-${hex.slice(20, 32)}`;
 }
