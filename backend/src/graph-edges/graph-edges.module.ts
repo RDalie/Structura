@@ -8,5 +8,6 @@ import { GraphEdgesController } from './graph-edges.controller';
   imports: [GraphModule, PrismaModule],
   controllers: [GraphEdgesController],
   providers: [GraphEdgesService],
+  exports: [GraphEdgesService],
 })
 export class GraphEdgesModule {}
