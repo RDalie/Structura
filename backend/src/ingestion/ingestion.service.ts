@@ -51,11 +51,20 @@ export class IngestionService {
     // Kick off parsing asynchronously so the request returns immediately.
     void this.runParsing(normalizedRoot, snapshot);
 
+    void this.extractGraphEdges();
+
     return {
       snapshotId,
       message: `Ingestion started for ${normalizedRoot}`,
     };
   }
+
+  // TODO: main graph extraction function that does all kinds of graph extractions
+  private extractGraphEdges() {
+    // TODO: Import graph extraction
+  }
+
+  private extractImportGraphEdges() {}
 
   private async runParsing(root: string, snapshot: Snapshot) {
     const snapshotId = snapshot.id;

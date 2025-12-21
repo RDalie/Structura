@@ -11,6 +11,7 @@ import { TestModule } from './test/test.module';
 import { Neo4jGraphModule } from './infrastructure/neo4j/graph.module';
 import { GraphModule } from './graph/graph.module';
 import { IngestionModule } from './ingestion/ingestion.module';
+import { GraphEdgesModule } from './graph-edges/graph-edges.module';
 
 @Module({
   imports: [
@@ -37,6 +38,7 @@ import { IngestionModule } from './ingestion/ingestion.module';
     Neo4jGraphModule,
     GraphModule,
     IngestionModule,
+    GraphEdgesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
