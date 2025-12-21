@@ -1,5 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
 import { Test, type TestingModule } from '@nestjs/testing';
+import type { Prisma, GraphEdge } from '../../generated/prisma';
 import { EdgeKind } from '../graph/graph.types';
 import { GraphEdgesController } from './graph-edges.controller';
 import { GraphEdgesService } from './graph-edges.service';
@@ -7,6 +8,16 @@ import { GraphEdgesService } from './graph-edges.service';
 describe('GraphEdgesController', () => {
   let controller: GraphEdgesController;
   let service: jest.Mocked<GraphEdgesService>;
+  const sampleEdge: GraphEdge = {
+    id: 'edge-1',
+    fromId: 'from',
+    toId: 'to',
+    kind: EdgeKind.Import,
+    filePath: 'src/index.ts',
+    snapshotId: 'snap-1',
+    version: 1,
+    createdAt: new Date(),
+  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -28,7 +39,7 @@ describe('GraphEdgesController', () => {
   });
 
   it('routes node queries to the service with parsed params', async () => {
-    const expected = [{ id: 'edge-1' }];
+    const expected = [sampleEdge];
     service.getEdgesForNode.mockResolvedValue(expected);
 
     const response = await controller.getEdges({
@@ -52,7 +63,7 @@ describe('GraphEdgesController', () => {
   });
 
   it('routes snapshot queries when nodeId is absent', async () => {
-    const expected = [];
+    const expected: GraphEdge[] = [];
     service.getEdgesForSnapshot.mockResolvedValue(expected);
 
     const response = await controller.getEdges({
@@ -73,7 +84,18 @@ describe('GraphEdgesController', () => {
   });
 
   it('creates edges after validating payload', async () => {
-    const expected = [{ id: 'edge-1' }];
+    const expected: Prisma.GraphEdgeCreateManyInput[] = [
+      {
+        id: 'edge-1',
+        fromId: 'from',
+        toId: 'to',
+        filePath: 'src/index.ts',
+        snapshotId: 'snap',
+        kind: EdgeKind.Import,
+        version: 2,
+        createdAt: new Date(),
+      },
+    ];
     service.createGraphEdges.mockResolvedValue(expected);
 
     const response = await controller.createEdges({
@@ -83,7 +105,7 @@ describe('GraphEdgesController', () => {
           toId: 'to',
           filePath: 'src/index.ts',
           snapshotId: 'snap',
-          kind: 'Import',
+          kind: 'Import' as any,
           version: 2,
         },
       ],

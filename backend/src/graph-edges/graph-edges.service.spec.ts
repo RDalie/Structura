@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { EdgeKind } from '../graph/graph.types';
 import { GraphEdgesService } from './graph-edges.service';
 
@@ -22,10 +23,7 @@ describe('GraphEdgesService', () => {
     prisma.graphEdge.findMany.mockReset();
     prisma.graphEdge.createMany.mockReset();
 
-    service = new GraphEdgesService(
-      graphRepository as any,
-      prisma as any
-    );
+    service = new GraphEdgesService(graphRepository as any, prisma as any);
   });
 
   it('delegates node queries to the graph repository based on direction', async () => {

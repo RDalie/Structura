@@ -74,7 +74,6 @@ describe('UsersService', () => {
     const data: Prisma.UserCreateInput = {
       email: sampleUser.email,
       name: sampleUser.name,
-      posts: { create: [] },
     };
 
     const result = await service.createUser(data);
