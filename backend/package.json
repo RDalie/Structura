@@ -32,6 +32,8 @@
     "@nestjs/terminus": "^11.0.0",
     "@prisma/adapter-pg": "^7.0.1",
     "@prisma/client": "^7.0.1",
+    "@structura/core": "0.0.1",
+    "@structura/ingestion": "0.0.1",
     "axios": "^1.13.2",
     "dotenv": "^17.2.3",
     "joi": "^17.13.3",

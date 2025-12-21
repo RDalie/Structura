@@ -4,4 +4,6 @@ const API_BASE =
 
 export const endpoints = {
   health: `${API_BASE}/health`,
+  ingestionStart: `${API_BASE}/ingestion/start`,
+  ingestionSnapshots: `${API_BASE}/ingestion/snapshots`,
 };

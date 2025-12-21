@@ -6,6 +6,12 @@ export type NavItem = {
 };
 
 export const navItems: NavItem[] = [
+  {
+    key: 'ingestion',
+    label: 'Ingestion',
+    to: '/ingestion',
+    blurb: 'Kick off snapshots and monitor pipelines.',
+  },
   { key: 'graph', label: 'Graph', to: '/graph', blurb: 'Explore the knowledge graph.' },
   { key: 'code', label: 'Code', to: '/code', blurb: 'Work on code-aware insights.' },
   { key: 'metrics', label: 'Metrics', to: '/metrics', blurb: 'Review performance signals.' },

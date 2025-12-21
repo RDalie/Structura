@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "index.ts",
+    "crawler/**/*.ts",
+    "parser/**/*.ts",
+    "snapshots/**/*.ts",
+    "graph/**/*.ts",
+    "importer/**/*.ts",
+    "normalizer/**/*.ts",
+    "src/**/*.ts"
+  ],
+  "exclude": ["dist", "node_modules"]
+}

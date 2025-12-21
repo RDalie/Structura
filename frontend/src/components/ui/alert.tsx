@@ -8,7 +8,7 @@ type AlertProps = HTMLAttributes<HTMLDivElement> & {
 export function Alert({ className, variant = 'default', ...props }: AlertProps) {
   const base = 'relative w-full rounded-lg border p-4 text-sm';
   const variants: Record<typeof variant, string> = {
-    default: 'border-amber-500/40 bg-amber-500/10 text-amber-100',
+    default: 'border-amber-500/40 bg-amber-500 text-amber-100',
     destructive: 'border-rose-500/50 bg-rose-950/70 text-rose-100 shadow-inner shadow-rose-900/40',
   };
   return <div role="alert" className={cn(base, variants[variant], className)} {...props} />;
