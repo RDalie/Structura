@@ -16,7 +16,8 @@ export class ImportGraphExtractorService {
   ) {}
 
   async extract(context: NormalizedModulesContext) {
-    const { snapshotId, normalizedModules, snapshotFiles, rootIds, sources } = context;
+    const { snapshotId, normalizedModules, snapshotFiles, rootIds, sources, relativePaths } =
+      context;
 
     const importEdges: CreateGraphEdgeInput[] = [];
     const importSeen = new Set<string>();
@@ -41,11 +42,12 @@ export class ImportGraphExtractorService {
         if (importSeen.has(key)) continue;
         importSeen.add(key);
 
+        const relativePath = relativePaths.get(filePath) ?? filePath;
         importEdges.push({
           fromId,
           toId,
           kind: EdgeKind.Import,
-          filePath: filePath,
+          filePath: relativePath,
           snapshotId,
           version: 1,
         });

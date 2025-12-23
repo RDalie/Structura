@@ -8,6 +8,8 @@ export type NormalizedModulesContext = {
   sources: Map<string, string>;
   rootIds: Map<string, string>;
   snapshotFiles: Set<string>;
+  // Maps absolute POSIX file paths to snapshot-relative paths (using buildSnapshotFileMap).
+  relativePaths: Map<string, string>;
 };
 
 export function normalizeRootPath(input: string) {

@@ -20,7 +20,7 @@ export class CallGraphExtractorService {
   ) {}
 
   async extract(context: NormalizedModulesContext) {
-    const { snapshotId, normalizedModules, rootIds } = context;
+    const { snapshotId, normalizedModules, rootIds, relativePaths } = context;
 
     const callEdges: CreateGraphEdgeInput[] = [];
     const callSeen = new Set<string>();
@@ -61,13 +61,14 @@ export class CallGraphExtractorService {
         }
         callSeen.add(key);
 
+        const relativePath = relativePaths.get(normalizedCallPath) ?? normalizedCallPath;
         callEdges.push({
           ...callEdge,
           fromId: hashedFromId,
           toId: hashedToId,
           kind: EdgeKind.Call,
           snapshotId,
-          filePath: normalizedCallPath,
+          filePath: relativePath,
         });
       }
     }

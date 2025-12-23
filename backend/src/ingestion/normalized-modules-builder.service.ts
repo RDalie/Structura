@@ -21,9 +21,12 @@ export class NormalizedModulesBuilderService {
     const sources = new Map<string, string>();
 
     const { fileMap } = buildSnapshotFileMap(snapshot.rootPath, files);
+    const relativePaths = new Map<string, string>();
     const snapshotFiles = new Set<string>();
-    for (const absolute of fileMap.values()) {
-      snapshotFiles.add(toPosix(absolute));
+    for (const [relative, absolute] of fileMap.entries()) {
+      const posixAbsolute = toPosix(absolute);
+      snapshotFiles.add(posixAbsolute);
+      relativePaths.set(posixAbsolute, relative);
     }
 
     for (const file of files) {
@@ -78,6 +81,7 @@ export class NormalizedModulesBuilderService {
       sources,
       rootIds,
       snapshotFiles,
+      relativePaths,
     };
   }
 }

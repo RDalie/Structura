@@ -2,12 +2,20 @@ import { createHash } from 'node:crypto';
 import type { Prisma } from '../../generated/prisma/client';
 import type { NormalizedNode } from '@structura/core';
 
+type FlattenOptions = {
+  parentId?: string;
+  // Map of absolute POSIX file paths to snapshot-relative paths.
+  relativePaths?: Map<string, string>;
+};
+
 // Convert a normalized AST into flat rows for Prisma createMany.
 export function flattenNodes(
   node: NormalizedNode,
   snapshotId: string,
-  parentId?: string
+  options?: FlattenOptions
 ): Prisma.AstNodeCreateManyInput[] {
+  const parentId = options?.parentId;
+  const relativePaths = options?.relativePaths;
   const childNodes: NormalizedNode[] = [];
   const data: Record<string, unknown> = {};
 
@@ -43,7 +51,7 @@ export function flattenNodes(
 
   const currentRow: Prisma.AstNodeCreateManyInput = {
     id: toUuid(node.id),
-    filePath: node.filePath,
+    filePath: mapFilePath(node.filePath, relativePaths),
     type: node.type,
     parentId: parentId ? toUuid(parentId) : null,
     snapshotId,
@@ -52,7 +60,12 @@ export function flattenNodes(
     originalType: node.originalType ?? null,
   };
 
-  return [currentRow, ...childNodes.flatMap((child) => flattenNodes(child, snapshotId, node.id))];
+  return [
+    currentRow,
+    ...childNodes.flatMap((child) =>
+      flattenNodes(child, snapshotId, { parentId: node.id, relativePaths })
+    ),
+  ];
 }
 
 function isNormalizedNode(value: unknown): value is NormalizedNode {
@@ -81,4 +94,13 @@ function toUuid(input: string): string {
     16,
     20
   )}-${hex.slice(20, 32)}`;
+}
+
+function toPosix(input: string) {
+  return input.replace(/\\/g, '/');
+}
+
+function mapFilePath(filePath: string, relativePaths?: Map<string, string>) {
+  const normalized = toPosix(filePath);
+  return relativePaths?.get(normalized) ?? normalized;
 }
