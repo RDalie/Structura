@@ -12,6 +12,13 @@ import {
 } from '../types/ast';
 import { findEnclosingCallable } from './findEnclosingCallable';
 
+/**
+ * Directed edge connecting a caller to its callee within a snapshot.
+ * - `fromId` is the enclosing callable that issues the call.
+ * - `toId` is the callee's node id (typically a function or method).
+ * - `filePath` is the source file where the call expression lives.
+ * - `snapshotId`/`version` scope the edge to a particular ingest run.
+ */
 export type CallEdge = {
   fromId: string;
   toId: string;
@@ -23,7 +30,14 @@ export type CallEdge = {
 
 type NodeWithParent = NormalizedNode & { parentId?: string };
 
-// Build in-memory call edges for a single module; does not persist.
+/**
+ * Builds in-memory call edges for a single module without persistence.
+ *
+ * Process:
+ * 1) DFS the module to collect every `Call` node while traversing the full tree.
+ * 2) For each call, find its callee id and nearest enclosing callable via `nodeMap`.
+ * 3) Emit a CallEdge for the caller→callee pair, deduping duplicates in the same module.
+ */
 export function buildCallEdges(params: {
   module: ModuleNode;
   nodeMap: Map<string, NormalizedNode>;
@@ -31,8 +45,10 @@ export function buildCallEdges(params: {
   version?: number;
 }): CallEdge[] {
   const { module, nodeMap, snapshotId, version = 1 } = params;
+  // Collect all Call nodes encountered during traversal.
   const callNodes: CallNode[] = [];
 
+  // DFS traversal over the normalized AST to visit every child node.
   const traverse = (node?: NormalizedNode) => {
     if (!node) return;
 
@@ -88,6 +104,7 @@ export function buildCallEdges(params: {
 
   module.body.forEach(traverse);
 
+  // Convert collected calls into unique call edges.
   const edges: CallEdge[] = [];
   const dedupe = new Set<string>();
 

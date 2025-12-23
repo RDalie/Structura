@@ -9,7 +9,10 @@ import { createSnapshot } from './snapshot';
 export class IngestionService {
   private readonly logger = new Logger(IngestionService.name);
 
-  constructor(private readonly prisma: PrismaService, private readonly pipeline: IngestionPipelineService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly pipeline: IngestionPipelineService
+  ) {}
 
   async listSnapshots() {
     return this.prisma.snapshot.findMany({

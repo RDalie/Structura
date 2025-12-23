@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { createHash } from 'node:crypto';
 import * as path from 'node:path';
 import type { ModuleNode, NormalizedNode } from '@structura/core';
@@ -48,7 +45,7 @@ export function buildNodeMapWithParents(module: ModuleNode) {
   const map = new Map<string, NodeWithParent>();
 
   const addNode = (node: NormalizedNode, parentId?: string) => {
-    const current = { ...(node as NodeWithParent), parentId };
+    const current = { ...node, parentId } as NodeWithParent;
     map.set(node.id, current);
     return current;
   };
