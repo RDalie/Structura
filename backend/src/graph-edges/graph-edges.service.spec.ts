@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { EdgeKind } from '../graph/graph.types';
 import { GraphEdgesService } from './graph-edges.service';
 
@@ -122,9 +121,7 @@ describe('GraphEdgesService', () => {
       ],
       skipDuplicates: true,
     });
-    expect(firstCall).toMatch(
-      /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
-    );
+    expect(firstCall).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/);
 
     // Deterministic: calling again with the same input yields the same id.
     const again = await service.createGraphEdges(edges);
