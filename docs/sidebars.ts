@@ -60,7 +60,11 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Extraction',
-          items: ['graph-system/import-extractor', 'graph-system/import-resolver'],
+          items: [
+            'graph-system/import-extractor',
+            'graph-system/import-resolver',
+            'graph-system/call-graph-extraction',
+          ],
         },
         {
           type: 'category',
