@@ -17,6 +17,7 @@
     "index.ts",
     "config/**/*.ts",
     "imports/**/*.ts",
+    "calls/**/*.ts",
     "types/**/*.ts",
     "utils/**/*.ts"
   ],

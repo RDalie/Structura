@@ -11,6 +11,11 @@
       "require": "./dist/index.js",
       "import": "./dist/index.js"
     },
+    "./calls/*": {
+      "types": "./dist/calls/*.d.ts",
+      "require": "./dist/calls/*.js",
+      "import": "./dist/calls/*.js"
+    },
     "./imports/*": {
       "types": "./dist/imports/*.d.ts",
       "require": "./dist/imports/*.js",
