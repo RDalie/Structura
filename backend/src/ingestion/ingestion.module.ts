@@ -7,6 +7,7 @@ import { CallGraphExtractorService } from './call-graph-extractor.service';
 import { ImportGraphExtractorService } from './import-graph-extractor.service';
 import { IngestionPipelineService } from './ingestion-pipeline.service';
 import { NormalizedModulesBuilderService } from './normalized-modules-builder.service';
+import { SymbolGraphExtractor } from './symbol-graph-extractor';
 
 @Module({
   imports: [PrismaModule, GraphEdgesModule],
@@ -16,6 +17,7 @@ import { NormalizedModulesBuilderService } from './normalized-modules-builder.se
     IngestionPipelineService,
     ImportGraphExtractorService,
     CallGraphExtractorService,
+    SymbolGraphExtractor,
     NormalizedModulesBuilderService,
   ],
   exports: [IngestionService],

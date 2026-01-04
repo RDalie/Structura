@@ -8,6 +8,7 @@ import { CallGraphExtractorService } from './call-graph-extractor.service';
 import { ImportGraphExtractorService } from './import-graph-extractor.service';
 import { NormalizedModulesBuilderService } from './normalized-modules-builder.service';
 import { parseAndPersist } from './parse-and-persist';
+import { SymbolGraphExtractor } from './symbol-graph-extractor';
 
 @Injectable()
 export class IngestionPipelineService {
@@ -18,7 +19,8 @@ export class IngestionPipelineService {
     private readonly prisma: PrismaService,
     private readonly normalizedModulesBuilder: NormalizedModulesBuilderService,
     private readonly importGraphExtractor: ImportGraphExtractorService,
-    private readonly callGraphExtractor: CallGraphExtractorService
+    private readonly callGraphExtractor: CallGraphExtractorService,
+    private readonly symbolGraphExtractor: SymbolGraphExtractor
   ) {
     this.parser = new Parser();
     // tree-sitter typings do not carry the language type information here.
@@ -53,6 +55,7 @@ export class IngestionPipelineService {
 
       await this.importGraphExtractor.extract(context);
       await this.callGraphExtractor.extract(context);
+      await this.symbolGraphExtractor.extract(context);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       this.logger.error(

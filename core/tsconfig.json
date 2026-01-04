@@ -18,6 +18,7 @@
     "config/**/*.ts",
     "imports/**/*.ts",
     "calls/**/*.ts",
+    "symbols/**/*.ts",
     "types/**/*.ts",
     "utils/**/*.ts"
   ],

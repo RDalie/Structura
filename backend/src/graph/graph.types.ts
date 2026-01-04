@@ -4,6 +4,8 @@ export enum EdgeKind {
   Import = 'Import',
   MemberAccess = 'MemberAccess',
   Assignment = 'Assignment',
+  ResolvesTo = 'ResolvesTo',
+  Declares = 'Declares',
 }
 
 // Handy list if you need to iterate or validate.
@@ -12,4 +14,6 @@ export const EDGE_KINDS: EdgeKind[] = [
   EdgeKind.Import,
   EdgeKind.MemberAccess,
   EdgeKind.Assignment,
+  EdgeKind.ResolvesTo,
+  EdgeKind.Declares,
 ];
