@@ -21,6 +21,11 @@
       "require": "./dist/imports/*.js",
       "import": "./dist/imports/*.js"
     },
+    "./symbols/*": {
+      "types": "./dist/symbols/*.d.ts",
+      "require": "./dist/symbols/*.js",
+      "import": "./dist/symbols/*.js"
+    },
     "./package.json": "./package.json"
   },
   "files": [
