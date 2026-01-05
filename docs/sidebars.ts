@@ -64,6 +64,7 @@ const sidebars: SidebarsConfig = {
             'graph-system/import-extractor',
             'graph-system/import-resolver',
             'graph-system/call-graph-extraction',
+            'graph-system/symbol-resolution',
           ],
         },
         {
