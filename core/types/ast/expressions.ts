@@ -1,5 +1,5 @@
 import { BaseNode } from './base';
-import type { NormalizedNode, IdentifierNode, LiteralNode } from './base';
+import type { NormalizedNode, IdentifierNode } from './base';
 
 export interface CallNode extends BaseNode {
   type: 'Call';
@@ -21,8 +21,8 @@ export interface UnaryOpNode extends BaseNode {
   arg: NormalizedNode;
 }
 
-export interface MemberAccessNode extends BaseNode {
-  type: 'MemberAccess';
+export interface MemberExpressionNode extends BaseNode {
+  type: 'MemberExpression';
   object: NormalizedNode;
-  property: IdentifierNode | LiteralNode;
+  property: IdentifierNode;
 }
