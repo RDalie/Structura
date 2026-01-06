@@ -206,7 +206,7 @@ export function resolveSymbols(params: {
         traverseBlock(node.body, true);
         break;
       }
-      case 'MemberAccess': {
+      case 'MemberExpression': {
         traverse(node.object);
         break;
       }

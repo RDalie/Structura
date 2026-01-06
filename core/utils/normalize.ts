@@ -1,5 +1,10 @@
 import { SNAPSHOT_VERSION } from '../config/snapshotVersion';
-import { normalizeIdentifier, normalizeLiteral, normalizeCall } from './normalizers/expressions';
+import {
+  normalizeIdentifier,
+  normalizeLiteral,
+  normalizeCall,
+  normalizeMemberExpression,
+} from './normalizers/expressions';
 import { normalizeFunction } from './normalizers/functions';
 import { normalizeImport } from './normalizers/imports';
 import { normalizeProgram } from './normalizers/program';
@@ -34,6 +39,10 @@ export const normalize: NormalizeFn = (
       return normalizeLiteral(node, source, filePath, snapshotVersion);
     case 'call_expression':
       return normalizeCall(node, source, filePath, snapshotVersion, normalize);
+    case 'member_expression':
+    case 'optional_member_expression':
+    case 'optional_chain':
+      return normalizeMemberExpression(node, source, filePath, snapshotVersion, normalize);
     case 'function_declaration':
     case 'function':
     case 'arrow_function':

@@ -5,13 +5,12 @@ import {
   ExpressionStatementNode,
   FunctionNode,
   IdentifierNode,
-  LiteralNode,
   LoopNode,
   ModuleNode,
   NormalizedNode,
   ReturnNode,
   VariableNode,
-  MemberAccessNode,
+  MemberExpressionNode,
 } from '../types/ast';
 import { FileCalls } from './types';
 
@@ -94,13 +93,10 @@ function renderCallee(node: NormalizedNode): string {
   if (node.type === 'Identifier') {
     return (node as IdentifierNode).name;
   }
-  if (node.type === 'MemberAccess') {
-    const access = node as MemberAccessNode;
+  if (node.type === 'MemberExpression') {
+    const access = node as MemberExpressionNode;
     const object = renderCallee(access.object as NormalizedNode);
-    const prop =
-      access.property.type === 'Identifier'
-        ? (access.property as IdentifierNode).name
-        : String((access.property as LiteralNode).value);
+    const prop = (access.property as IdentifierNode).name;
     return `${object}.${prop}`;
   }
   return node.type;
