@@ -7,6 +7,7 @@ import { PrismaService } from '../infrastructure/prisma/prisma.service';
 import { CallGraphExtractorService } from './call-graph-extractor.service';
 import { ImportGraphExtractorService } from './import-graph-extractor.service';
 import { MemberAccessExtractorService } from './member-access-extractor.service';
+import { AssignmentGraphExtractorService } from './assignment-graph-extractor.service';
 import { NormalizedModulesBuilderService } from './normalized-modules-builder.service';
 import { parseAndPersist } from './parse-and-persist';
 import { SymbolGraphExtractor } from './symbol-graph-extractor';
@@ -19,6 +20,7 @@ export class IngestionPipelineService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly normalizedModulesBuilder: NormalizedModulesBuilderService,
+    private readonly assignmentGraphExtractor: AssignmentGraphExtractorService,
     private readonly importGraphExtractor: ImportGraphExtractorService,
     private readonly callGraphExtractor: CallGraphExtractorService,
     private readonly memberAccessExtractor: MemberAccessExtractorService,
@@ -55,6 +57,7 @@ export class IngestionPipelineService {
         return;
       }
 
+      await this.assignmentGraphExtractor.extract(context);
       await this.importGraphExtractor.extract(context);
       await this.callGraphExtractor.extract(context);
       await this.memberAccessExtractor.extract(context);
