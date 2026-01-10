@@ -65,6 +65,7 @@ const sidebars: SidebarsConfig = {
             'graph-system/import-resolver',
             'graph-system/call-graph-extraction',
             'graph-system/member-access-extraction',
+            'graph-system/assignment-graph-extraction',
             'graph-system/symbol-resolution',
           ],
         },

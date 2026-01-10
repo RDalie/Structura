@@ -21,6 +21,12 @@ export interface UnaryOpNode extends BaseNode {
   arg: NormalizedNode;
 }
 
+export interface AssignmentNode extends BaseNode {
+  type: 'Assignment';
+  left: NormalizedNode;
+  right: NormalizedNode;
+}
+
 export interface MemberExpressionNode extends BaseNode {
   type: 'MemberExpression';
   object: NormalizedNode;

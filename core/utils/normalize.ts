@@ -1,5 +1,6 @@
 import { SNAPSHOT_VERSION } from '../config/snapshotVersion';
 import {
+  normalizeAssignment,
   normalizeIdentifier,
   normalizeLiteral,
   normalizeCall,
@@ -63,6 +64,9 @@ export const normalize: NormalizeFn = (
       return normalizeVariableDeclaration(node, source, filePath, snapshotVersion, normalize);
     case 'import_statement':
       return normalizeImport(node, source, filePath, snapshotVersion);
+    case 'assignment_expression':
+    case 'augmented_assignment_expression':
+      return normalizeAssignment(node, source, filePath, snapshotVersion, normalize);
     default:
       return normalizeUnknown(node, source, filePath, snapshotVersion);
   }
