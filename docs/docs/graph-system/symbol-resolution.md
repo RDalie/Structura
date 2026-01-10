@@ -1,6 +1,6 @@
 ---
 title: Symbol Resolution
-sidebar_position: 4
+sidebar_position: 5
 description: How Structura resolves identifiers to declarations and persists ResolvesTo/Declares edges.
 ---
 

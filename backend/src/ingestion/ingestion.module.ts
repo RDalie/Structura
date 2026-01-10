@@ -6,6 +6,7 @@ import { IngestionService } from './ingestion.service';
 import { CallGraphExtractorService } from './call-graph-extractor.service';
 import { ImportGraphExtractorService } from './import-graph-extractor.service';
 import { IngestionPipelineService } from './ingestion-pipeline.service';
+import { MemberAccessExtractorService } from './member-access-extractor.service';
 import { NormalizedModulesBuilderService } from './normalized-modules-builder.service';
 import { SymbolGraphExtractor } from './symbol-graph-extractor';
 
@@ -17,6 +18,7 @@ import { SymbolGraphExtractor } from './symbol-graph-extractor';
     IngestionPipelineService,
     ImportGraphExtractorService,
     CallGraphExtractorService,
+    MemberAccessExtractorService,
     SymbolGraphExtractor,
     NormalizedModulesBuilderService,
   ],
