@@ -1,5 +1,6 @@
 import { SyntaxNode } from 'tree-sitter';
 import type {
+  AssignmentNode,
   CallNode,
   IdentifierNode,
   LiteralNode,
@@ -49,6 +50,28 @@ export function normalizeLiteral(
     ...base(node, 'Literal', filePath, snapshotVersion),
     value,
     literalType,
+  };
+}
+
+export function normalizeAssignment(
+  node: SyntaxNode,
+  source: string,
+  filePath: string,
+  snapshotVersion: string,
+  normalize: NormalizeFn
+): AssignmentNode | ReturnType<typeof normalizeUnknown> {
+  const leftNode = node.childForFieldName?.('left') ?? node.namedChildren[0];
+  const rightNode =
+    node.childForFieldName?.('right') ?? node.namedChildren[node.namedChildren.length - 1];
+
+  if (!leftNode || !rightNode) {
+    return normalizeUnknown(node, source, filePath, snapshotVersion);
+  }
+
+  return {
+    ...base(node, 'Assignment', filePath, snapshotVersion),
+    left: normalize(leftNode, source, filePath, snapshotVersion),
+    right: normalize(rightNode, source, filePath, snapshotVersion),
   };
 }
 

@@ -7,7 +7,13 @@ import type {
   ConditionalNode,
   LoopNode,
 } from './statements';
-import type { CallNode, BinaryOpNode, UnaryOpNode, MemberExpressionNode } from './expressions';
+import type {
+  CallNode,
+  BinaryOpNode,
+  UnaryOpNode,
+  AssignmentNode,
+  MemberExpressionNode,
+} from './expressions';
 
 export interface BaseNode {
   id: string;
@@ -51,6 +57,7 @@ export type NormalizedNode =
   | LoopNode
   | BinaryOpNode
   | UnaryOpNode
+  | AssignmentNode
   | CallNode
   | MemberExpressionNode
   | ReturnNode
