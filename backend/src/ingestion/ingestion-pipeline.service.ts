@@ -6,6 +6,7 @@ import type { Snapshot } from '../../generated/prisma/client';
 import { PrismaService } from '../infrastructure/prisma/prisma.service';
 import { CallGraphExtractorService } from './call-graph-extractor.service';
 import { ImportGraphExtractorService } from './import-graph-extractor.service';
+import { MemberAccessExtractorService } from './member-access-extractor.service';
 import { NormalizedModulesBuilderService } from './normalized-modules-builder.service';
 import { parseAndPersist } from './parse-and-persist';
 import { SymbolGraphExtractor } from './symbol-graph-extractor';
@@ -20,6 +21,7 @@ export class IngestionPipelineService {
     private readonly normalizedModulesBuilder: NormalizedModulesBuilderService,
     private readonly importGraphExtractor: ImportGraphExtractorService,
     private readonly callGraphExtractor: CallGraphExtractorService,
+    private readonly memberAccessExtractor: MemberAccessExtractorService,
     private readonly symbolGraphExtractor: SymbolGraphExtractor
   ) {
     this.parser = new Parser();
@@ -27,7 +29,7 @@ export class IngestionPipelineService {
     this.parser.setLanguage(JavaScript as unknown as Parser.Language);
   }
 
-  // crawls JS/TS files, parses + persists normalized ASTs then calls extractImportGraphEdges
+  // crawls JS/TS files, parses + persists normalized ASTs, then extracts graph edges
   async run(root: string, snapshot: Snapshot) {
     const snapshotId = snapshot.id;
     try {
@@ -55,6 +57,7 @@ export class IngestionPipelineService {
 
       await this.importGraphExtractor.extract(context);
       await this.callGraphExtractor.extract(context);
+      await this.memberAccessExtractor.extract(context);
       await this.symbolGraphExtractor.extract(context);
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
