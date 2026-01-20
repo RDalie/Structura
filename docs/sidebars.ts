@@ -157,6 +157,11 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Learning',
+      items: ['learning/snapshot-materializer'],
+    },
+    {
+      type: 'category',
       label: 'Development Guide',
       items: [
         'development-guide/local-setup',
