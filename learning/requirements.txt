@@ -1,0 +1,4 @@
+networkx
+psycopg2-binary
+pandas
+pytest

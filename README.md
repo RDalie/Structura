@@ -10,6 +10,7 @@ Structura is a static analysis and AI-assisted engineering platform. The monorep
 - `frontend/` – React + Vite app.
 - `core/` – shared types and utilities.
 - `ingestion/` – data ingestion experiments and pipelines.
+- `learning/` – Python snapshot materializer and ML helpers.
 - `tests/` – repo-wide test helpers and fixtures.
 - `docker/` – docker-compose stack for local databases and admin tools.
 - `scripts/`, `docs/`, `parser-example/`, `patches/` – helper scripts, notes, samples, and patches.
@@ -21,6 +22,7 @@ Structura is a static analysis and AI-assisted engineering platform. The monorep
 - npm 10+ with workspaces enabled.
 - Docker and Docker Compose for local databases.
 - Git and a shell with basic build tools.
+- Python 3.12+ (for `learning/` snapshots).
 
 ## Cloning the repo
 
@@ -76,6 +78,36 @@ DATABASE_URL=postgresql://structura:structura_password@localhost:5432/structura_
 
 ```env
 VITE_API_BASE_URL=http://localhost:3000
+```
+
+## Learning (Python)
+
+Install Python requirements:
+
+```bash
+python -m pip install -r learning/requirements.txt
+```
+
+Set env vars (choose one):
+
+```bash
+set -a
+source learning/.env
+set +a
+```
+
+Or:
+
+```bash
+set -a
+source backend/.env
+set +a
+```
+
+Run the snapshot CLI:
+
+```bash
+python learning/scripts/create_snapshot.py --snapshot_id <UUID>
 ```
 
 ## Docker services
