@@ -1,2 +1,0 @@
-# Source Types
-TODO

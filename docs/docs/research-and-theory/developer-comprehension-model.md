@@ -1,2 +1,0 @@
-# Developer Comprehension Model
-TODO

@@ -1,2 +1,0 @@
-# Snapshot Model
-TODO

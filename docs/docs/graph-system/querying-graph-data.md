@@ -1,2 +1,0 @@
-# Querying Graph Data
-TODO

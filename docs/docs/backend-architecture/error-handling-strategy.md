@@ -1,2 +1,0 @@
-# Error Handling Strategy
-TODO
