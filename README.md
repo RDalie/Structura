@@ -68,6 +68,10 @@ npm run build --workspace ingestion
 ## Environment variables
 
 Create env files before running services. Values below are safe defaults for local development.
+If you start from an example file, copy it and remove the `.example` suffix for:
+- `backend/.env.example` → `backend/.env`
+- `learning/.env.example` → `learning/.env`
+- `frontend/.env.local.example` → `frontend/.env.local`
 
 **Root `.env` (optional, used for shared settings)**
 
