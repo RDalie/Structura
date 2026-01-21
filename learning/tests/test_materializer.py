@@ -8,9 +8,10 @@ import networkx as nx
 import pytest
 
 LEARNING_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(LEARNING_ROOT))
+SRC_ROOT = LEARNING_ROOT / "src"
+sys.path.insert(0, str(SRC_ROOT))
 
-import snapshot_graph.materializer as materializer  # noqa: E402
+import components.materializer as materializer  # noqa: E402
 
 
 def make_connection(node_rows, edge_rows):

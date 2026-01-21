@@ -1,4 +1,21 @@
+# 1. Provide the link for pre-compiled binaries
+--find-links https://data.pyg.org/whl/torch-2.4.0+cpu.html
+
+# 2. Core Engines
+torch==2.4.0
+
+# 3. Graph Utilities
 networkx
 psycopg2-binary
 pandas
+
+# 4. PyTorch Geometric & Optimized Extensions
+pyg_lib
+torch_scatter
+torch_sparse
+torch_cluster
+torch_spline_conv
+torch_geometric
+
+# 5. Testing
 pytest
