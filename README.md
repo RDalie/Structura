@@ -65,6 +65,19 @@ npm run build --workspace core
 npm run build --workspace ingestion
 ```
 
+When you change code in `core` or `ingestion`, rebuild them so the backend picks
+up the updated `dist/` output. To avoid manual rebuilds, run the watch scripts in
+separate terminals while developing:
+
+```bash
+npm run watch --workspace core
+npm run watch --workspace ingestion
+```
+
+Note: the backend watcher does not typically restart on changes in workspace
+package outputs, so you may need to restart `npm run start:dev --workspace backend`
+after updates land in `dist/`.
+
 ## Environment variables
 
 Create env files before running services. Values below are safe defaults for local development.

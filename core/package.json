@@ -32,7 +32,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch"
   },
   "engines": {
     "node": ">=20.19.0"
