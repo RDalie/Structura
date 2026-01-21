@@ -107,7 +107,7 @@ set +a
 Run the snapshot CLI:
 
 ```bash
-python learning/scripts/create_snapshot.py --snapshot_id <UUID>
+python learning/src/pipeline/run_export.py --snapshot_id <UUID>
 ```
 
 ## Docker services

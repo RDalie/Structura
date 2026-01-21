@@ -8,7 +8,7 @@ The snapshot materializer builds an immutable NetworkX graph from Postgres data
 scoped to a single snapshot. It reads from `AstNode` and `GraphEdge` and freezes
 the graph (`nx.freeze`) so downstream ML code cannot mutate it accidentally.
 
-Source: `learning/snapshot_graph/materializer.py`.
+Source: `learning/src/components/materializer.py`.
 
 ## What It Produces
 
@@ -51,15 +51,15 @@ If `DATABASE_URL` includes `?schema=public`, it is translated into libpq
 ## CLI: Create Snapshot
 
 ```bash
-python learning/scripts/create_snapshot.py --snapshot_id <UUID>
+python learning/src/pipeline/run_export.py --snapshot_id <UUID>
 ```
 
 Defaults:
-- Output path: `learning/snapshots/<UUID>.pkl`
+- Output path: `learning/data/<UUID>.pkl`
 - Nodes include isolated `AstNode` rows.
 
 You can override the output path:
 
 ```bash
-python learning/scripts/create_snapshot.py --snapshot_id <UUID> --output_path /tmp/snapshot.pkl
+python learning/src/pipeline/run_export.py --snapshot_id <UUID> --output_path /tmp/snapshot.pkl
 ```

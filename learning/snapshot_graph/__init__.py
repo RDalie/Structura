@@ -1,1 +1,0 @@
-"""Snapshot graph materialization package."""
