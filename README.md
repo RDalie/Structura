@@ -55,6 +55,16 @@ npm install <pkg> --workspace backend
 npm install <pkg> --workspace frontend
 ```
 
+## Initial Build (Required)
+
+Shared workspace libraries must be built once so their `dist/` folders and type
+definitions are available before building dependent packages.
+
+```bash
+npm run build --workspace core
+npm run build --workspace ingestion
+```
+
 ## Environment variables
 
 Create env files before running services. Values below are safe defaults for local development.
@@ -144,6 +154,7 @@ Backend lives in `backend/` and uses NestJS.
 
 - Key folders: `src/` (app code), `prisma/` (schema and migrations), `generated/` (Prisma client), `test/` (Jest).
 - Common scripts (run from repo root):
+  - Ensure you completed the Initial Build step above first.
   - `npm run start:dev --workspace backend` – start API with hot reload.
   - `npm run start --workspace backend` – start without watch.
   - `npm run build --workspace backend` then `npm run start:prod --workspace backend` – production build and run.
