@@ -1,11 +1,19 @@
 import pickle
 from pathlib import Path
-from typing import Dict, Tuple, Union
+from typing import Dict, TypedDict, Union
 
 import torch
 
 from .models import SnapshotGraph
-from .node_features import create_feature_matrix_v1
+
+
+class TensorBundle(TypedDict):
+    x: torch.Tensor
+    edge_index: torch.Tensor
+    node_mapping: Dict[str, int]
+
+
+Exportable = Union[SnapshotGraph, TensorBundle]
 
 
 def create_node_mapping(graph) -> Dict[str, int]:
@@ -27,20 +35,10 @@ def create_edge_index(graph, node_to_idx: Dict[str, int]) -> torch.Tensor:
     return torch.tensor([source_indices, target_indices], dtype=torch.long)
 
 
-def export_snapshot(snapshot: SnapshotGraph, output_path: Union[str, Path]) -> Path:
-    """Persist a snapshot graph to disk, creating the destination directory."""
+def export_snapshot(data: Exportable, output_path: Union[str, Path]) -> Path:
+    """Persist a payload to disk, creating the destination directory."""
     path = Path(output_path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "wb") as handle:
-        pickle.dump(snapshot, handle)
+        pickle.dump(data, handle)
     return path
-
-
-def build_tensor_bundle(
-    snapshot: SnapshotGraph,
-) -> Tuple[torch.Tensor, torch.Tensor, Dict[str, int]]:
-    """Create deterministic tensors and the node index mapping for a snapshot."""
-    node_to_idx = create_node_mapping(snapshot.graph)
-    x = create_feature_matrix_v1(snapshot.nodes, node_to_idx)
-    edge_index = create_edge_index(snapshot.graph, node_to_idx)
-    return x, edge_index, node_to_idx
