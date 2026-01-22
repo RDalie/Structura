@@ -85,7 +85,11 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Learning',
-      items: ['learning/snapshot-materializer'],
+      items: [
+        'learning/snapshot-materializer',
+        'learning/feature-engineering',
+        'learning/tensor-graph-export',
+      ],
     },
   ],
 };

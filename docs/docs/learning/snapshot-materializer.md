@@ -63,3 +63,8 @@ You can override the output path:
 ```bash
 python learning/src/pipeline/run_export.py --snapshot_id <UUID> --output_path /tmp/snapshot.pkl
 ```
+
+## Related Components
+
+- [Feature Engineering](./feature-engineering.md): Extract node features from snapshots for machine learning
+- [Tensor Graph Export](./tensor-graph-export.md): Complete pipeline from snapshot to ML-ready tensors
