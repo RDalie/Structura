@@ -17,5 +17,9 @@ torch_cluster
 torch_spline_conv
 torch_geometric
 
-# 5. Testing
+# 5. Visualization & ML
+scikit-learn
+matplotlib
+
+# 6. Testing
 pytest
