@@ -89,7 +89,13 @@ def extract_node_labels(bundle: TensorBundle) -> np.ndarray:
 def run_feasibility_demo(
     bundle_path: Optional[str] = None,
     output_dir: str = "output",
-    seed: int = 42
+    seed: int = 42,
+    num_layers: int = 1,
+    hidden_channels: int = 128,
+    perplexity: Optional[float] = None,
+    alpha: float = 0.4,
+    point_size: int = 20,
+    subsample_size: Optional[int] = None
 ):
     """
     Run the complete GNN feasibility demonstration.
@@ -98,6 +104,12 @@ def run_feasibility_demo(
         bundle_path: Path to a TensorBundle pickle file (if None, creates synthetic data)
         output_dir: Directory to save output visualizations
         seed: Random seed for reproducibility
+        num_layers: Number of GNN layers (1, 2, or 3, default: 1)
+        hidden_channels: Hidden layer dimension for multi-layer models (default: 128)
+        perplexity: t-SNE perplexity parameter (None = auto-adjust)
+        alpha: Point transparency (0-1, default: 0.4)
+        point_size: Size of scatter plot points (default: 20)
+        subsample_size: Number of nodes to subsample for visualization (None = use all)
     """
     print("=" * 60)
     print("GNN Feasibility Proof - Structura Project")
@@ -135,10 +147,18 @@ def run_feasibility_demo(
         in_channels=6,
         out_channels=64,
         seed=seed,
-        eval_mode=True
+        eval_mode=True,
+        num_layers=num_layers,
+        hidden_channels=hidden_channels
     )
     print(f"  Model: {model.__class__.__name__}")
-    print(f"  Input dim: 6, Output dim: 64")
+    print(f"  Number of layers: {num_layers}")
+    if num_layers == 1:
+        print(f"  Architecture: 6 → 64")
+    elif num_layers == 2:
+        print(f"  Architecture: 6 → {hidden_channels} → 64")
+    elif num_layers == 3:
+        print(f"  Architecture: 6 → {hidden_channels} → {hidden_channels} → 64")
     print(f"  Random seed: {seed} (for reproducibility)")
     print(f"  Mode: eval")
 
@@ -154,20 +174,47 @@ def run_feasibility_demo(
     # Extract labels for coloring
     labels = extract_node_labels(bundle)
 
-    # Create output directory
+    # Subsample nodes if requested
+    if subsample_size and subsample_size < num_nodes:
+        print(f"  Subsampling {subsample_size} nodes from {num_nodes} total nodes...")
+        np.random.seed(seed)
+        subsample_indices = np.random.choice(num_nodes, subsample_size, replace=False)
+        embeddings_viz = embeddings[subsample_indices]
+        labels_viz = labels[subsample_indices]
+        print(f"  Using {subsample_size} nodes for visualization")
+    else:
+        embeddings_viz = embeddings
+        labels_viz = labels
+        print(f"  Using all {num_nodes} nodes for visualization")
+
+    # Determine perplexity
+    viz_num_nodes = embeddings_viz.shape[0]
+    if perplexity is None:
+        effective_perplexity = min(30, viz_num_nodes - 1)
+    else:
+        effective_perplexity = min(perplexity, viz_num_nodes - 1)
+
+    print(f"  t-SNE perplexity: {effective_perplexity}")
+    print(f"  Point transparency (alpha): {alpha}")
+    print(f"  Point size: {point_size}")
+
+    # Create output directory with layer-specific filename
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
-    save_path = output_path / "tsne_embeddings.png"
+    save_path = output_path / f"tsne_embeddings_{num_layers}layer.png"
 
     # Visualize
+    layer_suffix = f"{num_layers}-Layer" if num_layers > 1 else "1-Layer"
     projection, fig = visualize_embeddings(
-        embeddings,
-        labels=labels,
-        title="t-SNE Projection of GNN Embeddings (SAGEConv)",
+        embeddings_viz,
+        labels=labels_viz,
+        title=f"t-SNE Projection of GNN Embeddings ({layer_suffix} SAGEConv)",
         save_path=save_path,
         show=False,  # Don't block in script mode
-        perplexity=min(30, num_nodes - 1),  # Adjust for small graphs
-        random_state=seed
+        perplexity=effective_perplexity,
+        random_state=seed,
+        alpha=alpha,
+        point_size=point_size
     )
 
     print(f"  t-SNE projection shape: {projection.shape}")
@@ -226,13 +273,62 @@ Examples:
         help="Random seed for reproducibility (default: 42)"
     )
 
+    parser.add_argument(
+        "--num-layers",
+        type=int,
+        default=1,
+        choices=[1, 2, 3],
+        help="Number of GNN layers (default: 1)"
+    )
+
+    parser.add_argument(
+        "--hidden-channels",
+        type=int,
+        default=128,
+        help="Hidden layer dimension for multi-layer models (default: 128)"
+    )
+
+    parser.add_argument(
+        "--perplexity",
+        type=float,
+        default=None,
+        help="t-SNE perplexity parameter (default: auto-adjust based on graph size)"
+    )
+
+    parser.add_argument(
+        "--alpha",
+        type=float,
+        default=0.4,
+        help="Point transparency for scatter plot (0-1, default: 0.4)"
+    )
+
+    parser.add_argument(
+        "--point-size",
+        type=int,
+        default=20,
+        help="Size of points in scatter plot (default: 20)"
+    )
+
+    parser.add_argument(
+        "--subsample",
+        type=int,
+        default=None,
+        help="Number of nodes to subsample for visualization (default: use all nodes)"
+    )
+
     args = parser.parse_args()
 
     try:
         run_feasibility_demo(
             bundle_path=args.bundle_path,
             output_dir=args.output_dir,
-            seed=args.seed
+            seed=args.seed,
+            num_layers=args.num_layers,
+            hidden_channels=args.hidden_channels,
+            perplexity=args.perplexity,
+            alpha=args.alpha,
+            point_size=args.point_size,
+            subsample_size=args.subsample
         )
     except Exception as e:
         print(f"\n❌ Error: {e}", file=sys.stderr)

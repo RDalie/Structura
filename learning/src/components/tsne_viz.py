@@ -120,6 +120,8 @@ def visualize_embeddings(
     title: str = "t-SNE Projection of Node Embeddings",
     save_path: Optional[Union[str, Path]] = None,
     show: bool = True,
+    alpha: float = 0.6,
+    point_size: int = 50,
     **tsne_kwargs
 ) -> Tuple[np.ndarray, plt.Figure]:
     """
@@ -135,6 +137,8 @@ def visualize_embeddings(
         title: Plot title
         save_path: Optional path to save the figure
         show: Whether to display the plot (default: True)
+        alpha: Point transparency (0-1, default: 0.6)
+        point_size: Size of scatter plot points (default: 50)
         **tsne_kwargs: Additional arguments for t-SNE (perplexity, n_iter, etc.)
 
     Returns:
@@ -145,7 +149,9 @@ def visualize_embeddings(
         >>> projection, fig = visualize_embeddings(
         ...     embeddings,
         ...     title="AST Node Embeddings",
-        ...     save_path="output/tsne_plot.png"
+        ...     save_path="output/tsne_plot.png",
+        ...     alpha=0.3,
+        ...     point_size=20
         ... )
     """
     # Compute t-SNE projection
@@ -156,7 +162,9 @@ def visualize_embeddings(
         projection,
         labels=labels,
         title=title,
-        save_path=save_path
+        save_path=save_path,
+        alpha=alpha,
+        s=point_size
     )
 
     if show:
