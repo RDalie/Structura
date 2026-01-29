@@ -41,9 +41,10 @@ model = create_gnn_model(
 )
 ```
 
-Two model architectures are available:
+Three model architectures are available:
 - **SimpleGNN**: Single layer `6 → 64`
 - **TwoLayerGNN**: Two layers `6 → 128 → 64` (with ReLU)
+- **ThreeLayerGNN**: Three layers `6 → 128 → 128 → 64` (with ReLU)
 
 ### 3. Generate Embeddings
 
@@ -110,12 +111,25 @@ Architecture: `6 → 128 → 64` (two SAGEConv layers with ReLU)
 
 Output: `output/tsne_embeddings_2layer.png`
 
-#### Custom Hidden Channels
-
-Adjust the intermediate layer size for 2-layer models:
+#### 3-Layer GNN Model
 
 ```bash
-# Wider hidden layer (256 dimensions)
+python src/examples/gnn_feasibility_demo.py \
+  --bundle-path data/0c097fa3-71ca-4ddd-8288-58889a5de402_bundle.pkl \
+  --num-layers 3 \
+  --output-dir output
+```
+
+Architecture: `6 → 128 → 128 → 64` (three SAGEConv layers with ReLU)
+
+Output: `output/tsne_embeddings_3layer.png`
+
+#### Custom Hidden Channels
+
+Adjust the intermediate layer size for multi-layer models:
+
+```bash
+# Wider hidden layer (256 dimensions) with 2-layer model
 python src/examples/gnn_feasibility_demo.py \
   --bundle-path data/0c097fa3-71ca-4ddd-8288-58889a5de402_bundle.pkl \
   --num-layers 2 \
@@ -124,6 +138,17 @@ python src/examples/gnn_feasibility_demo.py \
 ```
 
 Architecture: `6 → 256 → 64`
+
+```bash
+# Wider hidden layer (256 dimensions) with 3-layer model
+python src/examples/gnn_feasibility_demo.py \
+  --bundle-path data/0c097fa3-71ca-4ddd-8288-58889a5de402_bundle.pkl \
+  --num-layers 3 \
+  --hidden-channels 256 \
+  --output-dir output
+```
+
+Architecture: `6 → 256 → 256 → 64`
 
 #### Custom Output Directory
 
@@ -182,8 +207,8 @@ python src/examples/gnn_feasibility_demo.py \
 |--------|------|---------|-------------|
 | `--bundle-path` | `str` | `None` | Path to TensorBundle pickle file (uses synthetic data if not provided) |
 | `--output-dir` | `str` | `output` | Directory to save visualization PNG files |
-| `--num-layers` | `int` | `1` | Number of GNN layers (choices: 1, 2) |
-| `--hidden-channels` | `int` | `128` | Hidden layer dimension for 2-layer model |
+| `--num-layers` | `int` | `1` | Number of GNN layers (choices: 1, 2, 3) |
+| `--hidden-channels` | `int` | `128` | Hidden layer dimension for multi-layer models |
 | `--seed` | `int` | `42` | Random seed for reproducibility |
 | `--alpha` | `float` | `0.4` | Point transparency (0=invisible, 1=opaque) |
 | `--point-size` | `int` | `20` | Size of scatter plot points |
@@ -202,6 +227,8 @@ python src/examples/gnn_feasibility_demo.py \
 | 2-layer, hidden=64 | `6 → 64 → 64` | ~4,480 | Compact, less memory |
 | 2-layer, hidden=128 | `6 → 128 → 64` | ~8,960 | Balanced (default) |
 | 2-layer, hidden=256 | `6 → 256 → 64` | ~17,920 | High capacity, slower |
+| 3-layer, hidden=128 | `6 → 128 → 128 → 64` | ~25,088 | Deeper representation |
+| 3-layer, hidden=256 | `6 → 256 → 256 → 64` | ~82,432 | Very high capacity |
 
 ### When to Use Different Sizes
 
@@ -227,12 +254,14 @@ Visualizations are saved with layer-specific filenames to avoid overwriting:
 |---------------------|----------------|
 | 1-layer | `tsne_embeddings_1layer.png` |
 | 2-layer | `tsne_embeddings_2layer.png` |
+| 3-layer | `tsne_embeddings_3layer.png` |
 
 Example output structure:
 ```
 learning/output/
 ├── tsne_embeddings_1layer.png
-└── tsne_embeddings_2layer.png
+├── tsne_embeddings_2layer.png
+└── tsne_embeddings_3layer.png
 ```
 
 ## GNN Model Details
@@ -275,6 +304,32 @@ class TwoLayerGNN(nn.Module):
 - **Hidden**: Configurable (default: 128 dimensions)
 - **Output**: 64-dimensional embeddings
 - **Activation**: ReLU between layers, none after final layer
+
+### ThreeLayerGNN (3-Layer)
+
+Three SAGEConv layers with ReLU activations:
+
+```python
+class ThreeLayerGNN(nn.Module):
+    def __init__(self, in_channels=6, hidden_channels=128, out_channels=64):
+        self.conv1 = SAGEConv(in_channels, hidden_channels)
+        self.conv2 = SAGEConv(hidden_channels, hidden_channels)
+        self.conv3 = SAGEConv(hidden_channels, out_channels)
+
+    def forward(self, x, edge_index):
+        x = self.conv1(x, edge_index)
+        x = torch.relu(x)
+        x = self.conv2(x, edge_index)
+        x = torch.relu(x)
+        x = self.conv3(x, edge_index)
+        return x
+```
+
+- **Input**: 6-dimensional one-hot encoded node types
+- **Hidden layers**: Two hidden layers (default: 128 dimensions each)
+- **Output**: 64-dimensional embeddings
+- **Activation**: ReLU between layers, none after final layer
+- **Message passing depth**: 3 hops (captures 3-hop neighborhoods)
 
 ### SAGEConv Message Passing
 
@@ -332,11 +387,11 @@ with open("data/snapshot_bundle.pkl", "rb") as f:
 x = bundle["x"]
 edge_index = bundle["edge_index"]
 
-# 2. Create 2-layer GNN
+# 2. Create 3-layer GNN
 model = create_gnn_model(
     in_channels=6,
     out_channels=64,
-    num_layers=2,
+    num_layers=3,
     hidden_channels=128,
     seed=42,
     eval_mode=True
@@ -394,10 +449,10 @@ if embeddings.shape[0] > 1000:
 
 ## Comparison Workflow
 
-To compare 1-layer vs 2-layer models side-by-side:
+To compare 1-layer vs 2-layer vs 3-layer models side-by-side:
 
 ```bash
-# Generate both visualizations
+# Generate all three visualizations
 cd learning
 
 # 1-layer model
@@ -412,12 +467,19 @@ python src/examples/gnn_feasibility_demo.py \
   --num-layers 2 \
   --output-dir output
 
+# 3-layer model
+python src/examples/gnn_feasibility_demo.py \
+  --bundle-path data/0c097fa3-71ca-4ddd-8288-58889a5de402_bundle.pkl \
+  --num-layers 3 \
+  --output-dir output
+
 # View outputs
 open output/tsne_embeddings_1layer.png
 open output/tsne_embeddings_2layer.png
+open output/tsne_embeddings_3layer.png
 ```
 
-Both visualizations will be saved in the same directory with distinct filenames.
+All visualizations will be saved in the same directory with distinct filenames.
 
 ## Environment Setup
 
