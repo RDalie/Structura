@@ -89,6 +89,7 @@ const sidebars: SidebarsConfig = {
         'learning/snapshot-materializer',
         'learning/feature-engineering',
         'learning/tensor-graph-export',
+        'learning/gnn-visualization',
       ],
     },
   ],
