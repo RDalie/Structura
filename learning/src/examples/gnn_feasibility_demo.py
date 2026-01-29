@@ -104,8 +104,8 @@ def run_feasibility_demo(
         bundle_path: Path to a TensorBundle pickle file (if None, creates synthetic data)
         output_dir: Directory to save output visualizations
         seed: Random seed for reproducibility
-        num_layers: Number of GNN layers (1 or 2, default: 1)
-        hidden_channels: Hidden layer dimension for 2-layer model (default: 128)
+        num_layers: Number of GNN layers (1, 2, or 3, default: 1)
+        hidden_channels: Hidden layer dimension for multi-layer models (default: 128)
         perplexity: t-SNE perplexity parameter (None = auto-adjust)
         alpha: Point transparency (0-1, default: 0.4)
         point_size: Size of scatter plot points (default: 20)
@@ -153,10 +153,12 @@ def run_feasibility_demo(
     )
     print(f"  Model: {model.__class__.__name__}")
     print(f"  Number of layers: {num_layers}")
-    if num_layers == 2:
-        print(f"  Architecture: 6 → {hidden_channels} → 64")
-    else:
+    if num_layers == 1:
         print(f"  Architecture: 6 → 64")
+    elif num_layers == 2:
+        print(f"  Architecture: 6 → {hidden_channels} → 64")
+    elif num_layers == 3:
+        print(f"  Architecture: 6 → {hidden_channels} → {hidden_channels} → 64")
     print(f"  Random seed: {seed} (for reproducibility)")
     print(f"  Mode: eval")
 
@@ -275,7 +277,7 @@ Examples:
         "--num-layers",
         type=int,
         default=1,
-        choices=[1, 2],
+        choices=[1, 2, 3],
         help="Number of GNN layers (default: 1)"
     )
 
@@ -283,7 +285,7 @@ Examples:
         "--hidden-channels",
         type=int,
         default=128,
-        help="Hidden layer dimension for 2-layer model (default: 128)"
+        help="Hidden layer dimension for multi-layer models (default: 128)"
     )
 
     parser.add_argument(
