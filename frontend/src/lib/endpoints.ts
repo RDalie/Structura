@@ -6,4 +6,8 @@ export const endpoints = {
   health: `${API_BASE}/health`,
   ingestionStart: `${API_BASE}/ingestion/start`,
   ingestionSnapshots: `${API_BASE}/ingestion/snapshots`,
+  experimentsRun: `${API_BASE}/experiments/run`,
+  experimentsList: `${API_BASE}/experiments`,
+  experimentsOutput: (runId: string, filename: string) =>
+    `${API_BASE}/experiments/outputs/${runId}/${filename}`,
 };
