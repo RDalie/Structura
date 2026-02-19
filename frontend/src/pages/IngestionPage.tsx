@@ -25,7 +25,6 @@ type IngestionRun = {
   startedAt: Date;
   message: string;
   snapshotVersion?: string;
-  silhouetteScore?: number | null;
   filesDiscovered?: number;
   normalized?: number;
   failed?: number;
@@ -40,7 +39,6 @@ type SnapshotResponse = {
   id: string;
   rootPath: string;
   snapshotVersion: string;
-  silhouetteScore: number | null;
   createdAt: string;
   _count: { astNodes: number; graphEdges: number };
 };
@@ -83,7 +81,6 @@ export function IngestionPage() {
         startedAt: new Date(snapshot.createdAt),
         message: `${snapshot._count.astNodes} AST nodes, ${snapshot._count.graphEdges} edges`,
         snapshotVersion: snapshot.snapshotVersion,
-        silhouetteScore: snapshot.silhouetteScore,
         filesDiscovered: snapshot._count.astNodes,
         normalized: snapshot._count.astNodes,
         failed: 0,
@@ -377,7 +374,6 @@ export function IngestionPage() {
                 <TableHead>Status</TableHead>
                 <TableHead>Root</TableHead>
                 <TableHead>Files</TableHead>
-                <TableHead>Silhouette</TableHead>
                 <TableHead>Started</TableHead>
                 <TableHead>Notes</TableHead>
               </TableRow>
@@ -385,7 +381,7 @@ export function IngestionPage() {
             <TableBody>
               {orderedRuns.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={7} className="py-6 text-center text-sm text-[#4b5563]">
+                  <TableCell colSpan={6} className="py-6 text-center text-sm text-[#4b5563]">
                     {isLoadingRuns
                       ? 'Loading snapshots...'
                       : 'No snapshots yet. Start an ingestion to see it here.'}
@@ -403,9 +399,6 @@ export function IngestionPage() {
                     </TableCell>
                     <TableCell className="text-sm text-[#0f172a]">
                       {formatFiles(run.filesDiscovered, run.failed)}
-                    </TableCell>
-                    <TableCell className="font-mono text-sm text-[#0f172a]">
-                      {formatSilhouetteScore(run.silhouetteScore)}
                     </TableCell>
                     <TableCell className="text-sm text-[#0f172a]">
                       {formatDate(run.startedAt)}
@@ -478,11 +471,6 @@ function formatFiles(files?: number, failed?: number) {
   if (typeof files === 'number') parts.push(`${files} files`);
   if (typeof failed === 'number' && failed > 0) parts.push(`${failed} failed`);
   return parts.join(' · ');
-}
-
-function formatSilhouetteScore(score?: number | null) {
-  if (typeof score !== 'number' || Number.isNaN(score)) return '—';
-  return score.toFixed(3);
 }
 
 function generateSnapshotId() {

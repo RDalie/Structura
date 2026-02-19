@@ -47,6 +47,27 @@ CREATE TABLE "Snapshot" (
     CONSTRAINT "Snapshot_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateTable
+CREATE TABLE "ExperimentRun" (
+    "id" UUID NOT NULL,
+    "snapshotId" UUID NOT NULL,
+    "numLayers" INTEGER NOT NULL DEFAULT 2,
+    "hiddenChannels" INTEGER NOT NULL DEFAULT 128,
+    "seed" INTEGER NOT NULL DEFAULT 42,
+    "status" TEXT NOT NULL DEFAULT 'pending',
+    "errorMessage" TEXT,
+    "tensorBundlePath" TEXT,
+    "embeddingsPath" TEXT,
+    "tsnePlotPath" TEXT,
+    "silhouetteScore" DOUBLE PRECISION,
+    "nodeCount" INTEGER,
+    "edgeCount" INTEGER,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "completedAt" TIMESTAMP(3),
+
+    CONSTRAINT "ExperimentRun_pkey" PRIMARY KEY ("id")
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
@@ -77,6 +98,12 @@ CREATE INDEX "GraphEdge_snapshotId_idx" ON "GraphEdge"("snapshotId");
 -- CreateIndex
 CREATE INDEX "Snapshot_snapshotVersion_idx" ON "Snapshot"("snapshotVersion");
 
+-- CreateIndex
+CREATE INDEX "ExperimentRun_snapshotId_idx" ON "ExperimentRun"("snapshotId");
+
+-- CreateIndex
+CREATE INDEX "ExperimentRun_status_idx" ON "ExperimentRun"("status");
+
 -- AddForeignKey
 ALTER TABLE "AstNode" ADD CONSTRAINT "AstNode_parentId_fkey" FOREIGN KEY ("parentId") REFERENCES "AstNode"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -85,3 +112,6 @@ ALTER TABLE "AstNode" ADD CONSTRAINT "AstNode_snapshotId_fkey" FOREIGN KEY ("sna
 
 -- AddForeignKey
 ALTER TABLE "GraphEdge" ADD CONSTRAINT "GraphEdge_snapshotId_fkey" FOREIGN KEY ("snapshotId") REFERENCES "Snapshot"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "ExperimentRun" ADD CONSTRAINT "ExperimentRun_snapshotId_fkey" FOREIGN KEY ("snapshotId") REFERENCES "Snapshot"("id") ON DELETE CASCADE ON UPDATE CASCADE;

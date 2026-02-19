@@ -57,6 +57,7 @@ def compute_tsne_projection(
 def create_scatter_plot(
     projection: np.ndarray,
     labels: Optional[np.ndarray] = None,
+    label_name: str = "Node Type",
     title: str = "t-SNE Projection of Node Embeddings",
     figsize: Tuple[int, int] = (10, 8),
     alpha: float = 0.6,
@@ -69,6 +70,7 @@ def create_scatter_plot(
     Args:
         projection: 2D coordinates of shape [N, 2]
         labels: Optional labels for coloring points (shape [N,])
+        label_name: Label for color bar when labels are provided
         title: Plot title
         figsize: Figure size (width, height)
         alpha: Point transparency (0-1)
@@ -89,7 +91,7 @@ def create_scatter_plot(
             alpha=alpha,
             s=s
         )
-        plt.colorbar(scatter, ax=ax, label='Node Type')
+        plt.colorbar(scatter, ax=ax, label=label_name)
     else:
         ax.scatter(
             projection[:, 0],
@@ -117,6 +119,7 @@ def create_scatter_plot(
 def visualize_embeddings(
     embeddings: Union[torch.Tensor, np.ndarray],
     labels: Optional[np.ndarray] = None,
+    label_name: str = "Node Type",
     title: str = "t-SNE Projection of Node Embeddings",
     save_path: Optional[Union[str, Path]] = None,
     show: bool = True,
@@ -134,6 +137,7 @@ def visualize_embeddings(
     Args:
         embeddings: Node embeddings of shape [N, D]
         labels: Optional labels for coloring points
+        label_name: Label for color bar when labels are provided
         title: Plot title
         save_path: Optional path to save the figure
         show: Whether to display the plot (default: True)
@@ -161,6 +165,7 @@ def visualize_embeddings(
     fig = create_scatter_plot(
         projection,
         labels=labels,
+        label_name=label_name,
         title=title,
         save_path=save_path,
         alpha=alpha,

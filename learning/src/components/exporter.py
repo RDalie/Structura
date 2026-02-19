@@ -1,6 +1,6 @@
 import pickle
 from pathlib import Path
-from typing import Dict, TypedDict, Union
+from typing import Dict, NotRequired, TypedDict, Union
 
 import torch
 
@@ -11,6 +11,7 @@ class TensorBundle(TypedDict):
     x: torch.Tensor
     edge_index: torch.Tensor
     node_mapping: Dict[str, int]
+    labels: NotRequired[torch.Tensor]
 
 
 Exportable = Union[SnapshotGraph, TensorBundle]

@@ -67,7 +67,6 @@ model Snapshot {
   id              String   @id @default(uuid()) @db.Uuid
   snapshotVersion String
   rootPath        String
-  silhouetteScore Float?
   createdAt       DateTime @default(now())
 
   astNodes       AstNode[]
@@ -97,6 +96,7 @@ model ExperimentRun {
   tsnePlotPath     String?
 
   // Metrics
+  silhouetteScore Float?
   nodeCount Int?
   edgeCount Int?
 

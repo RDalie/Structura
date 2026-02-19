@@ -9,18 +9,18 @@ class SimpleGNN(nn.Module):
     """
     A simple Graph Neural Network using SAGEConv for feasibility testing.
 
-    This model takes node features of dimension 6 (one-hot encoded node types)
+    This model takes node features of dimension in_channels
     and produces 64-dimensional embeddings using a single SAGEConv layer.
 
     Args:
-        in_channels: Input feature dimension (default: 6)
+        in_channels: Input feature dimension (default: 2)
         out_channels: Output embedding dimension (default: 64)
         seed: Random seed for reproducible initialization (default: 42)
     """
 
     def __init__(
         self,
-        in_channels: int = 6,
+        in_channels: int = 2,
         out_channels: int = 64,
         seed: Optional[int] = 42
     ):
@@ -61,11 +61,11 @@ class TwoLayerGNN(nn.Module):
     """
     A two-layer Graph Neural Network using SAGEConv.
 
-    This model takes node features of dimension 6 (one-hot encoded node types)
+    This model takes node features of dimension in_channels
     and produces 64-dimensional embeddings using two SAGEConv layers.
 
     Args:
-        in_channels: Input feature dimension (default: 6)
+        in_channels: Input feature dimension (default: 2)
         hidden_channels: Hidden layer dimension (default: 128)
         out_channels: Output embedding dimension (default: 64)
         seed: Random seed for reproducible initialization (default: 42)
@@ -73,7 +73,7 @@ class TwoLayerGNN(nn.Module):
 
     def __init__(
         self,
-        in_channels: int = 6,
+        in_channels: int = 2,
         hidden_channels: int = 128,
         out_channels: int = 64,
         seed: Optional[int] = 42
@@ -117,11 +117,11 @@ class ThreeLayerGNN(nn.Module):
     """
     A three-layer Graph Neural Network using SAGEConv.
 
-    This model takes node features of dimension 6 (one-hot encoded node types)
+    This model takes node features of dimension in_channels
     and produces 64-dimensional embeddings using three SAGEConv layers.
 
     Args:
-        in_channels: Input feature dimension (default: 6)
+        in_channels: Input feature dimension (default: 2)
         hidden_channels: Hidden layer dimension (default: 128)
         out_channels: Output embedding dimension (default: 64)
         seed: Random seed for reproducible initialization (default: 42)
@@ -129,7 +129,7 @@ class ThreeLayerGNN(nn.Module):
 
     def __init__(
         self,
-        in_channels: int = 6,
+        in_channels: int = 2,
         hidden_channels: int = 128,
         out_channels: int = 64,
         seed: Optional[int] = 42
@@ -175,7 +175,7 @@ class ThreeLayerGNN(nn.Module):
 
 
 def create_gnn_model(
-    in_channels: int = 6,
+    in_channels: int = 2,
     out_channels: int = 64,
     seed: int = 42,
     eval_mode: bool = True,
@@ -221,7 +221,7 @@ def generate_embeddings(
 
     Args:
         model: Trained or initialized GNN model (SimpleGNN or TwoLayerGNN)
-        x: Node feature matrix [N, 6]
+        x: Node feature matrix [N, in_channels]
         edge_index: Graph connectivity [2, E]
 
     Returns:

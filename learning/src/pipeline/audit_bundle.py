@@ -4,26 +4,6 @@ from pathlib import Path
 
 import torch
 
-# This is our "Contract" - we need to see if the data matches these keys!
-KIND_TO_BUCKET = {
-    "Module": 0,
-    "Block": 0,
-    "Function": 1,
-    "Conditional": 1,
-    "Loop": 1,
-    "Return": 1,
-    "Variable": 2,
-    "Parameter": 2,
-    "Assignment": 2,
-    "Literal": 2,
-    "Call": 3,
-    "MemberExpression": 3,
-    "Identifier": 3,
-    "ExpressionStatement": 4,
-    "Import": 4,
-    "Unknown": 5,
-}
-
 def audit_bundle(bundle_path: Path) -> None:
     if not bundle_path.exists():
         raise FileNotFoundError(f"Bundle file not found: {bundle_path}")
@@ -34,27 +14,24 @@ def audit_bundle(bundle_path: Path) -> None:
 
     x = bundle["x"]
     node_mapping = bundle["node_mapping"]
-    
-    # --- NEW: Discovery Logic 🕵️ ---
-    # We need to see what the 'kind' labels actually are.
-    # Note: This assumes your bundle or nodes carry the kind info!
-    # If the bundle only has tensors, we should check the Exporter's input.
-    
-    print("--- Diagnostic: Feature Alignment ---")
-    bucket_labels = ["Container", "Logic", "Data", "Ref", "Statement", "Other"]
-    bucket_counts = x.sum(dim=0).to(torch.int).tolist()
+    labels = bundle.get("labels")
 
-    for label, count in zip(bucket_labels, bucket_counts):
-        print(f"- {label}: {count}")
+    print("--- Bundle Audit ---")
+    print(f"Nodes: {len(node_mapping)}")
+    print(f"Feature shape: {tuple(x.shape)}")
 
-    if bucket_counts[5] > 0 and sum(bucket_counts[:5]) == 0:
-        print("\n⚠️ ALERT: All nodes are in 'Other'. Mapping failure suspected.")
-        print(f"Expected keys: {list(KIND_TO_BUCKET.keys())[:5]}...")
-    
-    # --- Integrity Checks ---
-    row_sums = x.sum(dim=1)
-    assert torch.allclose(row_sums, torch.ones(x.shape[0])), "Rows must sum to 1"
-    assert x.shape[1] == 6, "Must have 6 columns"
+    # Degree feature contract: two columns [log1p(in_degree), log1p(out_degree)].
+    assert x.shape[1] == 2, "Degree-feature bundles must have 2 columns"
+    assert torch.all(x >= 0), "Degree features should be non-negative after log1p scaling"
+
+    if labels is not None:
+        if isinstance(labels, torch.Tensor):
+            labels_tensor = labels
+        else:
+            labels_tensor = torch.as_tensor(labels)
+        assert labels_tensor.ndim == 1, "labels must be a 1D vector"
+        assert labels_tensor.shape[0] == x.shape[0], "labels length must match node count"
+        print(f"Labels shape: {tuple(labels_tensor.shape)}")
 
     print("\nStructure audit passed.")
 

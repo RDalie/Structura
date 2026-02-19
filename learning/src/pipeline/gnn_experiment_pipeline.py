@@ -1,44 +1,49 @@
+import json
 import pickle
-import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable, Optional, Tuple
+from typing import Callable, Mapping, Optional, Tuple
 
 import numpy as np
 import torch
+from torch_geometric.utils import degree
 
-from components.embedding_metrics import try_compute_silhouette_score
+from components.embedding_metrics import (
+    summarize_cluster_identities,
+    try_find_best_kmeans_silhouette,
+)
 from components.exporter import TensorBundle
 from components.gnn_model import create_gnn_model, generate_embeddings
-from components.snapshot_metrics import persist_snapshot_silhouette_score
+from components.node_features import create_degree_feature_matrix
 from components.tsne_viz import visualize_embeddings
 
-UUID_PATTERN = re.compile(
-    r"[0-9a-fA-F]{8}-"
-    r"[0-9a-fA-F]{4}-"
-    r"[0-9a-fA-F]{4}-"
-    r"[0-9a-fA-F]{4}-"
-    r"[0-9a-fA-F]{12}"
-)
-
 LogFn = Optional[Callable[[str], None]]
+LABEL_NAMES_BY_BUCKET: Mapping[int, str] = {
+    0: "Container",
+    1: "Logic",
+    2: "Data",
+    3: "Reference",
+    4: "Statement",
+    5: "Other",
+}
 
 
 @dataclass(frozen=True)
 class GnnExperimentConfig:
     bundle_path: Optional[str] = None
-    snapshot_id: Optional[str] = None
     output_dir: str = "output"
     seed: int = 42
-    num_layers: int = 1
-    hidden_channels: int = 128
+    num_layers: int = 2
+    hidden_channels: int = 256
     perplexity: Optional[float] = None
     alpha: float = 0.4
     point_size: int = 20
     subsample_size: Optional[int] = None
     silhouette_metric: str = "euclidean"
     silhouette_sample_size: Optional[int] = None
-    db_dsn: Optional[str] = None
+    cluster_k_min: int = 2
+    cluster_k_max: int = 10
+    embeddings_output_path: Optional[str] = None
 
 
 @dataclass(frozen=True)
@@ -50,8 +55,9 @@ class GnnExperimentResult:
     projection_shape: Tuple[int, ...]
     silhouette_score: Optional[float]
     silhouette_error: Optional[str]
-    silhouette_persisted: bool
-    snapshot_id: Optional[str]
+    best_cluster_k: Optional[int]
+    cluster_summary_lines: list[str]
+    embeddings_path: Optional[Path]
     visualization_path: Path
 
 
@@ -81,36 +87,36 @@ def load_tensor_bundle(bundle_path: str) -> TensorBundle:
 
 def create_synthetic_bundle(num_nodes: int = 100, num_edges: int = 200) -> TensorBundle:
     """Create a synthetic TensorBundle for testing purposes."""
-    x = torch.zeros((num_nodes, 6), dtype=torch.float32)
-    categories = torch.randint(0, 6, (num_nodes,))
-    x[torch.arange(num_nodes), categories] = 1.0
-
     edge_index = torch.randint(0, num_nodes, (2, num_edges), dtype=torch.long)
     node_mapping = {f"node_{i}": i for i in range(num_nodes)}
+    labels = torch.randint(0, 6, (num_nodes,), dtype=torch.long)
+    x = create_degree_feature_matrix(edge_index=edge_index, num_nodes=num_nodes)
 
     return {
         "x": x,
         "edge_index": edge_index,
         "node_mapping": node_mapping,
+        "labels": labels,
     }
 
 
-def extract_node_labels(bundle: TensorBundle) -> np.ndarray:
-    """Extract node type labels from one-hot encoded features."""
+def extract_original_labels(bundle: TensorBundle) -> np.ndarray:
+    """Extract node-type labels for cluster interpretation."""
+    labels = bundle.get("labels")
+    if labels is not None:
+        if isinstance(labels, torch.Tensor):
+            labels = labels.cpu().numpy()
+        labels_np = np.asarray(labels)
+        if labels_np.ndim != 1:
+            raise ValueError("Bundle labels must be a 1D array")
+        return labels_np
+
     x = bundle["x"]
     if isinstance(x, torch.Tensor):
         x = x.cpu().numpy()
+    if x.ndim != 2:
+        raise ValueError("Bundle x must be a 2D array when labels are missing")
     return np.argmax(x, axis=1)
-
-
-def infer_snapshot_id(bundle_path: Optional[str]) -> Optional[str]:
-    """Infer snapshot UUID from bundle file name when possible."""
-    if not bundle_path:
-        return None
-    match = UUID_PATTERN.search(Path(bundle_path).name)
-    if not match:
-        return None
-    return match.group(0)
 
 
 def run_gnn_experiment(config: GnnExperimentConfig, log: LogFn = print) -> GnnExperimentResult:
@@ -127,15 +133,24 @@ def run_gnn_experiment(config: GnnExperimentConfig, log: LogFn = print) -> GnnEx
         bundle = create_synthetic_bundle(num_nodes=100, num_edges=300)
         _emit(log, "  Created synthetic bundle")
 
-    x = bundle["x"]
+    x_from_bundle = bundle["x"]
     edge_index = bundle["edge_index"]
-    labels = extract_node_labels(bundle)
+    original_labels = extract_original_labels(bundle)
 
-    num_nodes = x.shape[0]
+    num_nodes = x_from_bundle.shape[0]
+    if original_labels.shape[0] != num_nodes:
+        raise ValueError(
+            f"Label count ({original_labels.shape[0]}) does not match node count ({num_nodes})"
+        )
+    x = create_degree_feature_matrix(edge_index=edge_index, num_nodes=num_nodes)
     num_edges = edge_index.shape[1]
     _emit(log, f"  Nodes: {num_nodes}, Edges: {num_edges}")
+    _emit(log, "  Recomputed node degree features (in-degree, out-degree)")
     _emit(log, f"  Node features shape: {x.shape}")
     _emit(log, f"  Edge index shape: {edge_index.shape}")
+
+    out_degree = degree(edge_index[0], num_nodes=num_nodes, dtype=torch.float32).cpu().numpy()
+    in_degree = degree(edge_index[1], num_nodes=num_nodes, dtype=torch.float32).cpu().numpy()
 
     connected_nodes = torch.unique(edge_index)
     num_orphans = num_nodes - len(connected_nodes)
@@ -143,9 +158,10 @@ def run_gnn_experiment(config: GnnExperimentConfig, log: LogFn = print) -> GnnEx
         _emit(log, f"  ⚠ Found {num_orphans} orphan node(s) with no edges")
         _emit(log, "  ✓ SAGEConv handles orphans gracefully using self-features")
 
+    input_dim = int(x.shape[1])
     _emit(log, "\n[2/5] Initializing GNN model...")
     model = create_gnn_model(
-        in_channels=6,
+        in_channels=input_dim,
         out_channels=64,
         seed=config.seed,
         eval_mode=True,
@@ -154,14 +170,15 @@ def run_gnn_experiment(config: GnnExperimentConfig, log: LogFn = print) -> GnnEx
     )
     _emit(log, f"  Model: {model.__class__.__name__}")
     _emit(log, f"  Number of layers: {config.num_layers}")
+    _emit(log, f"  Input feature dimension: {input_dim}")
     if config.num_layers == 1:
-        _emit(log, "  Architecture: 6 -> 64")
+        _emit(log, f"  Architecture: {input_dim} -> 64")
     elif config.num_layers == 2:
-        _emit(log, f"  Architecture: 6 -> {config.hidden_channels} -> 64")
+        _emit(log, f"  Architecture: {input_dim} -> {config.hidden_channels} -> 64")
     else:
         _emit(
             log,
-            f"  Architecture: 6 -> {config.hidden_channels} -> {config.hidden_channels} -> 64",
+            f"  Architecture: {input_dim} -> {config.hidden_channels} -> {config.hidden_channels} -> 64",
         )
     _emit(log, f"  Random seed: {config.seed} (for reproducibility)")
     _emit(log, "  Mode: eval")
@@ -171,48 +188,49 @@ def run_gnn_experiment(config: GnnExperimentConfig, log: LogFn = print) -> GnnEx
     _emit(log, f"  Embeddings shape: {embeddings.shape}")
     _emit(log, f"  Expected shape: [{num_nodes}, 64] ✓")
 
-    _emit(log, "\n[4/5] Computing silhouette score...")
-    silhouette_score, silhouette_error = try_compute_silhouette_score(
+    saved_embeddings_path: Optional[Path] = None
+    if config.embeddings_output_path:
+        saved_embeddings_path = Path(config.embeddings_output_path)
+        saved_embeddings_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(saved_embeddings_path, "wb") as handle:
+            pickle.dump(embeddings, handle)
+        _emit(log, f"  Saved embeddings to: {saved_embeddings_path}")
+
+    _emit(log, "\n[4/5] Searching best K-Means silhouette score...")
+    cluster_search, silhouette_error = try_find_best_kmeans_silhouette(
         embeddings=embeddings,
-        labels=labels,
+        k_min=config.cluster_k_min,
+        k_max=config.cluster_k_max,
         metric=config.silhouette_metric,
         sample_size=config.silhouette_sample_size,
         random_state=config.seed,
     )
-    if silhouette_score is None:
+    if cluster_search is None:
+        silhouette_score = None
+        best_cluster_k = None
+        cluster_labels = None
+        cluster_summary_lines: list[str] = []
         _emit(log, f"  ⚠ Silhouette score skipped: {silhouette_error}")
     else:
-        _emit(log, f"  Silhouette score ({config.silhouette_metric}): {silhouette_score:.4f}")
-
-    resolved_snapshot_id = config.snapshot_id or infer_snapshot_id(config.bundle_path)
-    if resolved_snapshot_id is None:
-        raise ValueError(
-            "snapshot_id is required for DB persistence. "
-            "Pass --snapshot-id or use a bundle filename containing the snapshot UUID."
+        silhouette_score = cluster_search.best_score
+        best_cluster_k = cluster_search.best_k
+        cluster_labels = cluster_search.labels
+        cluster_summary_lines = summarize_cluster_identities(
+            cluster_labels=cluster_labels,
+            original_labels=original_labels,
+            in_degrees=in_degree,
+            out_degrees=out_degree,
+            cluster_ids=list(range(best_cluster_k)),
+            top_n_types=3,
+            label_name_map=LABEL_NAMES_BY_BUCKET,
+            emit=None,
         )
-
-    silhouette_persisted = persist_snapshot_silhouette_score(
-        snapshot_id=resolved_snapshot_id,
-        silhouette_score=silhouette_score,
-        dsn=config.db_dsn,
-    )
-    if not silhouette_persisted:
-        raise ValueError(
-            "DB update did not match any Snapshot row "
-            f"(snapshot_id={resolved_snapshot_id})"
+        scores_text = ", ".join(
+            f"k={k}: {score:.4f}" for k, score in sorted(cluster_search.scores_by_k.items())
         )
-    if silhouette_score is None:
-        _emit(
-            log,
-            "  Persisted NULL silhouette score to Snapshot table "
-            f"(snapshot_id={resolved_snapshot_id})",
-        )
-    else:
-        _emit(
-            log,
-            "  Persisted silhouette score to Snapshot table "
-            f"(snapshot_id={resolved_snapshot_id})",
-        )
+        _emit(log, f"  Silhouette metric: {config.silhouette_metric}")
+        _emit(log, f"  Scores by k -> {scores_text}")
+        _emit(log, f"  Best positive silhouette: k={best_cluster_k}, score={silhouette_score:.4f}")
 
     _emit(log, "\n[5/5] Creating t-SNE visualization...")
     if config.subsample_size and config.subsample_size < num_nodes:
@@ -220,11 +238,11 @@ def run_gnn_experiment(config: GnnExperimentConfig, log: LogFn = print) -> GnnEx
         np.random.seed(config.seed)
         subsample_indices = np.random.choice(num_nodes, config.subsample_size, replace=False)
         embeddings_viz = embeddings[subsample_indices]
-        labels_viz = labels[subsample_indices]
+        labels_viz = cluster_labels[subsample_indices] if cluster_labels is not None else None
         _emit(log, f"  Using {config.subsample_size} nodes for visualization")
     else:
         embeddings_viz = embeddings
-        labels_viz = labels
+        labels_viz = cluster_labels
         _emit(log, f"  Using all {num_nodes} nodes for visualization")
 
     viz_num_nodes = embeddings_viz.shape[0]
@@ -240,12 +258,19 @@ def run_gnn_experiment(config: GnnExperimentConfig, log: LogFn = print) -> GnnEx
     output_path = Path(config.output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
     save_path = output_path / f"tsne_embeddings_{config.num_layers}layer.png"
+    cluster_summary_path = output_path / "cluster_summary.json"
 
     layer_suffix = f"{config.num_layers}-Layer" if config.num_layers > 1 else "1-Layer"
+    title_suffix = (
+        f"Discovered Clusters (k={best_cluster_k})"
+        if best_cluster_k is not None
+        else "No Positive Cluster Split Found"
+    )
     projection, _fig = visualize_embeddings(
         embeddings_viz,
         labels=labels_viz,
-        title=f"t-SNE Projection of GNN Embeddings ({layer_suffix} SAGEConv)",
+        label_name="Discovered Cluster ID",
+        title=f"t-SNE Projection of GNN Embeddings ({layer_suffix} SAGEConv, {title_suffix})",
         save_path=save_path,
         show=False,
         perplexity=effective_perplexity,
@@ -257,6 +282,15 @@ def run_gnn_experiment(config: GnnExperimentConfig, log: LogFn = print) -> GnnEx
     _emit(log, f"  t-SNE projection shape: {projection.shape}")
     _emit(log, f"  Visualization saved to: {save_path}")
 
+    cluster_summary_payload = {
+        "best_cluster_k": best_cluster_k,
+        "silhouette_score": silhouette_score,
+        "lines": cluster_summary_lines,
+    }
+    with open(cluster_summary_path, "w", encoding="utf-8") as handle:
+        json.dump(cluster_summary_payload, handle, indent=2)
+    _emit(log, f"  Cluster summary saved to: {cluster_summary_path}")
+
     _emit(log, "\n" + "=" * 60)
     _emit(log, "✓ Feasibility proof complete!")
     _emit(log, "=" * 60)
@@ -266,7 +300,11 @@ def run_gnn_experiment(config: GnnExperimentConfig, log: LogFn = print) -> GnnEx
     if silhouette_score is None:
         _emit(log, f"  • Silhouette score: unavailable ({silhouette_error})")
     else:
-        _emit(log, f"  • Silhouette score ({config.silhouette_metric}): {silhouette_score:.4f}")
+        _emit(log, f"  • Best positive silhouette ({config.silhouette_metric}): {silhouette_score:.4f}")
+        _emit(log, f"  • Selected cluster count: k={best_cluster_k}")
+        _emit(log, "  • Cluster identity summary:")
+        for line in cluster_summary_lines:
+            _emit(log, f"    - {line}")
     _emit(log, "  • t-SNE projection created and saved")
     _emit(log, f"  • Orphan nodes: {num_orphans} (handled gracefully)")
     _emit(log, "\nNext steps:")
@@ -282,7 +320,8 @@ def run_gnn_experiment(config: GnnExperimentConfig, log: LogFn = print) -> GnnEx
         projection_shape=tuple(projection.shape),
         silhouette_score=silhouette_score,
         silhouette_error=silhouette_error,
-        silhouette_persisted=silhouette_persisted,
-        snapshot_id=resolved_snapshot_id,
+        best_cluster_k=best_cluster_k,
+        cluster_summary_lines=cluster_summary_lines,
+        embeddings_path=saved_embeddings_path,
         visualization_path=save_path,
     )

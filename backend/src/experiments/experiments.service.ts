@@ -1,5 +1,6 @@
 import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { spawn } from 'child_process';
+import * as fs from 'fs/promises';
 import * as path from 'path';
 import type { ExperimentRun } from '../../generated/prisma/client';
 import { PrismaService } from '../infrastructure/prisma/prisma.service';
@@ -9,6 +10,9 @@ interface ExperimentResult {
   tensor_bundle_path: string;
   embeddings_path: string;
   tsne_plot_path: string;
+  silhouette_score: number | null;
+  best_cluster_k: number | null;
+  cluster_summary: string[] | null;
   node_count: number;
   edge_count: number;
 }
@@ -20,7 +24,7 @@ export class ExperimentsService {
   constructor(private readonly prisma: PrismaService) {}
 
   async listRuns() {
-    return this.prisma.experimentRun.findMany({
+    const runs = await this.prisma.experimentRun.findMany({
       orderBy: { createdAt: 'desc' },
       take: 50,
       include: {
@@ -33,6 +37,20 @@ export class ExperimentsService {
         },
       },
     });
+
+    return Promise.all(
+      runs.map(async (run) => {
+        const [silhouetteScore, clusterSummary] = await Promise.all([
+          this.getExperimentRunSilhouetteScore(run.id),
+          this.getExperimentRunClusterSummary(run.id),
+        ]);
+        return {
+          ...run,
+          silhouetteScore,
+          clusterSummary,
+        };
+      })
+    );
   }
 
   async getRun(id: string) {
@@ -53,16 +71,29 @@ export class ExperimentsService {
       throw new NotFoundException(`Experiment run ${id} not found`);
     }
 
-    return run;
+    const [silhouetteScore, clusterSummary] = await Promise.all([
+      this.getExperimentRunSilhouetteScore(run.id),
+      this.getExperimentRunClusterSummary(run.id),
+    ]);
+
+    return {
+      ...run,
+      silhouetteScore,
+      clusterSummary,
+    };
   }
 
   async startRun(dto: RunExperimentDto) {
-    // Verify snapshot exists
-    const snapshot = await this.prisma.snapshot.findUnique({
-      where: { id: dto.snapshotId },
-    });
+    // Verify snapshot exists.
+    // Use raw SQL to avoid stale generated Snapshot model metadata.
+    const snapshotRows = await this.prisma.$queryRaw<Array<{ id: string }>>`
+      SELECT "id"
+      FROM "Snapshot"
+      WHERE "id" = ${dto.snapshotId}
+      LIMIT 1
+    `;
 
-    if (!snapshot) {
+    if (snapshotRows.length === 0) {
       throw new NotFoundException(`Snapshot ${dto.snapshotId} not found`);
     }
 
@@ -71,7 +102,7 @@ export class ExperimentsService {
       data: {
         snapshotId: dto.snapshotId,
         numLayers: dto.numLayers ?? 2,
-        hiddenChannels: dto.hiddenChannels ?? 128,
+        hiddenChannels: dto.hiddenChannels ?? 256,
         seed: dto.seed ?? 42,
         status: 'pending',
       },
@@ -136,6 +167,7 @@ export class ExperimentsService {
           completedAt: new Date(),
         },
       });
+      await this.setExperimentRunSilhouetteScore(runId, experimentResult.silhouette_score);
 
       this.logger.log(`Experiment ${runId} completed successfully`);
     } catch (error) {
@@ -215,6 +247,66 @@ export class ExperimentsService {
       return JSON.parse(jsonMatch[1]) as ExperimentResult;
     } catch {
       throw new Error(`Failed to parse experiment result JSON: ${jsonMatch[1]}`);
+    }
+  }
+
+  private async setExperimentRunSilhouetteScore(
+    runId: string,
+    silhouetteScore: number | null
+  ): Promise<void> {
+    await this.prisma.$executeRaw`
+      UPDATE "ExperimentRun"
+      SET "silhouetteScore" = ${silhouetteScore}
+      WHERE "id" = ${runId}
+    `;
+  }
+
+  private async getExperimentRunSilhouetteScore(runId: string): Promise<number | null> {
+    type Row = { silhouetteScore: number | null };
+    const rows = await this.prisma.$queryRaw<Row[]>`
+      SELECT "silhouetteScore"
+      FROM "ExperimentRun"
+      WHERE "id" = ${runId}
+      LIMIT 1
+    `;
+    return rows[0]?.silhouetteScore ?? null;
+  }
+
+  private getExperimentOutputDir(runId: string): string {
+    const projectRoot = path.resolve(__dirname, '../../../..');
+    return path.join(projectRoot, 'learning/output/experiments', runId);
+  }
+
+  private async getExperimentRunClusterSummary(runId: string): Promise<string[] | null> {
+    const summaryPath = path.join(this.getExperimentOutputDir(runId), 'cluster_summary.json');
+
+    try {
+      const content = await fs.readFile(summaryPath, 'utf8');
+      const parsed = JSON.parse(content) as unknown;
+
+      if (Array.isArray(parsed) && parsed.every((line) => typeof line === 'string')) {
+        return parsed;
+      }
+      if (
+        typeof parsed === 'object' &&
+        parsed !== null &&
+        'lines' in parsed &&
+        Array.isArray((parsed as { lines: unknown }).lines)
+      ) {
+        const lines = (parsed as { lines: unknown[] }).lines.filter(
+          (line): line is string => typeof line === 'string'
+        );
+        return lines;
+      }
+      return null;
+    } catch (error) {
+      const err = error as NodeJS.ErrnoException;
+      if (err.code === 'ENOENT') {
+        return null;
+      }
+
+      this.logger.warn(`Failed to load cluster summary for run ${runId}: ${err.message}`);
+      return null;
     }
   }
 }

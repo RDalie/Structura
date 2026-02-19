@@ -43,6 +43,8 @@ type ExperimentRun = {
   tensorBundlePath: string | null;
   embeddingsPath: string | null;
   tsnePlotPath: string | null;
+  silhouetteScore: number | null;
+  clusterSummary: string[] | null;
   nodeCount: number | null;
   edgeCount: number | null;
   createdAt: string;
@@ -60,14 +62,16 @@ export function ExperimentsPage() {
   const [runs, setRuns] = useState<ExperimentRun[]>([]);
   const [selectedSnapshotId, setSelectedSnapshotId] = useState('');
   const [numLayers, setNumLayers] = useState(2);
-  const [hiddenChannels, setHiddenChannels] = useState(128);
+  const [hiddenChannels, setHiddenChannels] = useState(256);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(
     null
   );
   const [isLoadingRuns, setIsLoadingRuns] = useState(false);
   const [isLoadingSnapshots, setIsLoadingSnapshots] = useState(false);
-  const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [preview, setPreview] = useState<{ imageUrl: string; clusterSummary: string[] | null } | null>(
+    null
+  );
 
   useEffect(() => {
     void fetchSnapshots();
@@ -305,7 +309,7 @@ export function ExperimentsPage() {
                 <div>
                   <div className="font-semibold">Feature Engineering</div>
                   <p className="text-[#4b5563]">
-                    Create 6-dim one-hot node features based on AST node types.
+                    Build `[log1p(in_degree), log1p(out_degree)]` features from graph structure.
                   </p>
                 </div>
               </li>
@@ -323,7 +327,7 @@ export function ExperimentsPage() {
                 <div>
                   <div className="font-semibold">t-SNE Visualization</div>
                   <p className="text-[#4b5563]">
-                    Project embeddings to 2D and create a scatter plot colored by node type.
+                    Project embeddings to 2D and color points by discovered cluster IDs.
                   </p>
                 </div>
               </li>
@@ -377,6 +381,7 @@ export function ExperimentsPage() {
                 <TableHead>Snapshot</TableHead>
                 <TableHead>Layers</TableHead>
                 <TableHead>Nodes/Edges</TableHead>
+                <TableHead>Silhouette</TableHead>
                 <TableHead>Started</TableHead>
                 <TableHead>Results</TableHead>
               </TableRow>
@@ -384,7 +389,7 @@ export function ExperimentsPage() {
             <TableBody>
               {orderedRuns.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={7} className="py-6 text-center text-sm text-[#4b5563]">
+                  <TableCell colSpan={8} className="py-6 text-center text-sm text-[#4b5563]">
                     {isLoadingRuns
                       ? 'Loading experiments...'
                       : 'No experiments yet. Run one to see results here.'}
@@ -408,6 +413,9 @@ export function ExperimentsPage() {
                     <TableCell className="text-sm text-[#0f172a]">
                       {run.nodeCount != null ? `${run.nodeCount} / ${run.edgeCount}` : '—'}
                     </TableCell>
+                    <TableCell className="font-mono text-sm text-[#0f172a]">
+                      {formatSilhouetteScore(run.silhouetteScore)}
+                    </TableCell>
                     <TableCell className="text-sm text-[#0f172a]">
                       {formatDate(new Date(run.createdAt))}
                     </TableCell>
@@ -418,7 +426,10 @@ export function ExperimentsPage() {
                           className="h-7 px-2 text-xs"
                           onClick={() => {
                             const filename = run.tsnePlotPath!.split('/').pop()!;
-                            setPreviewImage(getOutputUrl(run.id, filename));
+                            setPreview({
+                              imageUrl: getOutputUrl(run.id, filename),
+                              clusterSummary: run.clusterSummary,
+                            });
                           }}
                         >
                           <ExternalLink className="mr-1 h-3 w-3" />
@@ -443,10 +454,10 @@ export function ExperimentsPage() {
         </CardContent>
       </Card>
 
-      {previewImage && (
+      {preview && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
-          onClick={() => setPreviewImage(null)}
+          onClick={() => setPreview(null)}
         >
           <div
             className="relative max-h-[90vh] max-w-[90vw] overflow-auto rounded-lg bg-white p-4 shadow-xl"
@@ -454,11 +465,23 @@ export function ExperimentsPage() {
           >
             <button
               className="absolute right-2 top-2 rounded-full p-1 hover:bg-gray-100"
-              onClick={() => setPreviewImage(null)}
+              onClick={() => setPreview(null)}
             >
               <XCircle className="h-6 w-6 text-gray-500" />
             </button>
-            <img src={previewImage} alt="t-SNE visualization" className="max-h-[80vh]" />
+            <img src={preview.imageUrl} alt="t-SNE visualization" className="max-h-[80vh]" />
+            <div className="mt-4 rounded-lg border border-[#e4e7ee] bg-[#f8fafc] p-4">
+              <h3 className="text-sm font-semibold text-[#0f172a]">Cluster Summary</h3>
+              {preview.clusterSummary && preview.clusterSummary.length > 0 ? (
+                <ul className="mt-2 space-y-1 text-sm text-[#334155]">
+                  {preview.clusterSummary.map((line, idx) => (
+                    <li key={`${idx}-${line}`}>{line}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-2 text-sm text-[#64748b]">No cluster summary available for this run.</p>
+              )}
+            </div>
           </div>
         </div>
       )}
@@ -490,4 +513,9 @@ function formatDate(date: Date) {
     hour: '2-digit',
     minute: '2-digit',
   });
+}
+
+function formatSilhouetteScore(score?: number | null) {
+  if (typeof score !== 'number' || Number.isNaN(score)) return '—';
+  return score.toFixed(3);
 }

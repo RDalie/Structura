@@ -19,7 +19,6 @@ export class IngestionService {
       id: string;
       rootPath: string;
       snapshotVersion: string;
-      silhouetteScore: number | null;
       createdAt: Date;
       astNodesCount: bigint;
       graphEdgesCount: bigint;
@@ -30,7 +29,6 @@ export class IngestionService {
         s."id",
         s."rootPath",
         s."snapshotVersion",
-        s."silhouetteScore",
         s."createdAt",
         COALESCE(an."astNodesCount", 0) AS "astNodesCount",
         COALESCE(ge."graphEdgesCount", 0) AS "graphEdgesCount"
@@ -55,7 +53,6 @@ export class IngestionService {
       id: row.id,
       rootPath: row.rootPath,
       snapshotVersion: row.snapshotVersion,
-      silhouetteScore: row.silhouetteScore,
       createdAt: row.createdAt,
       _count: {
         astNodes: Number(row.astNodesCount),

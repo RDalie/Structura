@@ -38,12 +38,6 @@ Examples:
         help="Path to TensorBundle pickle file (if not provided, uses synthetic data)",
     )
     parser.add_argument(
-        "--snapshot-id",
-        type=str,
-        default=None,
-        help="Snapshot UUID to update in DB (if omitted, inferred from --bundle-path)",
-    )
-    parser.add_argument(
         "--output-dir",
         type=str,
         default="output",
@@ -58,15 +52,15 @@ Examples:
     parser.add_argument(
         "--num-layers",
         type=int,
-        default=1,
+        default=2,
         choices=[1, 2, 3],
-        help="Number of GNN layers (default: 1)",
+        help="Number of GNN layers (default: 2)",
     )
     parser.add_argument(
         "--hidden-channels",
         type=int,
-        default=128,
-        help="Hidden layer dimension for multi-layer models (default: 128)",
+        default=256,
+        help="Hidden layer dimension for multi-layer models (default: 256)",
     )
     parser.add_argument(
         "--perplexity",
@@ -105,10 +99,16 @@ Examples:
         help="Optional sample size for silhouette score computation",
     )
     parser.add_argument(
-        "--db-dsn",
-        type=str,
-        default=None,
-        help="Optional DB DSN override for persisting silhouette score",
+        "--cluster-k-min",
+        type=int,
+        default=2,
+        help="Minimum cluster count for K-Means silhouette sweep (default: 2)",
+    )
+    parser.add_argument(
+        "--cluster-k-max",
+        type=int,
+        default=10,
+        help="Maximum cluster count for K-Means silhouette sweep (default: 10)",
     )
     return parser.parse_args()
 
@@ -117,7 +117,6 @@ def main() -> int:
     args = parse_args()
     config = GnnExperimentConfig(
         bundle_path=args.bundle_path,
-        snapshot_id=args.snapshot_id,
         output_dir=args.output_dir,
         seed=args.seed,
         num_layers=args.num_layers,
@@ -128,7 +127,8 @@ def main() -> int:
         subsample_size=args.subsample,
         silhouette_metric=args.silhouette_metric,
         silhouette_sample_size=args.silhouette_sample_size,
-        db_dsn=args.db_dsn,
+        cluster_k_min=args.cluster_k_min,
+        cluster_k_max=args.cluster_k_max,
     )
     run_gnn_experiment(config, log=print)
     return 0

@@ -14,7 +14,7 @@ export class RunExperimentDto {
   @IsInt()
   @Min(32)
   @Max(512)
-  hiddenChannels?: number = 128;
+  hiddenChannels?: number = 256;
 
   @IsOptional()
   @IsInt()

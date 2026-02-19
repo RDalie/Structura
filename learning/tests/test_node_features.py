@@ -1,4 +1,5 @@
 import sys
+import math
 from pathlib import Path
 
 import pytest
@@ -11,7 +12,9 @@ sys.path.insert(0, str(SRC_ROOT))
 from components.models import SnapshotNode  # noqa: E402
 from components.node_features import (  # noqa: E402
     KIND_TO_BUCKET,
+    create_degree_feature_matrix,
     create_feature_matrix_v1,
+    create_label_vector_v1,
     _validate_node_set,
 )
 
@@ -42,6 +45,44 @@ def test_feature_matrix_shape():
 
     assert x.shape == (len(nodes), 6)
     assert x.dtype == torch.float32
+
+
+def test_degree_feature_matrix_shape_and_dtype():
+    edge_index = torch.tensor([[0, 1, 1], [1, 2, 0]], dtype=torch.long)
+    x = create_degree_feature_matrix(edge_index=edge_index, num_nodes=3)
+
+    assert x.shape == (3, 2)
+    assert x.dtype == torch.float32
+
+
+def test_degree_feature_matrix_uses_log1p_in_out_degree():
+    # Edges: 0->1, 1->2, 1->0
+    # in_degree:  [1, 1, 1]
+    # out_degree: [1, 2, 0]
+    edge_index = torch.tensor([[0, 1, 1], [1, 2, 0]], dtype=torch.long)
+    x = create_degree_feature_matrix(edge_index=edge_index, num_nodes=3)
+
+    expected = torch.tensor(
+        [
+            [math.log1p(1.0), math.log1p(1.0)],
+            [math.log1p(1.0), math.log1p(2.0)],
+            [math.log1p(1.0), math.log1p(0.0)],
+        ],
+        dtype=torch.float32,
+    )
+    assert torch.allclose(x, expected)
+
+
+def test_label_vector_v1_shape_and_values():
+    nodes = make_test_nodes()
+    node_to_idx = make_node_mapping(nodes)
+
+    labels = create_label_vector_v1(nodes, node_to_idx)
+
+    assert labels.shape == (len(nodes),)
+    assert labels.dtype == torch.long
+    assert labels[node_to_idx["a"]] == KIND_TO_BUCKET["Module"]
+    assert labels[node_to_idx["b"]] == KIND_TO_BUCKET["Function"]
 
 
 def test_one_hot_encoding():

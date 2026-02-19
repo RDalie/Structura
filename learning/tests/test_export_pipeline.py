@@ -1,5 +1,6 @@
 import pickle
 import sys
+import math
 from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import MagicMock
@@ -111,6 +112,7 @@ def test_run_export_pipeline_integration(tmp_path, monkeypatch):
     assert "x" in bundle
     assert "edge_index" in bundle
     assert "node_mapping" in bundle
+    assert "labels" in bundle
 
 
 def test_bundle_structure(tmp_path, monkeypatch):
@@ -127,6 +129,7 @@ def test_bundle_structure(tmp_path, monkeypatch):
     assert isinstance(bundle["x"], torch.Tensor)
     assert isinstance(bundle["edge_index"], torch.Tensor)
     assert isinstance(bundle["node_mapping"], dict)
+    assert isinstance(bundle["labels"], torch.Tensor)
 
     # Check tensor dtypes
     assert bundle["x"].dtype == torch.float32
@@ -146,14 +149,15 @@ def test_bundle_consistency(tmp_path, monkeypatch):
     num_nodes = len(node_rows)
     num_edges = len(edge_rows)
 
-    # Feature matrix should be [num_nodes, 6]
-    assert bundle["x"].shape == (num_nodes, 6)
+    # Degree feature matrix should be [num_nodes, 2]
+    assert bundle["x"].shape == (num_nodes, 2)
 
     # Edge index should be [2, num_edges]
     assert bundle["edge_index"].shape == (2, num_edges)
 
     # Node mapping should have num_nodes entries
     assert len(bundle["node_mapping"]) == num_nodes
+    assert bundle["labels"].shape == (num_nodes,)
 
 
 def test_export_creates_file(tmp_path, monkeypatch):
@@ -187,12 +191,13 @@ def test_bundle_can_be_loaded(tmp_path, monkeypatch):
     # Verify contents match
     assert torch.equal(loaded_bundle["x"], original_bundle["x"])
     assert torch.equal(loaded_bundle["edge_index"], original_bundle["edge_index"])
+    assert torch.equal(loaded_bundle["labels"], original_bundle["labels"])
     assert loaded_bundle["node_mapping"] == original_bundle["node_mapping"]
 
 
-def test_feature_matrix_one_hot(tmp_path, monkeypatch):
-    """Feature matrix rows should be one-hot encoded."""
-    snapshot_id = "test-one-hot"
+def test_feature_matrix_degree_log_scaled(tmp_path, monkeypatch):
+    """Feature matrix should contain log1p-scaled in/out degree features."""
+    snapshot_id = "test-degree-features"
     output_path = tmp_path / "bundle.pkl"
     node_rows, edge_rows = make_sample_rows(snapshot_id)
     conn = make_connection(node_rows, edge_rows)
@@ -200,9 +205,17 @@ def test_feature_matrix_one_hot(tmp_path, monkeypatch):
 
     bundle = run_export_pipeline(snapshot_id, str(output_path))
 
-    # Each row should sum to 1.0
-    row_sums = bundle["x"].sum(dim=1)
-    assert torch.allclose(row_sums, torch.ones(len(node_rows)))
+    # With edges a->b and b->c:
+    # a: in=0, out=1 ; b: in=1, out=1 ; c: in=1, out=0
+    expected = torch.tensor(
+        [
+            [math.log1p(0.0), math.log1p(1.0)],
+            [math.log1p(1.0), math.log1p(1.0)],
+            [math.log1p(1.0), math.log1p(0.0)],
+        ],
+        dtype=torch.float32,
+    )
+    assert torch.allclose(bundle["x"], expected)
 
 
 def test_edge_index_values(tmp_path, monkeypatch):
@@ -291,9 +304,10 @@ def test_isolated_nodes(tmp_path, monkeypatch):
 
     bundle = run_export_pipeline(snapshot_id, str(output_path))
 
-    assert bundle["x"].shape == (1, 6)
+    assert bundle["x"].shape == (1, 2)
     assert bundle["edge_index"].shape == (2, 0)
     assert len(bundle["node_mapping"]) == 1
+    assert bundle["labels"].shape == (1,)
 
 
 def test_large_graph(tmp_path, monkeypatch):
@@ -338,6 +352,7 @@ def test_large_graph(tmp_path, monkeypatch):
 
     bundle = run_export_pipeline(snapshot_id, str(output_path))
 
-    assert bundle["x"].shape == (100, 6)
+    assert bundle["x"].shape == (100, 2)
     assert bundle["edge_index"].shape == (2, 150)
     assert len(bundle["node_mapping"]) == 100
+    assert bundle["labels"].shape == (100,)
