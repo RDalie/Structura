@@ -6,14 +6,14 @@ title: GNN Embeddings and t-SNE Visualization
 
 The GNN feasibility demonstration script generates node embeddings using Graph Neural Networks (GNNs) and visualizes them using t-SNE dimensionality reduction. This enables visual exploration of how GNN models learn to represent code structure.
 
-Source: `learning/src/examples/gnn_feasibility_demo.py`, `learning/src/components/gnn_model.py`, `learning/src/components/tsne_viz.py`.
+Source: `learning/src/examples/gnn_feasibility_demo.py`, `learning/src/pipeline/gnn_experiment_pipeline.py`, `learning/src/components/gnn_model.py`, `learning/src/components/tsne_viz.py`.
 
 ## Architecture
 
-The visualization pipeline consists of four stages:
+The visualization pipeline consists of five stages:
 
 ```
-TensorBundle → GNN Model → Node Embeddings → t-SNE Projection → Visualization
+TensorBundle → GNN Model → Node Embeddings → Silhouette Score → t-SNE Projection → Visualization
 ```
 
 ### 1. Load TensorBundle
