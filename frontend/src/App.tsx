@@ -4,10 +4,11 @@ import { navItems } from './core/nav';
 import { PlaceholderPage } from './pages/PlaceholderPage';
 import { HealthStatusPage } from './pages/HealthStatusPage';
 import { IngestionPage } from './pages/IngestionPage';
+import { ExperimentsPage } from './pages/ExperimentsPage';
 
 export default function App() {
   const placeholderItems = navItems.filter(
-    (item) => item.key !== 'health' && item.key !== 'ingestion'
+    (item) => item.key !== 'health' && item.key !== 'ingestion' && item.key !== 'experiments'
   );
 
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route index element={<Navigate to="/graph" replace />} />
           <Route path="health" element={<HealthStatusPage />} />
           <Route path="ingestion" element={<IngestionPage />} />
+          <Route path="experiments" element={<ExperimentsPage />} />
           {placeholderItems.map((item) => (
             <Route
               key={item.key}

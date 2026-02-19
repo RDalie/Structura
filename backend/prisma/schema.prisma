@@ -69,8 +69,39 @@ model Snapshot {
   rootPath        String
   createdAt       DateTime @default(now())
 
-  astNodes AstNode[]
-  graphEdges GraphEdge[]
+  astNodes       AstNode[]
+  graphEdges     GraphEdge[]
+  experimentRuns ExperimentRun[]
 
   @@index([snapshotVersion])
+}
+
+model ExperimentRun {
+  id         String   @id @default(uuid()) @db.Uuid
+  snapshotId String   @db.Uuid
+  snapshot   Snapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
+
+  // Run parameters
+  numLayers      Int @default(2)
+  hiddenChannels Int @default(128)
+  seed           Int @default(42)
+
+  // Status tracking: pending, running, completed, failed
+  status       String  @default("pending")
+  errorMessage String?
+
+  // Output paths (relative to learning/output/experiments/)
+  tensorBundlePath String?
+  embeddingsPath   String?
+  tsnePlotPath     String?
+
+  // Metrics
+  nodeCount Int?
+  edgeCount Int?
+
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([snapshotId])
+  @@index([status])
 }
