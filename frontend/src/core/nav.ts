@@ -12,6 +12,12 @@ export const navItems: NavItem[] = [
     to: '/ingestion',
     blurb: 'Kick off snapshots and monitor pipelines.',
   },
+  {
+    key: 'experiments',
+    label: 'Experiments',
+    to: '/experiments',
+    blurb: 'Run GNN baseline experiments on snapshots.',
+  },
   { key: 'graph', label: 'Graph', to: '/graph', blurb: 'Explore the knowledge graph.' },
   { key: 'code', label: 'Code', to: '/code', blurb: 'Work on code-aware insights.' },
   { key: 'metrics', label: 'Metrics', to: '/metrics', blurb: 'Review performance signals.' },

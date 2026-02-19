@@ -12,6 +12,7 @@ import { Neo4jGraphModule } from './infrastructure/neo4j/graph.module';
 import { GraphModule } from './graph/graph.module';
 import { IngestionModule } from './ingestion/ingestion.module';
 import { GraphEdgesModule } from './graph-edges/graph-edges.module';
+import { ExperimentsModule } from './experiments/experiments.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { GraphEdgesModule } from './graph-edges/graph-edges.module';
     GraphModule,
     IngestionModule,
     GraphEdgesModule,
+    ExperimentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
